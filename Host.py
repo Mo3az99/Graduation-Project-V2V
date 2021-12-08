@@ -114,6 +114,40 @@ def convert_long(x):
     result = degree+(minutes/60)
     return result
 
+def send_message(number, message):
+    print(number)
+    print(message)
+    ser.write(b'AT \r\n')  # check the GSM+GPRS module, should return OK if working
+    receive = ser.read(100)
+    print(receive)
+    time.sleep(1)
+
+    ser.write(b'AT+CMGF=1 \r\n')  # set to text mode
+    receive = ser.read(100)
+    print(receive)
+    time.sleep(1)
+
+    #ser.write(b'AT+CSMP= 17,167,0,4 \r\n')  # for encoding bytes and other parameters
+    #receive = ser.read(100)
+    #print(receive)
+    #time.sleep(1)
+
+    AT_number = 'AT+CMGS="{}"'.format(number) + '\r\n'
+    ser.write(str.encode(AT_number))  # the number where message is to be sent
+    receive = ser.read(100)
+    print(receive)
+    time.sleep(1)
+
+    ser.write(message.encode('utf-8'))  # the message text
+    ser.write('\r\n'.encode('utf-8'))
+    receive = ser.read(100)
+    print(receive)
+
+    ser.write(b'\x1A')
+    for i in range(10):
+        receive = ser.read(1000)  # read the response from the service provider if additional information sent
+        print(receive)
+
 if __name__ == "__main__":
     # creating threads
     rev_thread = threading.Thread(target=receive)
@@ -121,7 +155,7 @@ if __name__ == "__main__":
 
     #open Serial for COM 3 and baud rate 115200
     ser = serial.Serial('COM3', 115200, timeout=1)
-
+    send_message("01222876678", "BOSHBOSH NOOOOOB")
     #initialize GPS
     init()
 
