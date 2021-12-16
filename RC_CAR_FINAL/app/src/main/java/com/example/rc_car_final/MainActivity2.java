@@ -34,7 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
 
-        button = findViewById(R.id.button);
+//        button = findViewById(R.id.button);
         UP = findViewById(R.id.UP);
         DOWN = findViewById(R.id.DOWN);
         RIGHT = findViewById(R.id.right);
@@ -43,15 +43,15 @@ public class MainActivity2 extends AppCompatActivity {
         LCD = findViewById(R.id.textView3);
 
         String IP=get_ip();
-        button.setOnClickListener(v -> {
-//                LCD.setText("Connected with IP "+get_ip());
-            try {
-                new Thread(new connect(IP , "4445","hamada")).start();}
-            catch (IOException e) {
-                setLCD(e.toString());
-            }
-
-        });
+//        button.setOnClickListener(v -> {
+////                LCD.setText("Connected with IP "+get_ip());
+//            try {
+//                new Thread(new connect(IP , "4445","hamada")).start();}
+//            catch (IOException e) {
+//                setLCD(e.toString());
+//            }
+//
+//        });
 
 
         View.OnTouchListener handleTouch = new View.OnTouchListener() {
