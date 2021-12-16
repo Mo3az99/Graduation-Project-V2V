@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="26dp"
-        android:text="UP"
+        android:text="up"
         app:layout_constraintBottom_toTopOf="@+id/DOWN"
         app:layout_constraintStart_toStartOf="@+id/DOWN" />
 
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginBottom="58dp"
-        android:text="DOWN"
+        android:text="down"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

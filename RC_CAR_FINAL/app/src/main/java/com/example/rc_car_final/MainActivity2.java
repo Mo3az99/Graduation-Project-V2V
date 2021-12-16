@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+
+
 public class MainActivity2 extends AppCompatActivity {
     static TextView LCD;
     Button button;
@@ -46,36 +48,37 @@ public class MainActivity2 extends AppCompatActivity {
             try {
                 new Thread(new connect(IP , "4445","hamada")).start();}
             catch (IOException e) {
-//                e.printStackTrace();
                 setLCD(e.toString());
             }
 
         });
 
-//UP KEY
-        View.OnTouchListener handleUPTouch = new View.OnTouchListener() {
+
+        View.OnTouchListener handleTouch = new View.OnTouchListener() {
 
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                Button b = (Button) v;
+                String msg;
+
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-
+                        msg = (String) b.getText() + "DOWN";
                         try {
-                            new Thread(new connect(IP , "4445","UPDOWN")).start();
+                            new Thread(new connect(IP , "4445",msg)).start();
                         }
                         catch (IOException e) {
-//                            e.printStackTrace();
                             setLCD(e.toString());
                         }
 
                         break;
                     case MotionEvent.ACTION_UP:
+                         msg = (String) b.getText() + "UP";
                         try {
-                            new Thread(new connect(IP , "4445","UPUP")).start();}
+                            new Thread(new connect(IP , "4445",msg)).start();}
                         catch (IOException e)
                         {
-//                            e.printStackTrace();
                             setLCD(e.toString());
                         }
 
@@ -85,100 +88,101 @@ public class MainActivity2 extends AppCompatActivity {
                 return true;
             }
         };
-        UP.setOnTouchListener(handleUPTouch);
+        UP.setOnTouchListener(handleTouch);
+        DOWN.setOnTouchListener(handleTouch);
+        RIGHT.setOnTouchListener(handleTouch);
+        LEFT.setOnTouchListener(handleTouch);
 
-//DOWN KEY
-        View.OnTouchListener handleDOWNTouch = new View.OnTouchListener() {
-
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-
-                        try {
-                            new Thread(new connect(IP, "4445","DOWNDOWN")).start();} catch (IOException e) {
-//                            e.printStackTrace();
-                            setLCD(e.toString());
-                        }
-
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        try {
-                            new Thread(new connect(IP, "4445","DOWNUP")).start();} catch (IOException e) {
-//                            e.printStackTrace();
-                            setLCD(e.toString());
-                        }
-
-                        break;
-                }
-
-                return true;
-            }
-        };
-        DOWN.setOnTouchListener(handleDOWNTouch);
+//
+////DOWN KEY
+//        View.OnTouchListener handleDOWNTouch = new View.OnTouchListener() {
+//
+//
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                switch (event.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//
+//                        try {
+//                            new Thread(new connect(IP, "4445","DOWNDOWN")).start();
+//                            Button b2= (Button) v;
+//                            setLCD((String) b2.getText());
+//                        } catch (IOException e) {
+//                            setLCD(e.toString());
+//                        }
+//
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        try {
+//                            new Thread(new connect(IP, "4445","DOWNUP")).start();} catch (IOException e) {
+//                            setLCD(e.toString());
+//                        }
+//
+//                        break;
+//                }
+//
+//                return true;
+//            }
+//        };
+//        DOWN.setOnTouchListener(handleDOWNTouch);
 
 //right KEY
-        View.OnTouchListener handleRIGHTTouch = new View.OnTouchListener() {
-
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-
-                        try {
-                            new Thread(new connect(IP, "4445","RIGHTDOWN")).start();} catch (IOException e) {
-//                            e.printStackTrace();
-                            setLCD(e.toString());
-                        }
-
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        try {
-                            new Thread(new connect(IP, "4445","RIGHTUP")).start();} catch (IOException e) {
-//                            e.printStackTrace();
-                            setLCD(e.toString());
-                        }
-
-                        break;
-                }
-
-                return true;
-            }
-        };
-        RIGHT.setOnTouchListener(handleRIGHTTouch);
+//        View.OnTouchListener handleRIGHTTouch = new View.OnTouchListener() {
+//
+//
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                switch (event.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//
+//                        try {
+//                            new Thread(new connect(IP, "4445","RIGHTDOWN")).start();} catch (IOException e) {
+//                            setLCD(e.toString());
+//                        }
+//
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        try {
+//                            new Thread(new connect(IP, "4445","RIGHTUP")).start();} catch (IOException e) {
+//                            setLCD(e.toString());
+//                        }
+//
+//                        break;
+//                }
+//
+//                return true;
+//            }
+//        };
+//        RIGHT.setOnTouchListener(handleRIGHTTouch);
 
 //LEFT KEY
-        View.OnTouchListener handleLEFTTouch = new View.OnTouchListener() {
-
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-
-                        try {
-                            new Thread(new connect(IP, "4445","LEFTDOWN")).start();} catch (IOException e) {
-//                            e.printStackTrace();
-                            setLCD(e.toString());
-                        }
-
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        try {
-                            new Thread(new connect(IP , "4445","LEFTUP")).start();} catch (IOException e) {
-//                            e.printStackTrace();
-                            setLCD(e.toString());
-                        }
-
-                        break;
-                }
-
-                return true;
-            }
-        };
-        LEFT.setOnTouchListener(handleLEFTTouch);
+//        View.OnTouchListener handleLEFTTouch = new View.OnTouchListener() {
+//
+//
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                switch (event.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//
+//                        try {
+//                            new Thread(new connect(IP, "4445","LEFTDOWN")).start();} catch (IOException e) {
+//                            setLCD(e.toString());
+//                        }
+//
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        try {
+//                            new Thread(new connect(IP , "4445","LEFTUP")).start();} catch (IOException e) {
+//                            setLCD(e.toString());
+//                        }
+//
+//                        break;
+//                }
+//
+//                return true;
+//            }
+//        };
+//        LEFT.setOnTouchListener(handleLEFTTouch);
 
     }
 
