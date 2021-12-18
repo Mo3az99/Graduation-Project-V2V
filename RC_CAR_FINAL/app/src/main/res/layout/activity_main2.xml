@@ -106,4 +106,21 @@
         app:strokeColor="#023209"
         app:strokeWidth="5dp" />
 
+    <Button
+        android:id="@+id/Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha=".5"
+        android:backgroundTint="#40E0D0"
+        android:text="Get Location"
+        android:textColor="#023209"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.887"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068"
+        app:strokeColor="#023209"
+        app:strokeWidth="5dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

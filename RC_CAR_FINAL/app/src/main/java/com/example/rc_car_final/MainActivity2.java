@@ -5,11 +5,13 @@ import static com.example.rc_car_final.MainActivity2.setLCD;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,7 +26,7 @@ public class MainActivity2 extends AppCompatActivity {
     Button DOWN;
     Button LEFT;
     Button RIGHT;
-
+    Button Maps;
 
 
 
@@ -39,8 +41,17 @@ public class MainActivity2 extends AppCompatActivity {
         DOWN = findViewById(R.id.DOWN);
         RIGHT = findViewById(R.id.right);
         LEFT = findViewById(R.id.left);
-
+        Maps = findViewById(R.id.Location);
         LCD = findViewById(R.id.textView3);
+
+        Maps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Map_intent;
+                Map_intent = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(Map_intent);
+            }
+        });
 
         String IP=get_ip();
 //        button.setOnClickListener(v -> {
