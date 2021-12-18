@@ -6,7 +6,113 @@ import serial
 import pynmea2
 import serial
 import os
+import RPi.GPIO as GPIO
+#buttons Variables
+UP_Pressed = False
+Down_Pressed = False
+Right_Pressed = False
+Left_Pressed = False
+#input Definitions
+in1 = 4
+in2 = 3
+en = 2
+in3 = 22
+in4 = 27
+en2 = 23
+def up_right():
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(75)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100)
 
+def up_left():
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(75)
+
+def down_right():
+    GPIO.output(in1, GPIO.HIGH)
+    GPIO.output(in2, GPIO.LOW)
+    p.ChangeDutyCycle(75)
+    GPIO.output(in3, GPIO.HIGH)
+    GPIO.output(in4, GPIO.LOW)
+    p2.ChangeDutyCycle(100)
+
+def down_left():
+    GPIO.output(in1, GPIO.HIGH)
+    GPIO.output(in2, GPIO.LOW)
+    p.ChangeDutyCycle(100)
+    GPIO.output(in3, GPIO.HIGH)
+    GPIO.output(in4, GPIO.LOW)
+    p2.ChangeDutyCycle(75)
+
+def up():
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100)
+
+def down():
+    GPIO.output(in1, GPIO.HIGH)
+    GPIO.output(in2, GPIO.LOW)
+    p.ChangeDutyCycle(100)
+    GPIO.output(in3, GPIO.HIGH)
+    GPIO.output(in4, GPIO.LOW)
+    p2.ChangeDutyCycle(100)
+def right():
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(0)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100)
+def left():
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(0)
+def GPIO_Init():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
+    GPIO.setup(in1, GPIO.OUT)
+    GPIO.setup(in2, GPIO.OUT)
+    GPIO.setup(en, GPIO.OUT)
+    GPIO.setup(in3, GPIO.OUT)
+    GPIO.setup(in4, GPIO.OUT)
+    GPIO.setup(en2, GPIO.OUT)
+    # PWM
+    global p
+    p = GPIO.PWM(en, 100)
+    global p2
+    p2 = GPIO.PWM(en2, 100)
+    p.start(0)
+    p2.start(0)
+
+def ON():
+    # RUN
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100)
+def Stop():
+    # stop
+    GPIO.output(in1,GPIO.LOW)
+    GPIO.output(in2,GPIO.LOW)
+    p.ChangeDutyCycle(0)
+    GPIO.output(in3,GPIO.LOW)
+    GPIO.output(in4,GPIO.LOW)
+    p2.ChangeDutyCycle(0)
 
 # add Semaphore for Location
 def current_location():
@@ -123,22 +229,104 @@ def convert_long(x):
     result = degree + (minutes / 60)
     return result
 
+def car_Controller():
+    while True:
+
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        sock.bind(('0.0.0.0', 4445))
+        sock.listen(1)
+        print('Waiting for a Connection...')
+        (client, (ip, sock)) = sock.accept()
+        counter = 1
+
+        while True:
+            try:
+                data = client.recv(1024)
+                if data == b'UDOWN':
+                    UP_Pressed = True
+                    print("up pressed")
+                elif data == b'DDOWN':
+                    Down_Pressed = True
+                    print("down pressed")
+                elif data == b'RDOWN':
+                    Right_Pressed = True
+                    print("right pressed")
+                elif data == b'LDOWN':
+                    Left_Pressed = True
+                    print("left pressed")
+                elif data == b'UUP':
+                    UP_Pressed = False
+                    print("up released")
+                elif data == b'DUP':
+                    Down_Pressed = False
+                    print("Down released")
+                elif data == b'RUP':
+                    Right_Pressed = False
+                    print("Right released")
+                elif data == b'LUP':
+                    Left_Pressed = False
+                    print("Left released")
+
+                if not data:
+                    break
+                # print ("Recieving Packet Number %d" %counter)
+                # print(data)
+                counter += 1
+            except:
+                break
+            print("Connection Closed!")
+            client.close()
+
+        try:
+            if UP_Pressed and Right_Pressed:
+                up_right()
+                print("Right Forward")
+            elif UP_Pressed and Left_Pressed:
+                up_left()
+                print("left forward")
+            elif Down_Pressed and Right_Pressed:
+                down_right()
+                print("backward right")
+            elif Down_Pressed and Left_Pressed:
+                down_left()
+                print("backward Left")
+            elif UP_Pressed:
+                up()
+                print("Move Forward")
+            elif Down_Pressed:
+                down()
+                print("Move Backward")
+            elif Right_Pressed:
+                right()
+                print("Move Right")
+            elif Left_Pressed:
+                left()
+                print("Move Left")
+            else:
+                Stop()
+        except:
+            break
 
 if __name__ == "__main__":
     # creating threads
     rev_thread = threading.Thread(target=receive)
     send_thread = threading.Thread(target=send)
+    Car_thread = threading.Thread(target=car_Controller)
+
 
     # open Serial for COM 3 and baud rate 115200
     ser = serial.Serial('/dev/ttyS0', 115200, timeout=1)
 
     # initialize GPS
     init()
-
+    # Initialize GPIO Pins and PWM
+    GPIO_Init()
     # starting thread 1 for Receiving
     rev_thread.start()
     # starting thread 2 Main Thread
     send_thread.start()
-
+    # starting thread 3 Car Thread
+    Car_thread
     time.sleep(60)
     exit()
