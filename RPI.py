@@ -7,6 +7,8 @@ import pynmea2
 import serial
 import os
 import RPi.GPIO as GPIO
+#Location Global Variable
+location = ""
 # buttons Variables
 UP_Pressed = False
 Down_Pressed = False
@@ -107,6 +109,7 @@ def Stop():
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.LOW)
     p2.ChangeDutyCycle(0)
+
 # add Semaphore for Location
 def current_location():
     # we dont need it global if it is only the command form the A9G
@@ -114,19 +117,22 @@ def current_location():
     global var_Location
     checkOK()
     time.sleep(1.1)
-    location = ""
     # needs edit
-    for i in range(0, 6):
-        location = (ser.readline().decode('utf-8'))
+    for i in range(0, 8):
+        temp_read = (ser.readline().decode('utf-8'))
+        if temp_read[0:6] == b'$GNRMC':
+            location = temp_read
+            break
     ser.write(b'AT+GPSRD=0\r')
     x = ser.read(1000)
     print(location)
-    msg = pynmea2.parse(location)
-    # improve convert msg.lat
-    var_Location = (
-            str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
-    # print(msg.lon)
-    print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
+    if location != "":
+        msg = pynmea2.parse(location)
+        # improve convert msg.lat
+        var_Location = (
+                str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
+        # print(msg.lon)
+        print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
 def send():
     # location = getlocation()
     # sio = io.TextIOWrapper(io.BufferedRWPair(ser, ser))
