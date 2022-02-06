@@ -120,13 +120,15 @@ def current_location():
     # needs edit
     for i in range(0, 8):
         temp_read = (ser.readline().decode('utf-8'))
-        if temp_read[0:6] == b'$GNRMC':
+        if temp_read[0:6] == "$GNRMC":
             location = temp_read
+            #print("Success")
             break
+    #print(location)    
     ser.write(b'AT+GPSRD=0\r')
     x = ser.read(1000)
-    print(location)
     if location != "":
+        print(location)
         msg = pynmea2.parse(location)
         # improve convert msg.lat
         var_Location = (
