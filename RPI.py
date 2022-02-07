@@ -7,8 +7,9 @@ import pynmea2
 import serial
 import os
 import RPi.GPIO as GPIO
-#Location Global Variable
+#Location and speed Global Variables
 location = ""
+speed = 1
 # buttons Variables
 UP_Pressed = False
 Down_Pressed = False
@@ -21,62 +22,105 @@ en = 2
 in3 = 22
 in4 = 27
 en2 = 23
+
+#Function to move car in the up right direction
+# by making right wheels slower than left wheels
+#p 75 duty cycle and p2 100 duty cycle multiplied by speed
 def up_right():
     GPIO.output(in1, GPIO.LOW)
     GPIO.output(in2, GPIO.HIGH)
-    p.ChangeDutyCycle(75)
+    p.ChangeDutyCycle(75 * speed)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(100)
+    p2.ChangeDutyCycle(100 * speed)
+
+#Function to move car in the up left direction
+# by making left wheels slower than right wheels
+#p2 75 duty cycle and p 100 duty cycle multiplied by speed
 def up_left():
     GPIO.output(in1, GPIO.LOW)
     GPIO.output(in2, GPIO.HIGH)
-    p.ChangeDutyCycle(100)
+    p.ChangeDutyCycle(100 * speed)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(75)
+    p2.ChangeDutyCycle(75 * speed)
+
+#Function to move car in the down right direction
+# by reversing direction with reversing pins in1 and in2
+# and making right wheels slower than left wheels
+#p 75 duty cycle and p2 100 duty cycle multiplied by speed
 def down_right():
     GPIO.output(in1, GPIO.HIGH)
     GPIO.output(in2, GPIO.LOW)
-    p.ChangeDutyCycle(75)
+    p.ChangeDutyCycle(75 * speed)
     GPIO.output(in3, GPIO.HIGH)
     GPIO.output(in4, GPIO.LOW)
-    p2.ChangeDutyCycle(100)
+    p2.ChangeDutyCycle(100 * speed)
+
+#Function to move car in the down left direction
+# by reversing direction with reversing pins in1 and in2
+# and making left wheels slower than right wheels
+#p2 75 duty cycle and p 100 duty cycle multiplied by speed
 def down_left():
     GPIO.output(in1, GPIO.HIGH)
     GPIO.output(in2, GPIO.LOW)
-    p.ChangeDutyCycle(100)
+    p.ChangeDutyCycle(100 * speed)
     GPIO.output(in3, GPIO.HIGH)
     GPIO.output(in4, GPIO.LOW)
-    p2.ChangeDutyCycle(75)
+    p2.ChangeDutyCycle(75 * speed)
+
+#Function to move car in the forwarding direction
+# by making all wheels move with the same amount of speed
+#p2 100 duty cycle and p 100 duty cycle multiplied by speed
 def up():
     GPIO.output(in1, GPIO.LOW)
     GPIO.output(in2, GPIO.HIGH)
-    p.ChangeDutyCycle(100)
+    p.ChangeDutyCycle(100 * speed)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(100)
+    p2.ChangeDutyCycle(100 * speed)
+
+#Function to move car in the backward direction
+# by reversing pins 1 and 2
+# and making all wheels move with the same amount of speed
+#p2 100 duty cycle and p 100 duty cycle multiplied by speed
 def down():
     GPIO.output(in1, GPIO.HIGH)
     GPIO.output(in2, GPIO.LOW)
-    p.ChangeDutyCycle(100)
+    p.ChangeDutyCycle(100 * speed)
     GPIO.output(in3, GPIO.HIGH)
     GPIO.output(in4, GPIO.LOW)
-    p2.ChangeDutyCycle(100)
+    p2.ChangeDutyCycle(100 * speed)
+
+#Function to move car in the right direction
+# by changing pins 1 and 2 and the opposite for 3 and 4
+# and making only the left wheels move
+#p2 100 duty cycle and p 0 duty cycle multiplied by speed
 def right():
     GPIO.output(in1, GPIO.LOW)
     GPIO.output(in2, GPIO.HIGH)
     p.ChangeDutyCycle(0)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(100)
+    p2.ChangeDutyCycle(100 * speed)
+
+#Function to move car in the left direction
+# by changing pins 1 and 2 and the opposite for 3 and 4
+# and making only the right wheels move
+#p 100 duty cycle and p2 0 duty cycle multiplied by speed
 def left():
     GPIO.output(in1, GPIO.LOW)
     GPIO.output(in2, GPIO.HIGH)
-    p.ChangeDutyCycle(100)
+    p.ChangeDutyCycle(100 * speed)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.HIGH)
     p2.ChangeDutyCycle(0)
+
+#Function to initialize the GPIO
+#by setting the mode to GPIO.BCM
+#and setting up the pins in1 in2 in3 in4
+#and setting up the enable pins en1 and en2
+#then putting the initial PWM signal
 def GPIO_Init():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
@@ -93,6 +137,8 @@ def GPIO_Init():
     p2 = GPIO.PWM(en2, 100)
     p.start(0)
     p2.start(0)
+
+#Function For testing the pins to move all wheels in the forward direction
 def ON():
     # RUN
     GPIO.output(in1, GPIO.LOW)
@@ -101,6 +147,9 @@ def ON():
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.HIGH)
     p2.ChangeDutyCycle(100)
+
+#function to putting low voltage on all pins in1 in2 in3 in4
+# and changing the duty cycle to 0 to stop the car
 def Stop():
     # stop
     GPIO.output(in1, GPIO.LOW)
@@ -111,6 +160,11 @@ def Stop():
     p2.ChangeDutyCycle(0)
 
 # add Semaphore for Location
+
+#Function To get the current location of the moving vehicle
+# and update the global variable Location
+# and converting the format of GNRMC to latitude and longitude
+# and setting up the Google maps link
 def current_location():
     # we dont need it global if it is only the command form the A9G
     global location
@@ -135,7 +189,10 @@ def current_location():
                 str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
         # print(msg.lon)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
-def send():
+######################################################################################################
+######################################################################################################
+######################################################################################################
+def broadcast():
     # location = getlocation()
     # sio = io.TextIOWrapper(io.BufferedRWPair(ser, ser))
     # nazlha ta7t 34an mkan el kolya et3ml update
@@ -299,7 +356,7 @@ def car_Controller():
 if __name__ == "__main__":
     # creating threads
     rev_thread = threading.Thread(target=receive)
-    send_thread = threading.Thread(target=send)
+    broadcast_thread = threading.Thread(target=broadcast)
     Car_thread = threading.Thread(target=car_Controller)
 
     # open Serial for COM 3 and baud rate 115200
@@ -312,8 +369,8 @@ if __name__ == "__main__":
     # starting thread 1 for Receiving
     rev_thread.start()
     # starting thread 2 Main Thread
-    send_thread.start()
-    # starting thread 3 Car Thread
+    broadcast_thread.start()
+    # starting thread 3 Car Controlling Thread
     Car_thread.start()
     time.sleep(60)
     exit()
