@@ -176,9 +176,7 @@ def current_location():
         temp_read = (ser.readline().decode('utf-8'))
         if temp_read[0:6] == "$GNRMC":
             location = temp_read
-            #print("Success")
             break
-    #print(location)    
     ser.write(b'AT+GPSRD=0\r')
     x = ser.read(1000)
     if location != "":
@@ -187,7 +185,6 @@ def current_location():
         # improve convert msg.lat
         var_Location = (
                 str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
-        # print(msg.lon)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
 ######################################################################################################
 ######################################################################################################
@@ -315,7 +312,7 @@ def car_Controller():
                 # print(data)
                 # counter += 1
             except:
-                print("???")
+                print("Error")
                 break
             print("Connection Closed!")
             client.close()
