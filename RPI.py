@@ -269,6 +269,9 @@ def convert_long(x):
     minutes = float(str(x)[3:])
     result = degree + (minutes / 60)
     return result
+#Function to recieve commands from the controller android application
+#and commanding the vehicle with the appropriate direction
+# and handling any exception that could happen
 def car_Controller():
     global UP_Pressed
     global Down_Pressed
