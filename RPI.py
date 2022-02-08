@@ -22,6 +22,9 @@ en = 2
 in3 = 22
 in4 = 27
 en2 = 23
+#Port and size Variables
+PORT_NUMBER = 5037
+SIZE = 1024
 
 #Function to move car in the up right direction
 # by making right wheels slower than left wheels
@@ -204,9 +207,13 @@ def broadcast():
         print("message sent! \n")
         # Sleep for 1 second
         time.sleep(1)
+
+#Function to automatically reveive the location of the nearby vehicles
+#by setting socket as DGRAM and reuse the socket for recieving the broadcasted message
+#and Acknoledgeing with server is listening message
 def receive():
-    PORT_NUMBER = 5037
-    SIZE = 1024
+    global PORT_NUMBER
+    global SIZE
     hostName = socket.gethostbyname('0.0.0.0')
     rev_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     rev_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
