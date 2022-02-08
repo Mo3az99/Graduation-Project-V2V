@@ -186,9 +186,9 @@ def current_location():
         var_Location = (
                 str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
-######################################################################################################
-######################################################################################################
-######################################################################################################
+#Function to get the Current Location from current_Location function and update the Global Location Variable
+# preparing the socket for broadcasting and reusing the port
+# finally we broadcast the location over the network and printing an Acknowledgement message
 def broadcast():
     # location = getlocation()
     # sio = io.TextIOWrapper(io.BufferedRWPair(ser, ser))
