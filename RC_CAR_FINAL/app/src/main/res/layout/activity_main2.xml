@@ -10,22 +10,22 @@
         android:id="@+id/textView3"
         android:layout_width="229dp"
         android:layout_height="114dp"
-        android:layout_marginEnd="312dp"
-        android:text="TextView"
+        android:layout_marginEnd="32dp"
+        android:background="#000000"
+        android:text="LCD"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintVertical_bias="0.296" />
 
     <Button
         android:id="@+id/UP"
-
         android:layout_width="75dp"
         android:layout_height="75dp"
-
         android:layout_marginStart="40dp"
         android:layout_marginBottom="24dp"
-        android:alpha=".5"
         android:backgroundTint="#40E0D0"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -43,11 +43,8 @@
         android:id="@+id/DOWN"
         android:layout_width="75dp"
         android:layout_height="75dp"
-
-
         android:layout_marginStart="40dp"
         android:layout_marginBottom="44dp"
-        android:alpha=".5"
         android:backgroundTint="#40E0D0"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -65,10 +62,8 @@
         android:id="@+id/right"
         android:layout_width="75dp"
         android:layout_height="75dp"
-
         android:layout_marginEnd="52dp"
         android:layout_marginBottom="48dp"
-        android:alpha=".5"
         android:backgroundTint="#40E0D0"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -86,11 +81,8 @@
         android:id="@+id/left"
         android:layout_width="75dp"
         android:layout_height="75dp"
-
-
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="48dp"
-        android:alpha=".5"
         android:backgroundTint="#40E0D0"
         android:insetTop="0dp"
         android:insetBottom="0dp"

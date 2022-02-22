@@ -54,6 +54,9 @@ def receive():
     rev_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     rev_socket.bind((hostName, PORT_NUMBER))
     print("Test server listening on port {0}\n".format(PORT_NUMBER))
+    # rev_socket.connect(('192.168.60.77', 5037))
+    #rev_socket.bind(('192.168.60.77', PORT_NUMBER))
+#    print("Test server listening on port {0}\n".format(PORT_NUMBER))
 
     while True:
         (data, addr) = rev_socket.recvfrom(SIZE)
@@ -142,17 +145,17 @@ def send_message(number, message):
 if __name__ == "__main__":
     # creating threads
     rev_thread = threading.Thread(target=receive)
-    send_thread = threading.Thread(target=send)
+    # send_thread = threading.Thread(target=send)
 
-    #open Serial for COM 3 and baud rate 115200
-    ser = serial.Serial('COM3', 115200, timeout=1)
-    send_message("01115345676", "V2V")
-    #initialize GPS
-    init()
+    # open Serial for COM 3 and baud rate 115200
+    # ser = serial.Serial('COM3', 115200, timeout=1)
+    # send_message("01115345676", "V2V")
+    # initialize GPS
+    # init()
 
     # starting thread 1 for Receiving
     rev_thread.start()
     # starting thread 2 Main Thread
-    send_thread.start()
+    # send_thread.start()
 
 
