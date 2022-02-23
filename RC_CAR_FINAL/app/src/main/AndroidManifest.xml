@@ -41,6 +41,11 @@
             android:name=".MainActivity2"
             android:exported="false"
             android:screenOrientation="landscape" />
+        <service
+            android:enabled="true"
+            android:name=".ExitService"
+            android:exported="false"
+            android:stopWithTask="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
