@@ -11,10 +11,13 @@ import static com.example.rc_car_final.MainActivity2.port_num;
 import static com.example.rc_car_final.MainActivity2.right_flag_pressed;
 import static com.example.rc_car_final.MainActivity2.right_flag_released;
 import static com.example.rc_car_final.MainActivity2.setLCD;
+import static com.example.rc_car_final.MainActivity2.start_flag;
 import static com.example.rc_car_final.MainActivity2.up_flag_pressed;
 import static com.example.rc_car_final.MainActivity2.up_flag_released;
 import static com.example.rc_car_final.Thread1.client;
 import static com.example.rc_car_final.Thread1.printwriter;
+
+import static java.lang.String.join;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +33,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
@@ -53,11 +59,14 @@ public class MainActivity2 extends AppCompatActivity {
     static boolean right_flag_released =false;
     static boolean left_flag_released =false;
     static boolean exit_flag= false;
+    static boolean start_flag= false;
+
 
     static String IP ;
     static String port_num = "4445";
     String msg;
     Thread Thread1 = null;
+    Thread Thread2 = null;
 
     @Override
     protected void onStop() {
@@ -80,7 +89,9 @@ public class MainActivity2 extends AppCompatActivity {
         IP=get_ip();
 
         Thread1 = new Thread(new Thread1());
+        Thread2 = new Thread(new Thread2());
         Thread1.start();
+        Thread2.start();
 
         Maps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,6 +236,7 @@ class Thread1 implements Runnable {
         try {
             client = new Socket(IP, Integer.parseInt(port_num));
             printwriter = new PrintWriter(client.getOutputStream(), true);
+            start_flag = true;
             while (true) {
                 if(exit_flag){
                     printwriter.write("exit");
@@ -290,3 +302,20 @@ class Thread1 implements Runnable {
     }
 }
 
+class Thread2 implements Runnable {
+    @Override
+    public void run() {
+        try {
+            while(!start_flag) {}
+            BufferedReader stdIn =new BufferedReader(new InputStreamReader(client.getInputStream()));
+            String receiveMessage;
+                while (true) {
+                    if((receiveMessage = stdIn.readLine()) != null){
+                        System.out.println(receiveMessage); // displaying at DOS prompt
+                    }
+                }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
