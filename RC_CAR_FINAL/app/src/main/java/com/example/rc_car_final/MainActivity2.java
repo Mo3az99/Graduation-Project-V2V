@@ -1,5 +1,6 @@
 package com.example.rc_car_final;
-
+import android.os.Build;
+import android.os.Bundle;
 import static com.example.rc_car_final.MainActivity.get_ip;
 import static com.example.rc_car_final.MainActivity2.IP;
 import static com.example.rc_car_final.MainActivity2.down_flag_pressed;
@@ -7,6 +8,7 @@ import static com.example.rc_car_final.MainActivity2.down_flag_released;
 import static com.example.rc_car_final.MainActivity2.exit_flag;
 import static com.example.rc_car_final.MainActivity2.left_flag_pressed;
 import static com.example.rc_car_final.MainActivity2.left_flag_released;
+import static com.example.rc_car_final.MainActivity2.mn;
 import static com.example.rc_car_final.MainActivity2.port_num;
 import static com.example.rc_car_final.MainActivity2.right_flag_pressed;
 import static com.example.rc_car_final.MainActivity2.right_flag_released;
@@ -15,27 +17,20 @@ import static com.example.rc_car_final.MainActivity2.start_flag;
 import static com.example.rc_car_final.MainActivity2.up_flag_pressed;
 import static com.example.rc_car_final.MainActivity2.up_flag_released;
 import static com.example.rc_car_final.Thread1.client;
-import static com.example.rc_car_final.Thread1.printwriter;
 
 import static java.lang.String.join;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.provider.Settings;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -43,6 +38,7 @@ import java.net.Socket;
 
 
 public class MainActivity2 extends AppCompatActivity {
+    static MainActivity2  mn;
     static TextView LCD;
     Button button;
     Button UP;
@@ -80,6 +76,8 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        mn = MainActivity2.this;
+
         UP = findViewById(R.id.UP);
         DOWN = findViewById(R.id.DOWN);
         RIGHT = findViewById(R.id.right);
@@ -180,9 +178,20 @@ public class MainActivity2 extends AppCompatActivity {
         RIGHT.setOnTouchListener(handleTouch);
         LEFT.setOnTouchListener(handleTouch);
     }
+
     public static void setLCD(String s){
             LCD.setText(s);
         }
+    public void updateUi(String message){
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                setLCD(message);
+            }
+        };
+        runOnUiThread(runnable);
+    }
+
 }
 
 class connect implements Runnable {
@@ -212,11 +221,13 @@ class connect implements Runnable {
         }
         catch (IOException e)
         {
-            setLCD(e.toString());
+            System.out.println(e.toString());
+//            setLCD(e.toString());
         }
         catch (Exception e)
         {
-            setLCD(e.toString());
+            System.out.println(e.toString());
+//            setLCD(e.toString());
 
         }
 
@@ -226,7 +237,7 @@ class connect implements Runnable {
 class Thread1 implements Runnable {
     static Socket client;
     static PrintWriter printwriter;
-    String msg = "First";
+    String msg = "D";
 
     //for test
     int counter =0;
@@ -303,15 +314,24 @@ class Thread1 implements Runnable {
 }
 
 class Thread2 implements Runnable {
+//    private context context;
     @Override
     public void run() {
+
         try {
             while(!start_flag) {}
             BufferedReader stdIn =new BufferedReader(new InputStreamReader(client.getInputStream()));
             String receiveMessage;
                 while (true) {
                     if((receiveMessage = stdIn.readLine()) != null){
-                        System.out.println(receiveMessage); // displaying at DOS prompt
+                        System.out.println(receiveMessage);
+                        String finalReceiveMessage = receiveMessage;
+                        mn.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                setLCD(finalReceiveMessage);
+                            }
+                        });
                     }
                 }
         } catch (IOException e) {
@@ -319,3 +339,4 @@ class Thread2 implements Runnable {
         }
     }
 }
+
