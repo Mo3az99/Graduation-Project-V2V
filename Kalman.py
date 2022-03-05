@@ -1,21 +1,24 @@
 import numpy as np
+import xlrd
+import pandas as pd
+import matplotlib.pyplot as plt
 
 
 class bcnSample(object):
-    def __init__(self, bEncrypted, vehId=0, psym=0, timestamp=0) -> None:
+    def __init__(self, vehId, timestamp, px, py, vx, vy) -> None:
         super().__init__()
-        self.bEncrypt = bEncrypted
+        # self.bEncrypt = bEncrypted
         self.vehId = vehId
-        self.psym = psym
+        # self.psym = psym # id for car bet8yr
         self.timestamp = timestamp
-        self.px
-        self.vx
-        self.py
-        self.vy
-        self.angle
+        self.px = px
+        self.vx = vx
+        self.py = py
+        self.vy = vy
+        # self.angle
 
 
-#class KalmanTrack(object):
+# class KalmanTrack(object):
 #    pass
 
 
@@ -25,29 +28,28 @@ class kalmanTrack(object):
     rp = 5
     rv = 2
     bcnT = 1
-    lastTrackdId = 0
+    lastTrackId = 0
     bKalmanParamInitialized = False
 
-    def __init__(self) -> None:
-        super().__init__()
+    def zeroo(self):
         self.id = -1
         self.bActive = True
         self.lifeTime = 0
         self.lastUpdateTime = -1
-        self.vehId
-        self.pseudonym
+        self.vehId = 0
+        # self.pseudonym
 
         # somestuff should be here MatrixXd H, F, P, Q, S, R, K, Sinv;
 
         self.P = np.zeros((3, 3))
-        self.P[0.0] = self.p0;
+        self.P[0, 0] = self.p0
 
-        self.F = np.ones((3, 3))
+        self.F = np.identity(3)
         self.F[0, 1] = self.bcnT
         self.F[0, 2] = (self.bcnT * self.bcnT) / 2
         self.F[1, 2] = self.bcnT
 
-        self.H = np.ones((2, 3))
+        self.H = np.eye(2,M = 3)
 
         self.Q = np.zeros((3, 3))
         self.Q = np.array([[(self.bcnT ** 4) / 4, (self.bcnT ** 3) / 3, (self.bcnT ** 2) / 2],
@@ -62,7 +64,8 @@ class kalmanTrack(object):
         self.X = np.zeros(6)
 
         self.S = np.zeros((2, 2))
-        self.S = self.H * self.P * (self.H.transpose()) + self.R
+        #self.S = np.dot((np.dot(self.H, self.P)), (self.H.transpose())) + self.R
+        self.S = np.dot(self.H, np.dot(self.P, self.H.transpose())) + self.R
 
         self.Sinv = np.zeros((2, 2))
         self.Sinv = np.linalg.inv(self.S)
@@ -73,104 +76,124 @@ class kalmanTrack(object):
 
     def __init__(self, bcn: bcnSample, tm) -> None:
         super().__init__()
-        self.__init__(self)
+        self.zeroo()
         self.lastUpdateTime = tm
         kalmanTrack.lastTrackId += 1
-        self.id = kalmanTrack.lastTrackedId
+        self.id = kalmanTrack.lastTrackId
         self.vehId = bcn.vehId
-        self.pseudonym = bcn.psym
+        # self.pseudonym = bcn.
         self.lifeTime = 1
-        self.x[0] = (bcn.px)
-        self.x[1] = (bcn.vx)
-        self.x[2] = (bcn.py)
-        self.x[3] = (bcn.vx)
+        self.X[0] = (bcn.px)
+        self.X[1] = (bcn.vx)
+        self.X[3] = (bcn.py)
+        self.X[4] = (bcn.vx)
 
     def predict(self) -> None:
-        temp = np.zeros((3, 1))
-        temp = self.F * self.X
-        self.x[0] = temp[0]
-        self.x[1] = temp[1]
-        self.x[2] = temp[2]
-        self.x[3] = temp[6]
-        self.x[4] = temp[7]
-        self.x[5] = temp[8]
+        tmpx = self.X[0:3]
+        print("tempX",tmpx)
+        # print("F elly hatdrb feha",self.F)
+        temp = np.dot(self.F, tmpx)
+        # temp=np.dot(tmpx,self.F)
+        print("First temp",temp)
 
-        self.P = self.F * self.P * self.F.transpose() + self.Q
+        self.X[0] = temp[0]
+        self.X[1] = temp[1]
+        self.X[2] = temp[2]
 
-    def clacD(self, bcn: bcnSample) -> float:
-        temp = np.zeros(2)
-        Hx = np.zeros(4)
-        z = np.zeros(4)
-        y = np.zeros(4)
-        tmp = np.zeros(1)
+        tmpx = self.X[3:6]
+        print("second tempX", tmpx)
+        temp = np.dot(self.F, tmpx)
+        # temp = np.dot(tmpx,self.F)
+        print("Second temp",temp)
+        self.X[3] = temp[0]
+        self.X[4] = temp[1]
+        self.X[5] = temp[2]
 
-        temp = self.H * self.X
+        #self.P = self.F * self.P * self.F.transpose() + self.Q
+        # print("F",self.F)
+        # print("P", self.P)
+        # print("F.T", self.F.T)
+        # print("Q", self.Q)
+        # print("F.P",np.dot(self.F, self.P))
+        # print("F.P.F.T",np.dot(np.dot(self.F, self.P), self.F.T))
+        self.P = np.dot(np.dot(self.F, self.P), self.F.T) + self.Q
+        print("p",self.P)
 
-        Hx[0] = temp[0]
-        Hx[1] = temp[1]
-        Hx[2] = temp[7]
-        Hx[3] = temp[8]
-
-        z = np.array([bcn.px, bcn.vx, bcn.py, bcn.vy])
-
-        y = z - Hx
-
-        to7atmp1 = np.array([y[0], y[1]])
-        to7atmp2 = np.array([y[2], y[3]])
-
-        tmp = (to7atmp1.transpose() * self.Sinv) * to7atmp1 + (to7atmp2.transpose() * self.Sinv) * to7atmp2
-        tmp = tmp ** 2
-        return tmp
 
 
     def update(self, z: bcnSample, tm) -> None:
         zVec = np.zeros((2, 1))
         self.vehId = z.vehId
-        self.pseudonym = z.psym
+        # self.pseudonym = z.psym
         self.lifeTime += 1
         self.bActive = True
         self.lastUpdateTime = tm
 
-        I = np.ones((2, 2))
-        ik = np.zeros((3, 3))
-        x_prior = np.zeros(6)
-        p_prior = np.zeros(6)
-
         x_prior = self.X
-        p_prior = self.Y
+        p_prior = self.P
 
-        self.S = self.H * p_prior * self.H.transpose() + self.R
+      #  self.S = np.dot((np.dot(self.H, p_prior)), (self.H.transpose())) + self.R
+        self.S = self.R + np.dot(self.H, np.dot(p_prior, self.H.T))
+
         self.Sinv = np.linalg.inv(self.S)
         self.Sdet = np.linalg.det(self.S)
 
-        self.K = p_prior * self.H.transpose() * self.Sinv
+        self.K = np.dot((np.dot(p_prior, self.H.T)), self.Sinv)
 
-        to7atmp1 = np.array([x_prior[0], x_prior[1], x_prior[2]])
-        to7atmp2 = np.array([x_prior[6], x_prior[7], x_prior[8]])
+        zVec = np.array([z.px, z.vx])
 
-        zVec = np.array([z.px, z.py])
+        temp = (x_prior[0:3]) + np.dot(self.K, zVec - np.dot(self.H, (x_prior[0:3])))
 
-        temp = to7atmp1 + self.K * (zVec - self.H * to7atmp1)
         self.X[0] = temp[0]
         self.X[1] = temp[1]
         self.X[2] = temp[2]
 
-        zVec = np.array([z.py, z.vy]) #momkn deh 8alat
+        zVec = np.array([z.py, z.vy])  # momkn deh 8alat
 
-        temp = to7atmp2 + self.K * (zVec - self.H * to7atmp2)
+        temp = (x_prior[3:6]) + np.dot(self.K, zVec - np.dot(self.H, (x_prior[3:6])))
 
         self.X[3] = temp[0]
-        self.x[4] = temp[1]
+        self.X[4] = temp[1]
         self.X[5] = temp[2]
 
-        ik = np.ones((np.shape(self.K[0], np.shape(self.K[1]) - (self.K * self.H))))
+        ik = np.eye(len(self.K), M=len(self.K)) - np.dot(self.K, self.H)
 
-        self.P = ik * p_prior * ik.transpose() + self.K * self.R * self.K.transpose()
-
-
+        self.P = np.dot((np.dot(ik, p_prior)), ik.transpose()) + np.dot((np.dot(self.K, self.R)), self.K.transpose())
 
 
+if __name__ == "__main__":
+    df = pd.read_csv("C:/Users/lenovo/Desktop/Kalman/GPS_track.csv")
+    df = df.head(900)
 
+    lat = np.array([df.latitude])
+    long = np.array([df.longitude])
+    speedx = np.array([df.speedx])
+    speedy = np.array([df.speedy])
+    newspeedx = np.array([df.newspeedx])
+    newspeedy = np.array([df.newspeedy])
 
+    bcn1 = bcnSample(0, 0, long[0][0], lat[0][0], newspeedx[0][0],
+                     newspeedy[0][0])
 
+    klm = kalmanTrack(bcn1, 0)
+    print("First Output", klm.X)
 
+    x = np.zeros(800)
+    y = np.zeros(800)
+    for j in range(1, 800):
+        # El Predict 8alat we have to trace it line by line and print every single matrix
+        klm.predict()
+        print("After Predict", klm.X)
+        bcn1 = bcnSample(0, 0, long[0][j], lat[0][j], newspeedx[0][j],
+                         newspeedy[0][j])
+        klm.update(bcn1, 1)
+        print("After Update", klm.X)
+
+        # x[j] = klm.X[0]
+        # y[j] = klm.X[3]
+
+# plt.title("Line graph")
+# plt.plot(x)
+#
+# plt.show()
+# print(klm.X)
