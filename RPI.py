@@ -1,8 +1,8 @@
+import json
 import socket
 import time
 import threading
 # import io
-import serial
 import pynmea2
 import serial
 import os
@@ -400,7 +400,7 @@ def update_acceleration():
 
     velocity = math.sqrt(math.pow(velocityx , 2) + math.pow(velocityy , 2))
     prev_velocity = math.sqrt(math.pow(prev_velocityx , 2) + math.pow(prev_velocityy , 2))
-
+    acceleration = velocity - prev_velocity
 
 # add Semaphore for Location
 
@@ -471,7 +471,7 @@ def broadcast():
 
         # Serialize your dict object
         data_string = json.dumps(data_as_dict)
-        s.send(data_string.encode(encoding="utf-8"))
+        send_socket.send(data_string.encode(encoding="utf-8"))
 
         # send_socket.sendto(message, ('<broadcast>', 5037))
         print("message sent! \n")
@@ -492,9 +492,18 @@ def receive():
     rev_socket.bind((hostName, PORT_NUMBER))
     print("Test server listening on port {0}\n".format(PORT_NUMBER))
     while True:
-        (data, addr) = rev_socket.recvfrom(SIZE)
-        data1 = data.decode('utf-8')
-        print(data1 + " From	" + str(addr) + "\n")
+        data_encoded = rev_socket.recv(4096)
+        data_string = data_encoded.decode(encoding="utf-8")
+
+        data_variable = json.loads(data_string)
+        determineLeadingVehicle(data_variable)
+        if (Following_vehicle):
+            determineDistanceToCollison(data_variable)
+
+        # print(data_variable.locationx)
+        # (data, addr) = rev_socket.recvfrom(SIZE)
+        # data1 = data.decode('utf-8')
+        # print(data1 + " From	" + str(addr) + "\n")
 
 
 def init():
