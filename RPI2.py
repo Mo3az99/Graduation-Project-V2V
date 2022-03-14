@@ -1,13 +1,37 @@
+import json
 import socket
 import time
 import threading
 # import io
-import serial
 import pynmea2
 import serial
 import os
 import RPi.GPIO as GPIO
-#Location and speed Global Variables
+from sympy import symbols, Eq, solve
+from sympy import Symbol
+import math
+import uuid
+
+
+# Location, Angle, Velocity, Acceleration and Distance to collison global variables
+vecid = uuid.getnode()
+locationx = 0     #long
+locationy = 0     #lat
+prev_locationx = 0
+prev_locationy = 0
+angle = 0
+velocity =0
+prev_velocity =0
+velocityx = 0
+velocityy=0
+prev_velocityx =0
+prev_velocityy = 0
+acceleration = 0
+stop = 0
+DTCa = 0
+Following_vehicle = False
+
+# Location and speed Global Variables
 location = ""
 speed = 1
 # buttons Variables
@@ -22,9 +46,175 @@ en = 2
 in3 = 22
 in4 = 27
 en2 = 23
-#Port and size Variables
+# Port and size Variables
 PORT_NUMBER = 5037
 SIZE = 1024
+
+
+#############################################################
+# Classes
+
+class Haversine(object):
+
+    def __init__(self, radius=6371):
+        """."""
+        self.EARTH_RADIUS = radius
+
+    @property
+    def get_location_a(self) -> tuple:
+        return self.LOCATION_ONE
+
+    property
+
+    def get_location_b(self) -> tuple:
+        return self.LOCATION_TWO
+
+    def distance(self, point_a: tuple, point_b: tuple) -> float:
+        """Public api for haversine formula."""
+        if not (isinstance(point_a, tuple) and isinstance(point_b, tuple)):
+            raise TypeError(
+                """Expect point_a and point_b to be <class "tuple">, {} and {} were given""".format(
+                    type(point_a), type(point_b)
+                )
+            )
+        self.LOCATION_ONE = point_b
+        self.LOCATION_TWO = point_a
+        return self._calculate_distance(self.LOCATION_ONE, self.LOCATION_TWO)
+
+    def _calculate_distance(self, pointA, pointB):
+        latA, lngA = (float(i) for i in pointA)
+        latB, lngB = (float(i) for i in pointB)
+        phiA = math.radians(latA)
+        phiB = math.radians(latB)
+        change_in_latitude = math.radians(latB - latA)
+        change_in_longitude = math.radians(lngB - lngA)
+        a = (
+                math.sin(change_in_latitude / 2.0) ** 2
+                + math.cos(phiA) * math.cos(phiB) * math.sin(change_in_longitude / 2.0) ** 2
+        )
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+        distance = self.EARTH_RADIUS * c
+        return distance
+
+
+# Message Class
+class message(object):
+    vecid = 0
+    locationx = 0
+    locationy = 0
+    velocityx = 0
+    velocityy = 0
+    acceleration = 0
+    stop = 0
+    angle = 0
+
+    def __init__(self, vecid, locationx, locationy, velocityx, velocityy, acceleration, stop, angle):
+        self.vecid = vecid
+        self.locationx = locationx
+        self.locationy = locationy
+        self.velocityx = velocityx
+        self.velocityy = velocityy
+        self.acceleration = acceleration
+        self.stop = stop
+        self.angle = angle
+
+
+
+def determineLeadingVehicle(message):
+    global locationx
+    global locationy
+    global Following_vehicle
+    if message.angle - angle <= 3:
+        if angle > 0:
+            if message.locationx > locationx or message.locationy > locationy:
+                print("ana following")
+                Following_vehicle = True
+            else:
+                print("ana leading ")
+        elif angle < 0:
+            if message.locationx < locationx or message.locationy < locationy:
+                print("ana following to south ")
+                Following_vehicle = True
+            else:
+                print("ana leading to south ")
+    else:
+        print("none of my business")
+
+
+def determineDistanceToCollison(message):
+    global acceleration
+    global velocity
+    global locationx
+    global locationy
+    global DTCa
+    velocity = velocity * 0.27777777777778
+    message.velocity = message.velocity * 0.27777777777778
+
+    # v_Relative = abs(v_Relative)
+    v_Relative = message.velocity - velocity
+    print("relative", v_Relative)
+    haversine = Haversine()
+    location_a, location_b = (message.locationx, message.locationy), (locationx, locationy)
+    # range = math.sqrt(math.pow((message.locationx - locationx), 2) + math.pow((message.locationy - locationy), 2))
+    range = haversine.distance(location_a, location_b)
+    range = range * 1000
+    print("range is", range)
+    # t = math.pow(v_Relative,2)
+    # if leading vehicle acceleration not equal zero
+    if message.acceleration != 0:
+        sqrtv = math.sqrt(math.pow(v_Relative, 2) + 2 * abs(message.acceleration) * range)
+        # print(sqrtv)
+        DTCa = ((-v_Relative - sqrtv) / message.acceleration) * velocity
+        print("DTCa", DTCa)
+        print("TTC", DTCa / velocity)
+    # if leading and following vehicles not equal zero
+    if acceleration != 0 and message.acceleration != 0:
+        Dw1 = 0.5 * ((pow(velocity, 2) / acceleration) - (
+                    pow(message.velocity, 2) / abs(message.acceleration))) + 1.5 * velocity + 1
+        print("DW1", Dw1)
+        Dw2 = ((pow(velocity, 2)) / (19.6 * ((acceleration / 9.8) + 0.7))) + 1.5 * velocity + 1
+        print("DW2", Dw2)
+        # D3
+        Dw3 = (velocity * 1.5) - (0.5 * message.acceleration * pow(1.5, 2)) + 1
+        print("DW3", Dw3)
+        # delta 1
+        deltaD1 = DTCa - Dw1
+        # delta 2
+        deltaD2 = DTCa - Dw2
+        # Delta 3
+        deltaD3 = DTCa - Dw3
+        # tw1
+        tw1 = deltaD1 / velocity
+        tw2 = deltaD2 / velocity
+        tw3 = deltaD3 / velocity
+        print("TW1", tw1)
+        print("TW2", tw2)
+        print("TW3", tw3)
+        print("TTC", DTCa / velocity)
+        if tw3 < 2:
+            print("brake")
+        elif tw2 < 2:
+            print("Danger")
+        elif tw1 < 2:
+            print("warning ")
+    elif message.acceleration == 0 and acceleration == 0:
+        x = Symbol('x')
+
+        s = (solve(
+            (acceleration * x ** 2) - (message.acceleration * x ** 2) + velocity * x - message.velocity * x - (range),
+            x))
+        print("TTC", s[0])
+        if s[0] < 3:
+            print("Brake")
+        elif s[0] < 5:
+            print("Danger")
+        elif s[0] < 7:
+            print("warning")
+
+
+########################################################
+
+
 
 #Function to move car in the up right direction
 # by making right wheels slower than left wheels
@@ -119,11 +309,12 @@ def left():
     GPIO.output(in4, GPIO.LOW)
     p2.ChangeDutyCycle(0)
 
-#Function to initialize the GPIO
-#by setting the mode to GPIO.BCM
-#and setting up the pins in1 in2 in3 in4
-#and setting up the enable pins en1 and en2
-#then putting the initial PWM signal
+
+# Function to initialize the GPIO
+# by setting the mode to GPIO.BCM
+# and setting up the pins in1 in2 in3 in4
+# and setting up the enable pins en1 and en2
+# then putting the initial PWM signal
 def GPIO_Init():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
@@ -141,7 +332,8 @@ def GPIO_Init():
     p.start(0)
     p2.start(0)
 
-#Function For testing the pins to move all wheels in the forward direction
+
+# Function For testing the pins to move all wheels in the forward direction
 def ON():
     # RUN
     GPIO.output(in1, GPIO.LOW)
@@ -151,7 +343,8 @@ def ON():
     GPIO.output(in4, GPIO.HIGH)
     p2.ChangeDutyCycle(100)
 
-#function to putting low voltage on all pins in1 in2 in3 in4
+
+# function to putting low voltage on all pins in1 in2 in3 in4
 # and changing the duty cycle to 0 to stop the car
 def Stop():
     # stop
@@ -162,18 +355,64 @@ def Stop():
     GPIO.output(in4, GPIO.LOW)
     p2.ChangeDutyCycle(0)
 
+
+#Function to update speed
+def update_speed():
+    global prev_locationy
+    global prev_locationx
+    global velocityy
+    global velocityx
+    if prev_locationx == 0 and prev_locationy == 0:
+        velocityx =  0
+        velocityy =  0
+    else:
+        velocityx = locationx - prev_locationx
+        velocityy = locationy- prev_locationy
+
+
+def update_angle():
+    global locationx
+    global locationy
+    global prev_locationx
+    global prev_locationy
+    global angle
+    #needs update
+    if locationx > 0 and locationy > 0:
+        angle = (90 - math.degrees(math.atan((locationy - prev_locationy) / (locationx - prev_locationx))))
+
+
+def update_acceleration():
+    global velocityy
+    global velocityx
+    global prev_velocityx
+    global prev_velocityy
+    global acceleration
+    global velocity
+    global prev_velocity
+    global angle
+
+    velocity = math.sqrt(math.pow(velocityx , 2) + math.pow(velocityy , 2))
+    prev_velocity = math.sqrt(math.pow(prev_velocityx , 2) + math.pow(prev_velocityy , 2))
+    acceleration = velocity - prev_velocity
+
 # add Semaphore for Location
 
-#Function To get the current location of the moving vehicle
+# Function To get the current location of the moving vehicle
 # and update the global variable Location
 # and converting the format of GNRMC to latitude and longitude
 # and setting up the Google maps link
 def current_location():
     # we dont need it global if it is only the command form the A9G
     global location
-    global var_Location
+    global vecid
+    global locationx
+    global locationy
+    global prev_locationx
+    global prev_locationy
+    prev_locationx = locationx
+    prev_locationy = locationy
     checkOK()
-    time.sleep(1.1)
+    # time.sleep(1.1)
     # needs edit
     for i in range(0, 8):
         temp_read = (ser.readline().decode('utf-8'))
@@ -185,32 +424,57 @@ def current_location():
     if location != "":
         print(location)
         msg = pynmea2.parse(location)
+        locationx=msg.lon
+        locationy=msg.lat
         # improve convert msg.lat
-        var_Location = (
-                str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
+        # var_Location = (
+        #         str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
-#Function to get the Current Location from current_Location function and update the Global Location Variable
+
+
+# Function to get the Current Location from current_Location function and update the Global Location Variable
 # preparing the socket for broadcasting and reusing the port
 # finally we broadcast the location over the network and printing an Acknowledgement message
 def broadcast():
     # location = getlocation()
     # sio = io.TextIOWrapper(io.BufferedRWPair(ser, ser))
     # nazlha ta7t 34an mkan el kolya et3ml update
-    current_location()
+    # current_location()
+    global vecid
+    global velocityy
+    global velocityx
+    global acceleration
+    global angle
+    global locationy
+    global locationx
+    global stop
     send_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
     send_socket.settimeout(0.2)
-    message = str.encode("RPI Location " + var_Location)
     while True:
-        send_socket.sendto(message, ('<broadcast>', 5037))
+        current_location()
+        update_speed()
+        update_angle()
+        update_acceleration()
+        variable = message(vecid, locationx, locationy, velocityx, velocityy, acceleration, stop, angle)
+
+        # Map your object into dict
+        data_as_dict = vars(variable)
+
+        # Serialize your dict object
+        data_string = json.dumps(data_as_dict)
+        send_socket.send(data_string.encode(encoding="utf-8"))
+
+        # send_socket.sendto(message, ('<broadcast>', 5037))
         print("message sent! \n")
         # Sleep for 1 second
         time.sleep(1)
 
-#Function to automatically reveive the location of the nearby vehicles
-#by setting socket as DGRAM and reuse the socket for recieving the broadcasted message
-#and Acknoledgeing with server is listening message
+
+# Function to automatically reveive the location of the nearby vehicles
+# by setting socket as DGRAM and reuse the socket for recieving the broadcasted message
+# and Acknoledgeing with server is listening message
 def receive():
     global PORT_NUMBER
     global SIZE
@@ -221,9 +485,20 @@ def receive():
     rev_socket.bind((hostName, PORT_NUMBER))
     print("Test server listening on port {0}\n".format(PORT_NUMBER))
     while True:
-        (data, addr) = rev_socket.recvfrom(SIZE)
-        data1 = data.decode('utf-8')
-        print(data1 + " From	" + str(addr) + "\n")
+        data_encoded = rev_socket.recv(4096)
+        data_string = data_encoded.decode(encoding="utf-8")
+
+        data_variable = json.loads(data_string)
+        determineLeadingVehicle(data_variable)
+        if (Following_vehicle):
+            determineDistanceToCollison(data_variable)
+
+        # print(data_variable.locationx)
+        # (data, addr) = rev_socket.recvfrom(SIZE)
+        # data1 = data.decode('utf-8')
+        # print(data1 + " From	" + str(addr) + "\n")
+
+
 def init():
     ser.write(b'AT+GPS=1 \r')
     while 1:
@@ -235,6 +510,8 @@ def init():
         if rcv == b'OK\r\n':
             print("GPS ON")
             break
+
+
 def checkOK():
     ser.write(b'AT+GPSRD=1\r')
     while 1:
@@ -246,6 +523,8 @@ def checkOK():
         if rcv == b'OK\r\n':
             print("GPSRD ON")
             break
+
+
 # def checkOKGPSON():
 #     while 1:
 #         rcv = ser.readline()
@@ -261,16 +540,22 @@ def convert_lat(x):
     minutes = float(str(x)[2:])
     result = degree + (minutes / 60)
     return result
+
+
 def getlocation_link(lat, lon):
     link = "http://maps.google.com/maps?q=loc:" + str(lat) + "," + str(lon)
     return link
+
+
 def convert_long(x):
     degree = float(str(x)[:3])
     minutes = float(str(x)[3:])
     result = degree + (minutes / 60)
     return result
-#Function to recieve commands from the controller android application
-#and commanding the vehicle with the appropriate direction
+
+
+# Function to recieve commands from the controller android application
+# and commanding the vehicle with the appropriate direction
 # and handling any exception that could happen
 def car_Controller():
     global UP_Pressed
