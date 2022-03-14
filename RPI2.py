@@ -563,18 +563,25 @@ def car_Controller():
     global Right_Pressed
     global Left_Pressed
     while True:
+        
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         sock.bind(('0.0.0.0', 4445))
         sock.listen(1)
         print('Waiting for a Connection...')
         (client, (ip, sock)) = sock.accept()
-        counter = 1
-
+        #print(client)
         while True:
             try:
+                print("Connected")
                 data = client.recv(1024)
                 print(data)
+                if data == b'exit':
+                    client.close()
+                    break
+                if data == b'':
+                    #client.close()
+                    continue
                 if data == b'UDOWN':
                     print("up pressed")
                     UP_Pressed = True
@@ -602,15 +609,14 @@ def car_Controller():
 
                 if not data:
                     print("?")
-                    break
+                    #break
                 # print ("Recieving Packet Number %d" %counter)
                 # print(data)
                 # counter += 1
             except:
                 print("Error")
-                break
-            print("Connection Closed!")
-            client.close()
+                #break
+
 
             try:
                 if UP_Pressed and Right_Pressed:
@@ -655,14 +661,14 @@ if __name__ == "__main__":
     ser = serial.Serial('/dev/ttyS0', 115200, timeout=1)
 
     # initialize GPS
-    init()
+    #init()
     # Initialize GPIO Pins and PWM
     GPIO_Init()
     # starting thread 1 for Receiving
-    rev_thread.start()
+    #rev_thread.start()
     # starting thread 2 Main Thread
-    broadcast_thread.start()
+    #broadcast_thread.start()
     # starting thread 3 Car Controlling Thread
     Car_thread.start()
-    time.sleep(60)
-    exit()
+    #time.sleep(60)
+    #exit()
