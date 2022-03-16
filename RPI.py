@@ -11,6 +11,7 @@ from sympy import symbols, Eq, solve
 from sympy import Symbol
 import math
 import uuid
+import logging
 
 
 # Location, Angle, Velocity, Acceleration and Distance to collison global variables
@@ -503,8 +504,10 @@ def receive():
         data_string = data_encoded.decode(encoding="utf-8")
 
         data_variable = json.loads(data_string)
+
         if data_variable["vecid"]==vecid:
             continue
+        logger.info(data_variable)
         determineLeadingVehicle(data_variable)
         
         if (Following_vehicle):
@@ -514,6 +517,7 @@ def receive():
         # (data, addr) = rev_socket.recvfrom(SIZE)
         # data1 = data.decode('utf-8')
         # print(data1 + " From	" + str(addr) + "\n")
+
 
 
 def init():
@@ -670,6 +674,15 @@ if __name__ == "__main__":
     rev_thread = threading.Thread(target=receive)
     broadcast_thread = threading.Thread(target=broadcast)
     Car_thread = threading.Thread(target=car_Controller)
+    logging.basicConfig(filename="car.log",
+                        format='%(asctime)s %(message)s',
+                        filemode='w')
+
+    # Let us Create an object
+    logger = logging.getLogger()
+
+    # Now we are going to Set the threshold of logger to DEBUG
+    logger.setLevel(logging.DEBUG)
 
     # open Serial for COM 3 and baud rate 115200
     ser = serial.Serial('/dev/ttyS0', 115200, timeout=1)

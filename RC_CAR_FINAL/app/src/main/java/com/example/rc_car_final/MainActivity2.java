@@ -70,6 +70,8 @@ public class MainActivity2 extends AppCompatActivity {
         System.out.println("da5alt");
         exit_flag = true;
         start_flag =true;
+        
+        Thread2.destroy();
         finish();
     }
     @Override
