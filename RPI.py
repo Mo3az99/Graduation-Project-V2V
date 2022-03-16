@@ -479,7 +479,7 @@ def broadcast():
         # Serialize your dict object
         data_string = json.dumps(data_as_dict)
         send_socket.sendto(data_string.encode(encoding="utf-8") , ('<broadcast>',5037))
-
+        logger.info(data_as_dict)
         # send_socket.sendto(message, ('<broadcast>', 5037))
         print("message sent! \n")
         # Sleep for 1 second
@@ -505,8 +505,8 @@ def receive():
 
         data_variable = json.loads(data_string)
 
-        if data_variable["vecid"]==vecid:
-            continue
+        #if data_variable["vecid"]==vecid:
+        #    continue
         logger.info(data_variable)
         determineLeadingVehicle(data_variable)
         
