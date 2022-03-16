@@ -576,12 +576,17 @@ def car_Controller():
         sock.listen(1)
         print('Waiting for a Connection...')
         (client, (ip, sock)) = sock.accept()
-        counter = 1
-
         while True:
             try:
+                print("Connected")
                 data = client.recv(1024)
                 print(data)
+                if data == b'exit':
+                    client.close()
+                    break
+                if data == b'':
+                    # client.close()
+                    continue
                 if data == b'UDOWN':
                     print("up pressed")
                     UP_Pressed = True
@@ -609,15 +614,13 @@ def car_Controller():
 
                 if not data:
                     print("?")
-                    break
+                    # break
                 # print ("Recieving Packet Number %d" %counter)
                 # print(data)
                 # counter += 1
             except:
                 print("Error")
-                break
-            print("Connection Closed!")
-            client.close()
+                # break
 
             try:
                 if UP_Pressed and Right_Pressed:

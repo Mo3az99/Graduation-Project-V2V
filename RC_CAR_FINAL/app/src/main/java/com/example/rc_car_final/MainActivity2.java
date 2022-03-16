@@ -69,8 +69,15 @@ public class MainActivity2 extends AppCompatActivity {
         super.onStop();
         System.out.println("da5alt");
         exit_flag = true;
-
+        start_flag =true;
         finish();
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        // put your code here...
+        start_flag = false;
+        exit_flag = false;
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -245,10 +252,19 @@ class Thread1 implements Runnable {
     @Override
     public void run() {
         try {
-            client = new Socket(IP, Integer.parseInt(port_num));
-            printwriter = new PrintWriter(client.getOutputStream(), true);
-            start_flag = true;
+            if (!start_flag) {
+                client = new Socket(IP, Integer.parseInt(port_num));
+                printwriter = new PrintWriter(client.getOutputStream(), true);
+                start_flag = true;
+            }
             while (true) {
+                if (!start_flag){
+                    System.out.println("starting");
+                    client = new Socket(IP, Integer.parseInt(port_num));
+                    printwriter = new PrintWriter(client.getOutputStream(), true);
+                    start_flag= true;
+                }
+
                 if(exit_flag){
                     printwriter.write("exit");
                     printwriter.flush();
@@ -256,6 +272,10 @@ class Thread1 implements Runnable {
                     printwriter.close();
                     // closing the connection
                     client.close();
+                    while(!client.isClosed())
+                        ;
+                    System.out.println("Closed ya walaaaa");
+                    exit_flag= false;
                 }
                 if (down_flag_released){
                     msg = "D"+ "UP";

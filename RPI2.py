@@ -563,14 +563,12 @@ def car_Controller():
     global Right_Pressed
     global Left_Pressed
     while True:
-        
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         sock.bind(('0.0.0.0', 4445))
         sock.listen(1)
         print('Waiting for a Connection...')
         (client, (ip, sock)) = sock.accept()
-        #print(client)
         while True:
             try:
                 print("Connected")
