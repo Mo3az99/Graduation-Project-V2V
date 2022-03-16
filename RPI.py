@@ -697,5 +697,5 @@ if __name__ == "__main__":
     broadcast_thread.start()
     # starting thread 3 Car Controlling Thread
     Car_thread.start()
-    time.sleep(60)
-    exit()
+    #time.sleep(60)
+    #exit()
