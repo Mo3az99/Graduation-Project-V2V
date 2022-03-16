@@ -377,7 +377,7 @@ def update_angle():
     global prev_locationy
     global angle
     #needs update
-    if locationx > 0 and locationy > 0:
+    if int(locationx) > 0 and int(locationy) > 0:
         angle = (90 - math.degrees(math.atan((locationy - prev_locationy) / (locationx - prev_locationx))))
 
 
@@ -659,7 +659,7 @@ if __name__ == "__main__":
     ser = serial.Serial('/dev/ttyS0', 115200, timeout=1)
 
     # initialize GPS
-    #init()
+    init()
     # Initialize GPIO Pins and PWM
     GPIO_Init()
     # starting thread 1 for Receiving

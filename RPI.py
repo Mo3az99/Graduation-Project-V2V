@@ -124,15 +124,15 @@ def determineLeadingVehicle(message):
     global locationx
     global locationy
     global Following_vehicle
-    if message.angle - angle <= 3:
+    if (message["angle"] - angle) <= 3:
         if angle > 0:
-            if message.locationx > locationx or message.locationy > locationy:
+            if message["locationx"] > locationx or message["locationy"] > locationy:
                 print("ana following")
                 Following_vehicle = True
-            else:
+            else :
                 print("ana leading ")
         elif angle < 0:
-            if message.locationx < locationx or message.locationy < locationy:
+            if message["locationx"] < locationx or message["locationy"] < locationy:
                 print("ana following to south ")
                 Following_vehicle = True
             else:
@@ -148,34 +148,34 @@ def determineDistanceToCollison(message):
     global locationy
     global DTCa
     velocity = velocity * 0.27777777777778
-    message.velocity = message.velocity * 0.27777777777778
+    message["velocity"] = message["velocity"] * 0.27777777777778
 
     # v_Relative = abs(v_Relative)
-    v_Relative = message.velocity - velocity
+    v_Relative = message["velocity"] - velocity
     print("relative", v_Relative)
     haversine = Haversine()
-    location_a, location_b = (message.locationx, message.locationy), (locationx, locationy)
+    location_a, location_b = (message["locationx"], message["locationy"]), (locationx, locationy)
     # range = math.sqrt(math.pow((message.locationx - locationx), 2) + math.pow((message.locationy - locationy), 2))
     range = haversine.distance(location_a, location_b)
     range = range * 1000
     print("range is", range)
     # t = math.pow(v_Relative,2)
     # if leading vehicle acceleration not equal zero
-    if message.acceleration != 0:
-        sqrtv = math.sqrt(math.pow(v_Relative, 2) + 2 * abs(message.acceleration) * range)
+    if message["acceleration"] != 0:
+        sqrtv = math.sqrt(math.pow(v_Relative, 2) + 2 * abs(message["acceleration"]) * range)
         # print(sqrtv)
-        DTCa = ((-v_Relative - sqrtv) / message.acceleration) * velocity
+        DTCa = ((-v_Relative - sqrtv) / message["acceleration"]) * velocity
         print("DTCa", DTCa)
         print("TTC", DTCa / velocity)
     # if leading and following vehicles not equal zero
-    if acceleration != 0 and message.acceleration != 0:
+    if acceleration != 0 and message["acceleration"] != 0:
         Dw1 = 0.5 * ((pow(velocity, 2) / acceleration) - (
-                    pow(message.velocity, 2) / abs(message.acceleration))) + 1.5 * velocity + 1
+                    pow(message["velocity"], 2) / abs(message["acceleration"]))) + 1.5 * velocity + 1
         print("DW1", Dw1)
         Dw2 = ((pow(velocity, 2)) / (19.6 * ((acceleration / 9.8) + 0.7))) + 1.5 * velocity + 1
         print("DW2", Dw2)
         # D3
-        Dw3 = (velocity * 1.5) - (0.5 * message.acceleration * pow(1.5, 2)) + 1
+        Dw3 = (velocity * 1.5) - (0.5 * message["acceleration"] * pow(1.5, 2)) + 1
         print("DW3", Dw3)
         # delta 1
         deltaD1 = DTCa - Dw1
@@ -197,11 +197,11 @@ def determineDistanceToCollison(message):
             print("Danger")
         elif tw1 < 2:
             print("warning ")
-    elif message.acceleration == 0 and acceleration == 0:
+    elif message["acceleration"] == 0 and acceleration == 0:
         x = Symbol('x')
 
         s = (solve(
-            (acceleration * x ** 2) - (message.acceleration * x ** 2) + velocity * x - message.velocity * x - (range),
+            (acceleration * x ** 2) - (message["acceleration"] * x ** 2) + velocity * x - message["velocity"] * x - (range),
             x))
         print("TTC", s[0])
         if s[0] < 3:
@@ -384,8 +384,12 @@ def update_angle():
     global prev_locationy
     global angle
     #needs update
-    if locationx > 0 and locationy > 0:
-        angle = (90 - math.degrees(math.atan((locationy - prev_locationy) / (locationx - prev_locationx))))
+    #print((locationx))
+    #print((locationy))       
+    if float(locationx)> 0 and float(locationy) > 0:
+        if(locationx - prev_locationx !=0):
+            angle = (90 - math.degrees(math.atan((locationy - prev_locationy) / (locationx - prev_locationx))))
+        
 
 
 def update_acceleration():
@@ -431,8 +435,10 @@ def current_location():
     if location != "":
         print(location)
         msg = pynmea2.parse(location)
-        locationx=msg.lon
-        locationy=msg.lat
+        locationx=convert_long(msg.lon)
+        locationy=convert_lat(msg.lat)
+        #print(msg.lon)
+        #print(convert_lat(msg.lat))
         # improve convert msg.lat
         # var_Location = (
         #         str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
@@ -458,6 +464,7 @@ def broadcast():
     send_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+    
     send_socket.settimeout(0.2)
     while True:
         current_location()
@@ -465,13 +472,12 @@ def broadcast():
         update_angle()
         update_acceleration()
         variable = message(vecid, locationx, locationy, velocityx, velocityy, acceleration, stop, angle)
-
         # Map your object into dict
         data_as_dict = vars(variable)
 
         # Serialize your dict object
         data_string = json.dumps(data_as_dict)
-        send_socket.send(data_string.encode(encoding="utf-8"))
+        send_socket.sendto(data_string.encode(encoding="utf-8") , ('<broadcast>',5037))
 
         # send_socket.sendto(message, ('<broadcast>', 5037))
         print("message sent! \n")
@@ -492,11 +498,15 @@ def receive():
     rev_socket.bind((hostName, PORT_NUMBER))
     print("Test server listening on port {0}\n".format(PORT_NUMBER))
     while True:
-        data_encoded = rev_socket.recv(4096)
+        
+        data_encoded = rev_socket.recv(8192)
         data_string = data_encoded.decode(encoding="utf-8")
 
         data_variable = json.loads(data_string)
+        if data_variable["vecid"]==vecid:
+            continue
         determineLeadingVehicle(data_variable)
+        
         if (Following_vehicle):
             determineDistanceToCollison(data_variable)
 
