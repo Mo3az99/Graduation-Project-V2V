@@ -53,7 +53,159 @@ SIZE = 1024
 
 #############################################################
 # Classes
+# Kalman Classes
+class bcnSample(object):
+    def __init__(self, vehId, timestamp, px, py, vx, vy) -> None:
+        super().__init__()
+        # self.bEncrypt = bEncrypted
+        self.vehId = vehId
+        # self.psym = psym # id for car bet8yr
+        self.timestamp = timestamp
+        self.px = px
+        self.vx = vx
+        self.py = py
+        self.vy = vy
+        # self.angle
 
+
+class kalmanTrack(object):
+    p0 = 50
+    q = 0.7
+    rp = 5
+    rv = 2
+    bcnT = 1
+    lastTrackId = 0
+    bKalmanParamInitialized = False
+
+    def zeroo(self):
+        self.id = -1
+        self.bActive = True
+        self.lifeTime = 0
+        self.lastUpdateTime = -1
+        self.vehId = 0
+        # self.pseudonym
+
+        # somestuff should be here MatrixXd H, F, P, Q, S, R, K, Sinv;
+
+        self.P = np.zeros((3, 3))
+        self.P[0, 0] = self.p0
+
+        self.F = np.identity(3)
+        self.F[0, 1] = self.bcnT
+        self.F[0, 2] = (self.bcnT * self.bcnT) / 2
+        self.F[1, 2] = self.bcnT
+
+        self.H = np.eye(2, M=3)
+
+        self.Q = np.zeros((3, 3))
+        self.Q = np.array([[(self.bcnT ** 4) / 4, (self.bcnT ** 3) / 3, (self.bcnT ** 2) / 2],
+                           [(self.bcnT ** 3) / 2, (self.bcnT ** 2), self.bcnT],
+                           [(self.bcnT ** 2) / 2, self.bcnT, 1]])
+        self.Q * self.q
+
+        self.R = np.zeros((2, 2))
+        self.R = np.array([[self.rp, 0],
+                           [0, self.rv]])
+
+        self.X = np.zeros(6)
+
+        self.S = np.zeros((2, 2))
+        # self.S = np.dot((np.dot(self.H, self.P)), (self.H.transpose())) + self.R
+        self.S = np.dot(self.H, np.dot(self.P, self.H.transpose())) + self.R
+
+        self.Sinv = np.zeros((2, 2))
+        self.Sinv = np.linalg.inv(self.S)
+
+        self.Sdev = np.linalg.det(self.S)
+
+        self.K = np.zeros((3, 2))
+
+    def __init__(self, bcn: bcnSample, tm) -> None:
+        super().__init__()
+        self.zeroo()
+        self.lastUpdateTime = tm
+        kalmanTrack.lastTrackId += 1
+        self.id = kalmanTrack.lastTrackId
+        self.vehId = bcn.vehId
+        # self.pseudonym = bcn.
+        self.lifeTime = 1
+        self.X[0] = (bcn.px)
+        self.X[1] = (bcn.vx)
+        self.X[3] = (bcn.py)
+        self.X[4] = (bcn.vx)
+
+    def predict(self) -> None:
+        tmpx = self.X[0:3]
+        print("tempX", tmpx)
+        # print("F elly hatdrb feha",self.F)
+        temp = np.dot(self.F, tmpx)
+        # temp=np.dot(tmpx,self.F)
+        print("First temp", temp)
+
+        self.X[0] = temp[0]
+        self.X[1] = temp[1]
+        self.X[2] = temp[2]
+
+        tmpx = self.X[3:6]
+        print("second tempX", tmpx)
+        temp = np.dot(self.F, tmpx)
+        # temp = np.dot(tmpx,self.F)
+        print("Second temp", temp)
+        self.X[3] = temp[0]
+        self.X[4] = temp[1]
+        self.X[5] = temp[2]
+
+        # self.P = self.F * self.P * self.F.transpose() + self.Q
+        # print("F",self.F)
+        # print("P", self.P)
+        # print("F.T", self.F.T)
+        # print("Q", self.Q)
+        # print("F.P",np.dot(self.F, self.P))
+        # print("F.P.F.T",np.dot(np.dot(self.F, self.P), self.F.T))
+        self.P = np.dot(np.dot(self.F, self.P), self.F.T) + self.Q
+        print("p", self.P)
+
+    def update(self, z: bcnSample, tm) -> None:
+        zVec = np.zeros((2, 1))
+        self.vehId = z.vehId
+        # self.pseudonym = z.psym
+        self.lifeTime += 1
+        self.bActive = True
+        self.lastUpdateTime = tm
+
+        x_prior = self.X
+        p_prior = self.P
+
+        #  self.S = np.dot((np.dot(self.H, p_prior)), (self.H.transpose())) + self.R
+        self.S = self.R + np.dot(self.H, np.dot(p_prior, self.H.T))
+
+        self.Sinv = np.linalg.inv(self.S)
+        self.Sdet = np.linalg.det(self.S)
+
+        self.K = np.dot((np.dot(p_prior, self.H.T)), self.Sinv)
+
+        zVec = np.array([z.px, z.vx])
+
+        temp = (x_prior[0:3]) + np.dot(self.K, zVec - np.dot(self.H, (x_prior[0:3])))
+
+        self.X[0] = temp[0]
+        self.X[1] = temp[1]
+        self.X[2] = temp[2]
+
+        zVec = np.array([z.py, z.vy])  # momkn deh 8alat
+
+        temp = (x_prior[3:6]) + np.dot(self.K, zVec - np.dot(self.H, (x_prior[3:6])))
+
+        self.X[3] = temp[0]
+        self.X[4] = temp[1]
+        self.X[5] = temp[2]
+
+        ik = np.eye(len(self.K), M=len(self.K)) - np.dot(self.K, self.H)
+
+        self.P = np.dot((np.dot(ik, p_prior)), ik.transpose()) + np.dot((np.dot(self.K, self.R)), self.K.transpose())
+
+
+# Haversine Class
 class Haversine(object):
 
     def __init__(self, radius=6371):
@@ -307,44 +459,6 @@ def left():
     GPIO.output(in3, GPIO.HIGH)
     GPIO.output(in4, GPIO.LOW)
     p2.ChangeDutyCycle(0)
-# Function to move car in the backward direction
-# by reversing pins 1 and 2
-# and making all wheels move with the same amount of speed
-# p2 100 duty cycle and p 100 duty cycle multiplied by speed
-def down():
-    GPIO.output(in1, GPIO.HIGH)
-    GPIO.output(in2, GPIO.LOW)
-    p.ChangeDutyCycle(100 * speed)
-    GPIO.output(in3, GPIO.HIGH)
-    GPIO.output(in4, GPIO.LOW)
-    p2.ChangeDutyCycle(100 * speed)
-
-
-# Function to move car in the right direction
-# by changing pins 1 and 2 and the opposite for 3 and 4
-# and making only the left wheels move
-# p2 100 duty cycle and p 0 duty cycle multiplied by speed
-def right():
-    GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.HIGH)
-    p.ChangeDutyCycle(0)
-    GPIO.output(in3, GPIO.LOW)
-    GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(100 * speed)
-
-
-# Function to move car in the left direction
-# by changing pins 1 and 2 and the opposite for 3 and 4
-# and making only the right wheels move
-# p 100 duty cycle and p2 0 duty cycle multiplied by speed
-def left():
-    GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.HIGH)
-    p.ChangeDutyCycle(100 * speed)
-    GPIO.output(in3, GPIO.LOW)
-    GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(0)
-
 
 # Function to initialize the GPIO
 # by setting the mode to GPIO.BCM
@@ -494,14 +608,28 @@ def broadcast():
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
     send_socket.settimeout(0.2)
+    current_location()
+    update_speed()
+    update_angle()
+    update_acceleration()
+    bcn1 = bcnSample(vecid, 0, locationx, locationy, velocityx, velocityy)
+    klm = kalmanTrack(bcn1, 0)
     while True:
         current_location()
         update_speed()
         update_angle()
+        # keda ba3d kalman should be deleted after test
         update_acceleration()
-        variable = message(vecid, locationx, locationy, velocityx, velocityy, acceleration, stop, angle)
+        # add kalman
+        klm.predict()
+        bcn1 = bcnSample(vecid, 0, locationx, locationy, velocityx, velocityy)
+        klm.update(bcn1, 1)
+        # send kalman cooridantes
+        acceleration = math.sqrt(math.pow(klm.X[2], 2) + math.pow(klm.X[5], 2))
+        variable = message(vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], acceleration, stop, angle)
         # Map your object into dict
         data_as_dict = vars(variable)
+
         # Serialize your dict object
         data_string = json.dumps(data_as_dict)
         send_socket.sendto(data_string.encode(encoding="utf-8"), ('<broadcast>', 5037))
@@ -530,7 +658,7 @@ def receive():
         data_variable = json.loads(data_string)
         # if data_variable["vecid"]==vecid:
         #    continue
-        logger.info(data_variable)
+        # logger.info(data_variable)
         determineLeadingVehicle(data_variable)
         if (Following_vehicle):
             determineDistanceToCollison(data_variable)
@@ -538,7 +666,6 @@ def receive():
         # (data, addr) = rev_socket.recvfrom(SIZE)
         # data1 = data.decode('utf-8')
         # print(data1 + " From	" + str(addr) + "\n")
-
 
 def init():
     ser.write(b'AT+GPS=1 \r')
@@ -551,7 +678,6 @@ def init():
         if rcv == b'OK\r\n':
             print("GPS ON")
             break
-
 
 def checkOK():
     ser.write(b'AT+GPSRD=1\r')
@@ -586,7 +712,6 @@ def convert_lat(x):
 def getlocation_link(lat, lon):
     link = "http://maps.google.com/maps?q=loc:" + str(lat) + "," + str(lon)
     return link
-
 
 def convert_long(x):
     degree = float(str(x)[:3])
@@ -717,5 +842,5 @@ if __name__ == "__main__":
     broadcast_thread.start()
     # starting thread 3 Car Controlling Thread
     Car_thread.start()
-    #time.sleep(60)
-    #exit()
+    # time.sleep(60)
+    # exit()

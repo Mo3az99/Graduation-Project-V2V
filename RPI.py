@@ -469,7 +469,6 @@ def left():
     GPIO.output(in4, GPIO.HIGH)
     p2.ChangeDutyCycle(0)
 
-
 # Function to initialize the GPIO
 # by setting the mode to GPIO.BCM
 # and setting up the pins in1 in2 in3 in4
@@ -492,7 +491,6 @@ def GPIO_Init():
     p.start(0)
     p2.start(0)
 
-
 # Function For testing the pins to move all wheels in the forward direction
 def ON():
     # RUN
@@ -502,7 +500,6 @@ def ON():
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.HIGH)
     p2.ChangeDutyCycle(100)
-
 
 # function to putting low voltage on all pins in1 in2 in3 in4
 # and changing the duty cycle to 0 to stop the car
@@ -514,7 +511,6 @@ def Stop():
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.LOW)
     p2.ChangeDutyCycle(0)
-
 
 #Function to update speed
 def update_speed():
@@ -529,7 +525,6 @@ def update_speed():
         velocityx = locationx - prev_locationx
         velocityy = locationy- prev_locationy
 
-
 def update_angle():
     global locationx
     global locationy
@@ -542,8 +537,6 @@ def update_angle():
     if float(locationx)> 0 and float(locationy) > 0:
         if(locationx - prev_locationx !=0):
             angle = (90 - math.degrees(math.atan((locationy - prev_locationy) / (locationx - prev_locationx))))
-        
-
 
 def update_acceleration():
     global velocityy
@@ -597,7 +590,6 @@ def current_location():
         #         str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
 
-
 # Function to get the Current Location from current_Location function and update the Global Location Variable
 # preparing the socket for broadcasting and reusing the port
 # finally we broadcast the location over the network and printing an Acknowledgement message
@@ -649,7 +641,6 @@ def broadcast():
         # Sleep for 1 second
         time.sleep(1)
 
-
 # Function to automatically reveive the location of the nearby vehicles
 # by setting socket as DGRAM and reuse the socket for recieving the broadcasted message
 # and Acknoledgeing with server is listening message
@@ -663,7 +654,6 @@ def receive():
     rev_socket.bind((hostName, PORT_NUMBER))
     print("Test server listening on port {0}\n".format(PORT_NUMBER))
     while True:
-        
         data_encoded = rev_socket.recv(8192)
         data_string = data_encoded.decode(encoding="utf-8")
         data_variable = json.loads(data_string)
@@ -671,7 +661,6 @@ def receive():
         #    continue
         # logger.info(data_variable)
         determineLeadingVehicle(data_variable)
-        
         if (Following_vehicle):
             determineDistanceToCollison(data_variable)
 
@@ -679,8 +668,6 @@ def receive():
         # (data, addr) = rev_socket.recvfrom(SIZE)
         # data1 = data.decode('utf-8')
         # print(data1 + " From	" + str(addr) + "\n")
-
-
 
 def init():
     ser.write(b'AT+GPS=1 \r')
@@ -693,7 +680,6 @@ def init():
         if rcv == b'OK\r\n':
             print("GPS ON")
             break
-
 
 def checkOK():
     ser.write(b'AT+GPSRD=1\r')
