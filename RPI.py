@@ -22,6 +22,7 @@ prev_locationx = 0
 prev_locationy = 0
 angle = 0
 velocity =0
+time = 0
 prev_velocity =0
 velocityx = 0
 velocityy=0
@@ -312,6 +313,7 @@ def determineDistanceToCollison(message):
     range = haversine.distance(location_a, location_b)
     range = range * 1000
     print("range is", range)
+    logger.info("range is", range)
     # t = math.pow(v_Relative,2)
     # if leading vehicle acceleration not equal zero
     if message["acceleration"] != 0:
@@ -346,10 +348,14 @@ def determineDistanceToCollison(message):
         print("TTC", DTCa / velocity)
         if tw3 < 2:
             print("brake")
+            stop()
+            logger.info("BRAKE")
         elif tw2 < 2:
             print("Danger")
+            logger.info("Danger")
         elif tw1 < 2:
             print("warning ")
+            logger.info("warning")
     elif message["acceleration"] == 0 and acceleration == 0:
         x = Symbol('x')
 
@@ -359,10 +365,15 @@ def determineDistanceToCollison(message):
         print("TTC", s[0])
         if s[0] < 3:
             print("Brake")
+            stop()
+            logger.info("BRAKE with Time")
         elif s[0] < 5:
             print("Danger")
+            logger.info("Time Danger")
         elif s[0] < 7:
             print("warning")
+            logger.info("Time warning")
+
 
 
 ########################################################
@@ -566,6 +577,7 @@ def current_location():
     global locationy
     global prev_locationx
     global prev_locationy
+    global time
     prev_locationx = locationx
     prev_locationy = locationy
     checkOK()
@@ -583,9 +595,8 @@ def current_location():
         msg = pynmea2.parse(location)
         locationx=convert_long(msg.lon)
         locationy=convert_lat(msg.lat)
-        #print(msg.lon)
-        #print(convert_lat(msg.lat))
-        # improve convert msg.lat
+        time=msg.timestamp
+        print("Timestamp",time)
         # var_Location = (
         #         str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
@@ -657,11 +668,12 @@ def receive():
         data_encoded = rev_socket.recv(8192)
         data_string = data_encoded.decode(encoding="utf-8")
         data_variable = json.loads(data_string)
-        #if data_variable["vecid"]==vecid:
-        #    continue
+        logger.info(data_variable)
+        if data_variable["vecid"]==vecid:
+           continue
         # logger.info(data_variable)
         determineLeadingVehicle(data_variable)
-        if (Following_vehicle):
+        if Following_vehicle:
             determineDistanceToCollison(data_variable)
 
         # print(data_variable.locationx)

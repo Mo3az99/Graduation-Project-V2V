@@ -13,18 +13,20 @@ import math
 import uuid
 import logging
 
+
 # Location, Angle, Velocity, Acceleration and Distance to collison global variables
 vecid = uuid.getnode()
-locationx = 0  # long
-locationy = 0  # lat
+locationx = 0     #long
+locationy = 0     #lat
 prev_locationx = 0
 prev_locationy = 0
 angle = 0
-velocity = 0
-prev_velocity = 0
+velocity =0
+time = 0
+prev_velocity =0
 velocityx = 0
-velocityy = 0
-prev_velocityx = 0
+velocityy=0
+prev_velocityx =0
 prev_velocityy = 0
 acceleration = 0
 stop = 0
@@ -53,7 +55,7 @@ SIZE = 1024
 
 #############################################################
 # Classes
-# Kalman Classes
+#Kalman Classes
 class bcnSample(object):
     def __init__(self, vehId, timestamp, px, py, vx, vy) -> None:
         super().__init__()
@@ -66,7 +68,6 @@ class bcnSample(object):
         self.py = py
         self.vy = vy
         # self.angle
-
 
 class kalmanTrack(object):
     p0 = 50
@@ -95,7 +96,7 @@ class kalmanTrack(object):
         self.F[0, 2] = (self.bcnT * self.bcnT) / 2
         self.F[1, 2] = self.bcnT
 
-        self.H = np.eye(2, M=3)
+        self.H = np.eye(2,M = 3)
 
         self.Q = np.zeros((3, 3))
         self.Q = np.array([[(self.bcnT ** 4) / 4, (self.bcnT ** 3) / 3, (self.bcnT ** 2) / 2],
@@ -110,7 +111,7 @@ class kalmanTrack(object):
         self.X = np.zeros(6)
 
         self.S = np.zeros((2, 2))
-        # self.S = np.dot((np.dot(self.H, self.P)), (self.H.transpose())) + self.R
+        #self.S = np.dot((np.dot(self.H, self.P)), (self.H.transpose())) + self.R
         self.S = np.dot(self.H, np.dot(self.P, self.H.transpose())) + self.R
 
         self.Sinv = np.zeros((2, 2))
@@ -136,11 +137,11 @@ class kalmanTrack(object):
 
     def predict(self) -> None:
         tmpx = self.X[0:3]
-        print("tempX", tmpx)
+        print("tempX",tmpx)
         # print("F elly hatdrb feha",self.F)
         temp = np.dot(self.F, tmpx)
         # temp=np.dot(tmpx,self.F)
-        print("First temp", temp)
+        print("First temp",temp)
 
         self.X[0] = temp[0]
         self.X[1] = temp[1]
@@ -150,12 +151,12 @@ class kalmanTrack(object):
         print("second tempX", tmpx)
         temp = np.dot(self.F, tmpx)
         # temp = np.dot(tmpx,self.F)
-        print("Second temp", temp)
+        print("Second temp",temp)
         self.X[3] = temp[0]
         self.X[4] = temp[1]
         self.X[5] = temp[2]
 
-        # self.P = self.F * self.P * self.F.transpose() + self.Q
+        #self.P = self.F * self.P * self.F.transpose() + self.Q
         # print("F",self.F)
         # print("P", self.P)
         # print("F.T", self.F.T)
@@ -163,7 +164,9 @@ class kalmanTrack(object):
         # print("F.P",np.dot(self.F, self.P))
         # print("F.P.F.T",np.dot(np.dot(self.F, self.P), self.F.T))
         self.P = np.dot(np.dot(self.F, self.P), self.F.T) + self.Q
-        print("p", self.P)
+        print("p",self.P)
+
+
 
     def update(self, z: bcnSample, tm) -> None:
         zVec = np.zeros((2, 1))
@@ -176,7 +179,7 @@ class kalmanTrack(object):
         x_prior = self.X
         p_prior = self.P
 
-        #  self.S = np.dot((np.dot(self.H, p_prior)), (self.H.transpose())) + self.R
+      #  self.S = np.dot((np.dot(self.H, p_prior)), (self.H.transpose())) + self.R
         self.S = self.R + np.dot(self.H, np.dot(p_prior, self.H.T))
 
         self.Sinv = np.linalg.inv(self.S)
@@ -204,8 +207,7 @@ class kalmanTrack(object):
 
         self.P = np.dot((np.dot(ik, p_prior)), ik.transpose()) + np.dot((np.dot(self.K, self.R)), self.K.transpose())
 
-
-# Haversine Class
+#Haversine Class
 class Haversine(object):
 
     def __init__(self, radius=6371):
@@ -271,6 +273,7 @@ class message(object):
         self.angle = angle
 
 
+
 def determineLeadingVehicle(message):
     global locationx
     global locationy
@@ -280,7 +283,7 @@ def determineLeadingVehicle(message):
             if message["locationx"] > locationx or message["locationy"] > locationy:
                 print("ana following")
                 Following_vehicle = True
-            else:
+            else :
                 print("ana leading ")
         elif angle < 0:
             if message["locationx"] < locationx or message["locationy"] < locationy:
@@ -310,6 +313,7 @@ def determineDistanceToCollison(message):
     range = haversine.distance(location_a, location_b)
     range = range * 1000
     print("range is", range)
+    logger.info("range is", range)
     # t = math.pow(v_Relative,2)
     # if leading vehicle acceleration not equal zero
     if message["acceleration"] != 0:
@@ -321,7 +325,7 @@ def determineDistanceToCollison(message):
     # if leading and following vehicles not equal zero
     if acceleration != 0 and message["acceleration"] != 0:
         Dw1 = 0.5 * ((pow(velocity, 2) / acceleration) - (
-                pow(message["velocity"], 2) / abs(message["acceleration"]))) + 1.5 * velocity + 1
+                    pow(message["velocity"], 2) / abs(message["acceleration"]))) + 1.5 * velocity + 1
         print("DW1", Dw1)
         Dw2 = ((pow(velocity, 2)) / (19.6 * ((acceleration / 9.8) + 0.7))) + 1.5 * velocity + 1
         print("DW2", Dw2)
@@ -344,27 +348,36 @@ def determineDistanceToCollison(message):
         print("TTC", DTCa / velocity)
         if tw3 < 2:
             print("brake")
+            stop()
+            logger.info("BRAKE")
         elif tw2 < 2:
             print("Danger")
+            logger.info("Danger")
         elif tw1 < 2:
             print("warning ")
+            logger.info("warning")
     elif message["acceleration"] == 0 and acceleration == 0:
         x = Symbol('x')
 
         s = (solve(
-            (acceleration * x ** 2) - (message["acceleration"] * x ** 2) + velocity * x - message["velocity"] * x - (
-                range),
+            (acceleration * x ** 2) - (message["acceleration"] * x ** 2) + velocity * x - message["velocity"] * x - (range),
             x))
         print("TTC", s[0])
         if s[0] < 3:
             print("Brake")
+            stop()
+            logger.info("BRAKE with Time")
         elif s[0] < 5:
             print("Danger")
+            logger.info("Time Danger")
         elif s[0] < 7:
             print("warning")
+            logger.info("Time warning")
+
 
 
 ########################################################
+
 
 # Car Controller Functions
 #Function to move car in the up right direction
@@ -482,7 +495,6 @@ def GPIO_Init():
     p.start(0)
     p2.start(0)
 
-
 # Function For testing the pins to move all wheels in the forward direction
 def ON():
     # RUN
@@ -492,7 +504,6 @@ def ON():
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.HIGH)
     p2.ChangeDutyCycle(100)
-
 
 # function to putting low voltage on all pins in1 in2 in3 in4
 # and changing the duty cycle to 0 to stop the car
@@ -505,20 +516,18 @@ def Stop():
     GPIO.output(in4, GPIO.LOW)
     p2.ChangeDutyCycle(0)
 
-
-# Function to update speed
+#Function to update speed
 def update_speed():
     global prev_locationy
     global prev_locationx
     global velocityy
     global velocityx
     if prev_locationx == 0 and prev_locationy == 0:
-        velocityx = 0
-        velocityy = 0
+        velocityx =  0
+        velocityy =  0
     else:
         velocityx = locationx - prev_locationx
-        velocityy = locationy - prev_locationy
-
+        velocityy = locationy- prev_locationy
 
 def update_angle():
     global locationx
@@ -526,13 +535,12 @@ def update_angle():
     global prev_locationx
     global prev_locationy
     global angle
-    # needs update
-    # print((locationx))
-    # print((locationy))
-    if float(locationx) > 0 and float(locationy) > 0:
-        if (locationx - prev_locationx != 0):
+    #needs update
+    #print((locationx))
+    #print((locationy))
+    if float(locationx)> 0 and float(locationy) > 0:
+        if(locationx - prev_locationx !=0):
             angle = (90 - math.degrees(math.atan((locationy - prev_locationy) / (locationx - prev_locationx))))
-
 
 def update_acceleration():
     global velocityy
@@ -544,10 +552,9 @@ def update_acceleration():
     global prev_velocity
     global angle
 
-    velocity = math.sqrt(math.pow(velocityx, 2) + math.pow(velocityy, 2))
-    prev_velocity = math.sqrt(math.pow(prev_velocityx, 2) + math.pow(prev_velocityy, 2))
+    velocity = math.sqrt(math.pow(velocityx , 2) + math.pow(velocityy , 2))
+    prev_velocity = math.sqrt(math.pow(prev_velocityx , 2) + math.pow(prev_velocityy , 2))
     acceleration = velocity - prev_velocity
-
 
 # add Semaphore for Location
 
@@ -563,6 +570,7 @@ def current_location():
     global locationy
     global prev_locationx
     global prev_locationy
+    global time
     prev_locationx = locationx
     prev_locationy = locationy
     checkOK()
@@ -578,15 +586,13 @@ def current_location():
     if location != "":
         print(location)
         msg = pynmea2.parse(location)
-        locationx = convert_long(msg.lon)
-        locationy = convert_lat(msg.lat)
-        # print(msg.lon)
-        # print(convert_lat(msg.lat))
-        # improve convert msg.lat
+        locationx=convert_long(msg.lon)
+        locationy=convert_lat(msg.lat)
+        time=msg.timestamp
+        print("Timestamp",time)
         # var_Location = (
         #         str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
-
 
 # Function to get the Current Location from current_Location function and update the Global Location Variable
 # preparing the socket for broadcasting and reusing the port
@@ -612,19 +618,19 @@ def broadcast():
     update_speed()
     update_angle()
     update_acceleration()
-    bcn1 = bcnSample(vecid, 0, locationx, locationy, velocityx, velocityy)
+    bcn1 = bcnSample(vecid, 0, locationx, locationy, velocityx,velocityy)
     klm = kalmanTrack(bcn1, 0)
     while True:
         current_location()
         update_speed()
         update_angle()
-        # keda ba3d kalman should be deleted after test
+        #keda ba3d kalman should be deleted after test
         update_acceleration()
-        # add kalman
+        #add kalman
         klm.predict()
-        bcn1 = bcnSample(vecid, 0, locationx, locationy, velocityx, velocityy)
+        bcn1 = bcnSample(vecid, 0, locationx, locationy, velocityx,velocityy)
         klm.update(bcn1, 1)
-        # send kalman cooridantes
+        #send kalman cooridantes
         acceleration = math.sqrt(math.pow(klm.X[2], 2) + math.pow(klm.X[5], 2))
         variable = message(vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], acceleration, stop, angle)
         # Map your object into dict
@@ -632,13 +638,12 @@ def broadcast():
 
         # Serialize your dict object
         data_string = json.dumps(data_as_dict)
-        send_socket.sendto(data_string.encode(encoding="utf-8"), ('<broadcast>', 5037))
+        send_socket.sendto(data_string.encode(encoding="utf-8") , ('<broadcast>',5037))
         logger.info(data_as_dict)
         # send_socket.sendto(message, ('<broadcast>', 5037))
         print("message sent! \n")
         # Sleep for 1 second
         time.sleep(1)
-
 
 # Function to automatically reveive the location of the nearby vehicles
 # by setting socket as DGRAM and reuse the socket for recieving the broadcasted message
@@ -656,12 +661,14 @@ def receive():
         data_encoded = rev_socket.recv(8192)
         data_string = data_encoded.decode(encoding="utf-8")
         data_variable = json.loads(data_string)
-        # if data_variable["vecid"]==vecid:
-        #    continue
+        logger.info(data_variable)
+        if data_variable["vecid"]==vecid:
+           continue
         # logger.info(data_variable)
         determineLeadingVehicle(data_variable)
-        if (Following_vehicle):
+        if Following_vehicle:
             determineDistanceToCollison(data_variable)
+
         # print(data_variable.locationx)
         # (data, addr) = rev_socket.recvfrom(SIZE)
         # data1 = data.decode('utf-8')
@@ -712,6 +719,7 @@ def convert_lat(x):
 def getlocation_link(lat, lon):
     link = "http://maps.google.com/maps?q=loc:" + str(lat) + "," + str(lon)
     return link
+
 
 def convert_long(x):
     degree = float(str(x)[:3])
@@ -819,7 +827,7 @@ if __name__ == "__main__":
     rev_thread = threading.Thread(target=receive)
     broadcast_thread = threading.Thread(target=broadcast)
     Car_thread = threading.Thread(target=car_Controller)
-    logging.basicConfig(filename="car.log",
+    logging.basicConfig(filename="car2.log",
                         format='%(asctime)s %(message)s',
                         filemode='w')
 
@@ -842,5 +850,5 @@ if __name__ == "__main__":
     broadcast_thread.start()
     # starting thread 3 Car Controlling Thread
     Car_thread.start()
-    # time.sleep(60)
-    # exit()
+    #time.sleep(60)
+    #exit()
