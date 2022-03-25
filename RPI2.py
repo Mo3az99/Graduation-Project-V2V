@@ -536,12 +536,21 @@ def update_angle():
     global prev_locationx
     global prev_locationy
     global angle
-    #needs update
-    #print((locationx))
-    #print((locationy))
-    if float(locationx)> 0 and float(locationy) > 0:
-        if(locationx - prev_locationx !=0):
-            angle = (90 - math.degrees(math.atan((locationy - prev_locationy) / (locationx - prev_locationx))))
+
+    dLon = (locationx - prev_locationx)
+
+    y = math.sin(dLon) * math.cos(locationy)
+    x = math.cos(prev_locationy) * math.sin(locationy) - math.sin(prev_locationy) * math.cos(locationy) * math.cos(dLon)
+
+    brng = math.atan2(y, x)
+
+    brng = brng * (180.0 / 3.141592653589793238463)
+    brng = (brng + 360)
+    brng = brng % 360
+    brng = 360 - brng
+
+    angle= brng
+
 
 def update_acceleration():
     global velocityy
