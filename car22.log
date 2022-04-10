@@ -1,0 +1,985 @@
+2022-03-23 11:26:32,174 Timestamp
+2022-03-23 11:26:32,174 11:59:33.088000
+2022-03-23 11:26:34,175 Timestamp
+2022-03-23 11:26:34,176 11:59:35.088000
+2022-03-23 11:26:34,184 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:34,185 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:37,172 Timestamp
+2022-03-23 11:26:37,173 11:59:38.088000
+2022-03-23 11:26:37,182 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:37,183 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:40,175 Timestamp
+2022-03-23 11:26:40,176 11:59:41.088000
+2022-03-23 11:26:40,183 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:40,184 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:43,163 Timestamp
+2022-03-23 11:26:43,164 11:59:44.088000
+2022-03-23 11:26:43,176 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:43,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:43,621 {'vecid': 242606374551181, 'locationx': 31.272806666666668, 'locationy': 30.077698333333334, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 46.11598110163739}
+2022-03-23 11:26:46,166 Timestamp
+2022-03-23 11:26:46,166 11:59:47.088000
+2022-03-23 11:26:46,176 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:46,176 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:46,643 {'vecid': 242606374551181, 'locationx': 31.272806666666668, 'locationy': 30.077698333333334, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 46.11598110163739}
+2022-03-23 11:26:49,169 Timestamp
+2022-03-23 11:26:49,169 11:59:50.088000
+2022-03-23 11:26:49,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:49,180 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:49,512 {'vecid': 242606374551181, 'locationx': 31.276766955452032, 'locationy': 30.068098979068257, 'velocityx': 0.0038907878303648044, 'velocityy': -0.009430890719871889, 'acceleration': 0.005443751015343666, 'stop': 0, 'angle': 157.5810208740907}
+2022-03-23 11:26:52,172 Timestamp
+2022-03-23 11:26:52,172 11:59:53.088000
+2022-03-23 11:26:52,181 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:52,181 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:52,330 {'vecid': 242606374551181, 'locationx': 31.2780278022937, 'locationy': 30.06506238119004, 'velocityx': 0.0018686496105881755, 'velocityy': -0.004510670022408224, 'acceleration': 0.0005736961864505461, 'stop': 0, 'angle': 174.28940686431423}
+2022-03-23 11:26:55,166 Timestamp
+2022-03-23 11:26:55,166 11:59:56.088000
+2022-03-23 11:26:55,174 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:55,175 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:55,450 {'vecid': 242606374551181, 'locationx': 31.278454707325402, 'locationy': 30.063993938783714, 'velocityx': 0.00039841722008116865, 'velocityy': -0.0009952268967280283, 'acceleration': 0.0022905060761294707, 'stop': 0, 'angle': 4.398705353199446}
+2022-03-23 11:26:58,169 Timestamp
+2022-03-23 11:26:58,170 11:59:59.088000
+2022-03-23 11:26:58,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:58,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:26:58,522 {'vecid': 242606374551181, 'locationx': 31.27841810005501, 'locationy': 30.06408620036402, 'velocityx': -0.00024179355096769174, 'velocityy': 0.0005835785047738455, 'acceleration': 0.0018392164284536903, 'stop': 0, 'angle': 130.60129464644132}
+2022-03-23 11:27:01,176 Timestamp
+2022-03-23 11:27:01,177 12:00:02.088000
+2022-03-23 11:27:01,187 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:01,188 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:01,394 {'vecid': 242606374551181, 'locationx': 31.27822245214684, 'locationy': 30.0645442162567, 'velocityx': -0.00035540400395470486, 'velocityy': 0.0008470169363149174, 'acceleration': 0.000893766402323002, 'stop': 0, 'angle': 135.0}
+2022-03-23 11:27:04,171 Timestamp
+2022-03-23 11:27:04,172 12:00:05.088000
+2022-03-23 11:27:04,182 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:04,182 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:04,461 {'vecid': 242606374551181, 'locationx': 31.27811915320577, 'locationy': 30.06489477665894, 'velocityx': -0.00018014992791583716, 'velocityy': 0.0005331632594365557, 'acceleration': 0.0001674131247511175, 'stop': 0, 'angle': 113.70264594968704}
+2022-03-23 11:27:07,165 Timestamp
+2022-03-23 11:27:07,166 12:00:08.088000
+2022-03-23 11:27:07,170 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:07,170 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:07,371 {'vecid': 242606374551181, 'locationx': 31.27812596385429, 'locationy': 30.065046165358268, 'velocityx': -1.6837017675946008e-07, 'velocityy': 0.0001796987824062246, 'acceleration': 0.0001504201075590547, 'stop': 0, 'angle': 113.45902408274216}
+2022-03-23 11:27:10,166 Timestamp
+2022-03-23 11:27:10,167 12:00:11.088000
+2022-03-23 11:27:10,178 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:10,178 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:10,368 {'vecid': 242606374551181, 'locationx': 31.278326854518333, 'locationy': 30.064986740621492, 'velocityx': 0.00021883947535578782, 'velocityy': -9.415530924048485e-05, 'acceleration': 0.0002500796741891395, 'stop': 0, 'angle': 116.41307333824771}
+2022-03-23 11:27:13,165 Timestamp
+2022-03-23 11:27:13,166 12:00:14.088000
+2022-03-23 11:27:13,171 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:13,171 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:16,169 Timestamp
+2022-03-23 11:27:16,170 12:00:17.088000
+2022-03-23 11:27:16,180 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:16,181 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:19,181 Timestamp
+2022-03-23 11:27:19,181 12:00:20.088000
+2022-03-23 11:27:19,189 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:19,189 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:19,412 {'vecid': 242606374551181, 'locationx': 31.277781018983838, 'locationy': 30.065213016181072, 'velocityx': -0.000849102242064418, 'velocityy': 0.00042322260062377094, 'acceleration': 0.0006034459184487082, 'stop': 0, 'angle': 117.96939845662521}
+2022-03-23 11:27:22,179 Timestamp
+2022-03-23 11:27:22,180 12:00:23.088000
+2022-03-23 11:27:22,188 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:22,188 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:22,689 {'vecid': 242606374551181, 'locationx': 31.277453922245236, 'locationy': 30.06537815738894, 'velocityx': -0.0004610873097504837, 'velocityy': 0.00023559566380189394, 'acceleration': 1.5741511888280594e-05, 'stop': 0, 'angle': 116.56505117519902}
+2022-03-23 11:27:25,172 Timestamp
+2022-03-23 11:27:25,172 12:00:26.088000
+2022-03-23 11:27:25,181 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:25,182 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:25,556 {'vecid': 242606374551181, 'locationx': 31.277340365385594, 'locationy': 30.06543377178054, 'velocityx': -0.00011881332091374068, 'velocityy': 6.0540618907804766e-05, 'acceleration': 0.00020085000088584896, 'stop': 0, 'angle': 153.43494879849536}
+2022-03-23 11:27:28,175 Timestamp
+2022-03-23 11:27:28,176 12:00:29.088000
+2022-03-23 11:27:28,186 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:28,186 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:28,423 {'vecid': 242606374551181, 'locationx': 31.27732202402284, 'locationy': 30.06543906468352, 'velocityx': 2.3094316676928623e-05, 'velocityy': -1.4979533391145024e-05, 'acceleration': 0.0001674421473553508, 'stop': 0, 'angle': 104.93141717205623}
+2022-03-23 11:27:31,164 Timestamp
+2022-03-23 11:27:31,166 12:00:32.088000
+2022-03-23 11:27:31,175 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:31,176 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:31,495 {'vecid': 242606374551181, 'locationx': 31.27732656892072, 'locationy': 30.065431879529907, 'velocityx': 3.8749207250822736e-05, 'velocityy': -2.4696210721515983e-05, 'acceleration': 7.730240870261732e-05, 'stop': 0, 'angle': 109.98310652457442}
+2022-03-23 11:27:34,159 Timestamp
+2022-03-23 11:27:34,161 12:00:35.088000
+2022-03-23 11:27:34,167 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:34,168 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:34,569 {'vecid': 242606374551181, 'locationx': 31.27731323896732, 'locationy': 30.06543507693296, 'velocityx': 1.978111040562677e-06, 'velocityy': -4.899401627531032e-06, 'acceleration': 8.532447070422179e-06, 'stop': 0, 'angle': 114.14554195800318}
+2022-03-23 11:27:37,157 Timestamp
+2022-03-23 11:27:37,157 12:00:38.088000
+2022-03-23 11:27:37,165 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:37,165 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:37,635 {'vecid': 242606374551181, 'locationx': 31.277312352844294, 'locationy': 30.065437163502168, 'velocityx': -5.826535440560452e-07, 'velocityy': 1.8275249843269876e-06, 'acceleration': 2.6300948430780215e-06, 'stop': 0, 'angle': 135.00000001526666}
+2022-03-23 11:27:40,168 Timestamp
+2022-03-23 11:27:40,169 12:00:41.088000
+2022-03-23 11:27:40,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:40,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:40,471 {'vecid': 242606374551181, 'locationx': 31.27745874446378, 'locationy': 30.065364205404713, 'velocityx': 0.00014223285772039908, 'velocityy': -7.017466392891492e-05, 'acceleration': 8.517517050991344e-05, 'stop': 0, 'angle': 116.76750891964693}
+2022-03-23 11:27:43,159 Timestamp
+2022-03-23 11:27:43,159 12:00:44.087000
+2022-03-23 11:27:43,172 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:43,172 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:43,504 {'vecid': 242606374551181, 'locationx': 31.277528287332924, 'locationy': 30.065327925496533, 'velocityx': 8.811590121835802e-05, 'velocityy': -4.533453352073147e-05, 'acceleration': 2.578858118551458e-06, 'stop': 0, 'angle': 120.4655449153783}
+2022-03-23 11:27:46,170 Timestamp
+2022-03-23 11:27:46,170 12:00:47.087000
+2022-03-23 11:27:46,180 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:46,181 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:46,520 {'vecid': 242606374551181, 'locationx': 31.27757757163952, 'locationy': 30.065299665513415, 'velocityx': 4.959569249439142e-05, 'velocityy': -2.8571506249433577e-05, 'acceleration': 2.169092220249016e-05, 'stop': 0, 'angle': 121.75948008701519}
+2022-03-23 11:27:49,156 Timestamp
+2022-03-23 11:27:49,156 12:00:50.087000
+2022-03-23 11:27:49,160 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:49,160 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:49,518 {'vecid': 242606374551181, 'locationx': 31.277587625617972, 'locationy': 30.065294106850455, 'velocityx': 5.847557680828685e-06, 'velocityy': -3.9180287032607515e-06, 'acceleration': 3.563659058398462e-05, 'stop': 0, 'angle': 90.0}
+2022-03-23 11:27:52,164 Timestamp
+2022-03-23 11:27:52,164 12:00:53.087000
+2022-03-23 11:27:52,173 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:52,174 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:52,590 {'vecid': 242606374551181, 'locationx': 31.277579603787036, 'locationy': 30.065294810320776, 'velocityx': -1.5002709499876134e-05, 'velocityy': 4.446305109356194e-06, 'acceleration': 2.6357881467167217e-05, 'stop': 0, 'angle': 71.56505118929132}
+2022-03-23 11:27:55,158 Timestamp
+2022-03-23 11:27:55,159 12:00:56.087000
+2022-03-23 11:27:55,168 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:55,168 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:55,662 {'vecid': 242606374551181, 'locationx': 31.277567576575336, 'locationy': 30.065307024120077, 'velocityx': -1.730123139012116e-05, 'velocityy': 1.4452749001166243e-05, 'acceleration': 1.4597966057403523e-05, 'stop': 0, 'angle': 156.80140949266905}
+2022-03-23 11:27:58,158 Timestamp
+2022-03-23 11:27:58,159 12:00:59.087000
+2022-03-23 11:27:58,169 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:58,170 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:27:58,529 {'vecid': 242606374551181, 'locationx': 31.2775430979397, 'locationy': 30.065322682712832, 'velocityx': -2.640391953936417e-05, 'velocityy': 1.7687536042769656e-05, 'acceleration': 1.073734013912426e-05, 'stop': 0, 'angle': 119.7448812988212}
+2022-03-23 11:28:01,157 Timestamp
+2022-03-23 11:28:01,157 12:01:02.087000
+2022-03-23 11:28:01,169 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:01,169 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:01,602 {'vecid': 242606374551181, 'locationx': 31.277532273622352, 'locationy': 30.065326827472283, 'velocityx': -1.296645407843998e-05, 'velocityy': 5.560938248730209e-06, 'acceleration': 5.5271017541165486e-06, 'stop': 0, 'angle': 63.43494882292201}
+2022-03-23 11:28:04,156 Timestamp
+2022-03-23 11:28:04,157 12:01:05.087000
+2022-03-23 11:28:04,168 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:04,168 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:04,549 {'vecid': 242606374551181, 'locationx': 31.27751541546203, 'locationy': 30.065331440782906, 'velocityx': -1.5695688748294096e-05, 'velocityy': 3.5118160307453923e-06, 'acceleration': 2.83682941913234e-06, 'stop': 0, 'angle': 105.25511869742085}
+2022-03-23 11:28:07,166 Timestamp
+2022-03-23 11:28:07,167 12:01:08.087000
+2022-03-23 11:28:07,176 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:07,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:07,541 {'vecid': 242606374551181, 'locationx': 31.277496234082527, 'locationy': 30.06534591126414, 'velocityx': -1.897407220276228e-05, 'velocityy': 1.3510343993977005e-05, 'acceleration': 4.513551051767804e-06, 'stop': 0, 'angle': 132.51044707385293}
+2022-03-23 11:28:10,169 Timestamp
+2022-03-23 11:28:10,169 12:01:11.087000
+2022-03-23 11:28:10,178 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:10,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:10,613 {'vecid': 242606374551181, 'locationx': 31.277481180160677, 'locationy': 30.06535364762171, 'velocityx': -1.547078758036568e-05, 'velocityy': 8.821062236249819e-06, 'acceleration': 1.4469631067183804e-06, 'stop': 0, 'angle': 110.55604522794876}
+2022-03-23 11:28:13,168 Timestamp
+2022-03-23 11:28:13,168 12:01:14.087000
+2022-03-23 11:28:13,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:13,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:13,685 {'vecid': 242606374551181, 'locationx': 31.277443139581994, 'locationy': 30.06534535191088, 'velocityx': -3.717174163073199e-05, 'velocityy': -8.110224384054975e-06, 'acceleration': 1.4511499991138502e-05, 'stop': 0, 'angle': 73.49563861608878}
+2022-03-23 11:28:16,166 Timestamp
+2022-03-23 11:28:16,167 12:01:17.087000
+2022-03-23 11:28:16,175 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:16,176 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:19,166 Timestamp
+2022-03-23 11:28:19,166 12:01:20.086000
+2022-03-23 11:28:19,178 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:19,178 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:19,624 {'vecid': 242606374551181, 'locationx': 31.277400064166887, 'locationy': 30.06532634952422, 'velocityx': -1.4002732756331997e-05, 'velocityy': -3.944236483571313e-06, 'acceleration': 1.0102676027908087e-05, 'stop': 0, 'angle': 135.00000001526666}
+2022-03-23 11:28:22,165 Timestamp
+2022-03-23 11:28:22,166 12:01:23.086000
+2022-03-23 11:28:22,174 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:22,175 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:22,696 {'vecid': 242606374551181, 'locationx': 31.27739195232433, 'locationy': 30.06533498186048, 'velocityx': -6.0999277813747415e-06, 'velocityy': 9.46146882623238e-06, 'acceleration': 1.1937002329836664e-05, 'stop': 0, 'angle': 144.46232220472473}
+2022-03-23 11:28:24,371 Timestamp
+2022-03-23 11:28:24,371 12:01:25.292000
+2022-03-23 11:28:24,382 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:24,382 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:25,563 {'vecid': 242606374551181, 'locationx': 31.27738820828016, 'locationy': 30.065340026939367, 'velocityx': -2.045195686288646e-06, 'velocityy': 7.219203060634525e-06, 'acceleration': 5.864489013459836e-06, 'stop': 0, 'angle': 108.43494881070868}
+2022-03-23 11:28:27,373 Timestamp
+2022-03-23 11:28:27,374 12:01:28.292000
+2022-03-23 11:28:27,384 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:27,384 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:28,635 {'vecid': 242606374551181, 'locationx': 31.27738887049549, 'locationy': 30.065338396438907, 'velocityx': 1.7107086315281124e-06, 'velocityy': -9.328102847814364e-07, 'acceleration': 5.345875600535429e-06, 'stop': 0, 'angle': 108.43494881070868}
+2022-03-23 11:28:30,178 Timestamp
+2022-03-23 11:28:30,179 12:01:31.097000
+2022-03-23 11:28:30,188 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:30,188 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:31,503 {'vecid': 242606374551181, 'locationx': 31.27739019446922, 'locationy': 30.06532868557201, 'velocityx': 2.163899086234569e-06, 'velocityy': -1.0327872852170548e-05, 'acceleration': 6.662596524070969e-06, 'stop': 0, 'angle': 108.43494881070868}
+2022-03-23 11:28:33,174 Timestamp
+2022-03-23 11:28:33,174 12:01:34.097000
+2022-03-23 11:28:33,186 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:33,187 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:34,575 {'vecid': 242606374551181, 'locationx': 31.277386075198635, 'locationy': 30.065323848427195, 'velocityx': -3.641417486278305e-06, 'velocityy': -6.42094939969013e-06, 'acceleration': 2.4097716942015653e-06, 'stop': 0, 'angle': 75.96375651052058}
+2022-03-23 11:28:36,184 Timestamp
+2022-03-23 11:28:36,184 12:01:37.097000
+2022-03-23 11:28:36,192 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:36,192 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:37,647 {'vecid': 242606374551181, 'locationx': 31.27738492183155, 'locationy': 30.065322177243907, 'velocityx': -1.8245738968403198e-06, 'velocityy': -1.8366522012441626e-06, 'acceleration': 2.2598667658799573e-06, 'stop': 0, 'angle': 75.96375651052058}
+2022-03-23 11:28:39,186 Timestamp
+2022-03-23 11:28:39,187 12:01:40.097000
+2022-03-23 11:28:39,198 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:39,198 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:40,719 {'vecid': 242606374551181, 'locationx': 31.277383251390887, 'locationy': 30.065323385493496, 'velocityx': -1.6944369230263627e-06, 'velocityy': 1.6870993481263003e-06, 'acceleration': 2.80023295715903e-06, 'stop': 0, 'angle': 135.00000006106666}
+2022-03-23 11:28:42,171 Timestamp
+2022-03-23 11:28:42,172 12:01:43.087000
+2022-03-23 11:28:42,183 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:42,184 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:43,586 {'vecid': 242606374551181, 'locationx': 31.277385453031084, 'locationy': 30.06532685009749, 'velocityx': 2.1108174011277136e-06, 'velocityy': 4.057617934045697e-06, 'acceleration': 3.1534348578432135e-06, 'stop': 0, 'angle': 45.0}
+2022-03-23 11:28:45,173 Timestamp
+2022-03-23 11:28:45,174 12:01:46.087000
+2022-03-23 11:28:45,184 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:45,184 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:46,659 {'vecid': 242606374551181, 'locationx': 31.277382484500485, 'locationy': 30.065332113007464, 'velocityx': -2.387470817433625e-06, 'velocityy': 5.750215915509998e-06, 'acceleration': 2.4373698798968527e-06, 'stop': 0, 'angle': 135.00000002035554}
+2022-03-23 11:28:48,167 Timestamp
+2022-03-23 11:28:48,168 12:01:49.087000
+2022-03-23 11:28:48,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:48,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:49,730 {'vecid': 242606374551181, 'locationx': 31.27737527549419, 'locationy': 30.0653389696998, 'velocityx': -7.473682155522452e-06, 'velocityy': 7.214138998303955e-06, 'acceleration': 3.682179031225216e-06, 'stop': 0, 'angle': 128.65980824217465}
+2022-03-23 11:28:51,174 Timestamp
+2022-03-23 11:28:51,175 12:01:52.087000
+2022-03-23 11:28:51,182 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:51,183 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:52,599 {'vecid': 242606374551181, 'locationx': 31.277369087106912, 'locationy': 30.065344823699018, 'velocityx': -6.978524896510074e-06, 'velocityy': 6.192520811722536e-06, 'acceleration': 1.088977994686946e-06, 'stop': 0, 'angle': 135.0}
+2022-03-23 11:28:54,166 Timestamp
+2022-03-23 11:28:54,167 12:01:55.087000
+2022-03-23 11:28:54,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:54,178 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:55,670 {'vecid': 242606374551181, 'locationx': 31.277371066240185, 'locationy': 30.065351451152587, 'velocityx': 1.5497374460404664e-06, 'velocityy': 6.593229260881541e-06, 'acceleration': 4.124148983022404e-06, 'stop': 0, 'angle': 36.86989765072935}
+2022-03-23 11:28:57,166 Timestamp
+2022-03-23 11:28:57,166 12:01:58.087000
+2022-03-23 11:28:57,176 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:57,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:28:58,741 {'vecid': 242606374551181, 'locationx': 31.27736700651042, 'locationy': 30.0653517706535, 'velocityx': -2.960701800468388e-06, 'velocityy': 5.009631312033897e-07, 'acceleration': 3.2468921749819322e-06, 'stop': 0, 'angle': 75.96375651052058}
+2022-03-23 11:29:00,170 Timestamp
+2022-03-23 11:29:00,170 12:02:01.087000
+2022-03-23 11:29:00,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:00,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:01,609 {'vecid': 242606374551181, 'locationx': 31.27736750463271, 'locationy': 30.065347486340727, 'velocityx': 2.2407909355907517e-07, 'velocityy': -4.901051732002611e-06, 'acceleration': 4.387316105023618e-06, 'stop': 0, 'angle': 161.56505117707798}
+2022-03-23 11:29:03,167 Timestamp
+2022-03-23 11:29:03,167 12:02:04.087000
+2022-03-23 11:29:03,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:03,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:04,536 {'vecid': 242606374551181, 'locationx': 31.277370384381378, 'locationy': 30.065345556265427, 'velocityx': 3.126428709367129e-06, 'velocityy': -2.9233003436603e-06, 'acceleration': 2.1979274526707703e-06, 'stop': 0, 'angle': 90.0}
+2022-03-23 11:29:06,166 Timestamp
+2022-03-23 11:29:06,167 12:02:07.087000
+2022-03-23 11:29:06,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:06,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:07,753 {'vecid': 242606374551181, 'locationx': 31.277367676098667, 'locationy': 30.065344683660488, 'velocityx': -2.1058702555620485e-06, 'velocityy': -1.0092716470280325e-06, 'acceleration': 2.0960137384739124e-06, 'stop': 0, 'angle': 90.0}
+2022-03-23 11:29:09,166 Timestamp
+2022-03-23 11:29:09,167 12:02:10.087000
+2022-03-23 11:29:09,174 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:09,175 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:10,620 {'vecid': 242606374551181, 'locationx': 31.277361755144486, 'locationy': 30.06534709954692, 'velocityx': -6.300084416684682e-06, 'velocityy': 2.5472238266250025e-06, 'acceleration': 3.7548808542906175e-06, 'stop': 0, 'angle': 116.56505117707799}
+2022-03-23 11:29:12,176 Timestamp
+2022-03-23 11:29:12,176 12:02:13.087000
+2022-03-23 11:29:12,185 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:12,186 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:13,692 {'vecid': 242606374551181, 'locationx': 31.27736486712068, 'locationy': 30.06534807465122, 'velocityx': 2.199782859053854e-06, 'velocityy': 1.5299376230173796e-06, 'acceleration': 3.332274658486079e-06, 'stop': 0, 'angle': 90.0}
+2022-03-23 11:29:15,166 Timestamp
+2022-03-23 11:29:15,167 12:02:16.087000
+2022-03-23 11:29:15,176 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:15,177 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:18,173 Timestamp
+2022-03-23 11:29:18,174 12:02:19.087000
+2022-03-23 11:29:18,183 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:18,184 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:19,631 {'vecid': 242606374551181, 'locationx': 31.277366606419875, 'locationy': 30.06535366378866, 'velocityx': 9.515559434978384e-07, 'velocityy': 1.7295611688515096e-06, 'acceleration': 7.17072466880857e-07, 'stop': 0, 'angle': 90.0}
+2022-03-23 11:29:21,175 Timestamp
+2022-03-23 11:29:21,176 12:02:22.087000
+2022-03-23 11:29:21,184 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:21,184 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:22,704 {'vecid': 242606374551181, 'locationx': 31.27736557172001, 'locationy': 30.065357811533673, 'velocityx': -1.012211033385908e-06, 'velocityy': 3.904748187082573e-06, 'acceleration': 1.3704174182691215e-06, 'stop': 0, 'angle': 161.56505117707798}
+2022-03-23 11:29:24,167 Timestamp
+2022-03-23 11:29:24,168 12:02:25.087000
+2022-03-23 11:29:24,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:24,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:25,571 {'vecid': 242606374551181, 'locationx': 31.277367723474754, 'locationy': 30.06536144464115, 'velocityx': 1.823526542268246e-06, 'velocityy': 3.830561848070022e-06, 'acceleration': 1.1250279360063317e-06, 'stop': 0, 'angle': 44.99999996946668}
+2022-03-23 11:29:27,179 Timestamp
+2022-03-23 11:29:27,180 12:02:28.087000
+2022-03-23 11:29:27,187 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:27,187 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:28,644 {'vecid': 242606374551181, 'locationx': 31.27736961828586, 'locationy': 30.065362405010546, 'velocityx': 2.1425657292372e-06, 'velocityy': 1.087959355177633e-06, 'acceleration': 1.4721314980506426e-06, 'stop': 0, 'angle': 90.0}
+2022-03-23 11:29:30,171 Timestamp
+2022-03-23 11:29:30,171 12:02:31.087000
+2022-03-23 11:29:30,185 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:30,186 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:31,715 {'vecid': 242606374551181, 'locationx': 31.277367674981658, 'locationy': 30.06536114462903, 'velocityx': -1.7151896012501712e-06, 'velocityy': -1.5176415859919989e-06, 'acceleration': 2.650984491755198e-06, 'stop': 0, 'angle': 63.434948798495356}
+2022-03-23 11:29:33,168 Timestamp
+2022-03-23 11:29:33,169 12:02:34.087000
+2022-03-23 11:29:33,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:33,179 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:34,583 {'vecid': 242606374551181, 'locationx': 31.277366962771953, 'locationy': 30.065361709282012, 'velocityx': -1.1586556685877114e-06, 'velocityy': 8.343330187720925e-08, 'acceleration': 4.437878722209199e-07, 'stop': 0, 'angle': 63.434948798495356}
+2022-03-23 11:29:36,166 Timestamp
+2022-03-23 11:29:36,166 12:02:37.087000
+2022-03-23 11:29:36,174 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:36,174 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:37,655 {'vecid': 242606374551181, 'locationx': 31.277369159371638, 'locationy': 30.065361706177608, 'velocityx': 2.028051611276419e-06, 'velocityy': 3.9264554846079874e-08, 'acceleration': 1.5260545812026056e-06, 'stop': 0, 'angle': 90.0}
+2022-03-23 11:29:39,173 Timestamp
+2022-03-23 11:29:39,173 12:02:40.087000
+2022-03-23 11:29:39,181 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:39,181 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:40,726 {'vecid': 242606374551181, 'locationx': 31.277372453421954, 'locationy': 30.06535913514317, 'velocityx': 3.6205809822576165e-06, 'velocityy': -2.4929614127554537e-06, 'acceleration': 1.988929874741103e-06, 'stop': 0, 'angle': 135.00000003053333}
+2022-03-23 11:29:42,169 Timestamp
+2022-03-23 11:29:42,169 12:02:43.087000
+2022-03-23 11:29:42,183 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:42,184 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:43,593 {'vecid': 242606374551181, 'locationx': 31.277373572749507, 'locationy': 30.065363427508867, 'velocityx': 1.5039258287170619e-06, 'velocityy': 3.83098954362052e-06, 'acceleration': 2.8839749507879586e-06, 'stop': 0, 'angle': 135.00000003053333}
+2022-03-23 11:29:45,174 Timestamp
+2022-03-23 11:29:45,175 12:02:46.087000
+2022-03-23 11:29:45,186 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:45,186 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:46,668 {'vecid': 242606374551181, 'locationx': 31.27737000762583, 'locationy': 30.065373775095455, 'velocityx': -3.5843679586275747e-06, 'velocityy': 1.085023569613151e-05, 'acceleration': 5.703529633719736e-06, 'stop': 0, 'angle': 156.80140947792881}
+2022-03-23 11:29:48,188 Timestamp
+2022-03-23 11:29:48,189 12:02:49.087000
+2022-03-23 11:29:48,197 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:48,198 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:49,738 {'vecid': 242606374551181, 'locationx': 31.27736224321289, 'locationy': 30.065382332795764, 'velocityx': -8.335406769921788e-06, 'velocityy': 9.704775803330252e-06, 'acceleration': 3.9588183579999305e-06, 'stop': 0, 'angle': 128.6598082689844}
+2022-03-23 11:29:51,189 Timestamp
+2022-03-23 11:29:51,189 12:02:52.087000
+2022-03-23 11:29:51,200 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:51,200 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:52,605 {'vecid': 242606374551181, 'locationx': 31.277355751011356, 'locationy': 30.06538491565334, 'velocityx': -7.355345602625035e-06, 'velocityy': 3.005041859843231e-06, 'acceleration': 3.190566826722263e-06, 'stop': 0, 'angle': 90.0}
+2022-03-23 11:29:54,178 Timestamp
+2022-03-23 11:29:54,178 12:02:55.086000
+2022-03-23 11:29:54,186 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:54,187 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:55,677 {'vecid': 242606374551181, 'locationx': 31.277352511724594, 'locationy': 30.065382563341362, 'velocityx': -3.5086136158516642e-06, 'velocityy': -2.9585540549222862e-06, 'acceleration': 4.722107451775097e-06, 'stop': 0, 'angle': 26.56505117707799}
+2022-03-23 11:29:57,178 Timestamp
+2022-03-23 11:29:57,179 12:02:58.086000
+2022-03-23 11:29:57,195 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:57,196 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:58,750 {'vecid': 242606374551181, 'locationx': 31.27734682094362, 'locationy': 30.065375939565833, 'velocityx': -5.220905846316186e-06, 'velocityy': -7.5342439088412946e-06, 'acceleration': 4.226917063424998e-06, 'stop': 0, 'angle': 45.0}
+2022-03-23 11:29:59,546 Timestamp
+2022-03-23 11:29:59,547 12:03:00.306000
+2022-03-23 11:29:59,559 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:29:59,560 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:01,617 {'vecid': 242606374551181, 'locationx': 31.27734171881117, 'locationy': 30.06537079132402, 'velocityx': -5.151869391877658e-06, 'velocityy': -6.118875611003434e-06, 'acceleration': 9.385921476053343e-07, 'stop': 0, 'angle': 56.309932474020215}
+2022-03-23 11:30:02,399 Timestamp
+2022-03-23 11:30:02,399 12:03:03.306000
+2022-03-23 11:30:02,403 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:02,403 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:04,590 {'vecid': 242606374551181, 'locationx': 31.277336665085958, 'locationy': 30.065370381728684, 'velocityx': -5.063204076350455e-06, 'velocityy': -6.93654153113177e-07, 'acceleration': 2.5307312938055187e-06, 'stop': 0, 'angle': 108.43494881070868}
+2022-03-23 11:30:05,176 Timestamp
+2022-03-23 11:30:05,177 12:03:06.083000
+2022-03-23 11:30:05,189 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:05,189 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:07,393 Timestamp
+2022-03-23 11:30:07,393 12:03:08.304000
+2022-03-23 11:30:07,405 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:07,405 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:07,760 {'vecid': 242606374551181, 'locationx': 31.27735343344514, 'locationy': 30.06536292241656, 'velocityx': 1.6251597123125543e-05, 'velocityy': -6.675231943218971e-06, 'acceleration': 1.1583293183895266e-05, 'stop': 0, 'angle': 113.19859051154245}
+2022-03-23 11:30:10,393 Timestamp
+2022-03-23 11:30:10,395 12:03:11.304000
+2022-03-23 11:30:10,405 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:10,405 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:10,628 {'vecid': 242606374551181, 'locationx': 31.27736183493211, 'locationy': 30.065372512884274, 'velocityx': 1.1174716300102825e-05, 'velocityy': 8.710496326021794e-06, 'acceleration': 7.5734027211518326e-06, 'stop': 0, 'angle': 12.528807706277789}
+2022-03-23 11:30:13,396 Timestamp
+2022-03-23 11:30:13,397 12:03:14.304000
+2022-03-23 11:30:13,407 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:13,407 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:13,700 {'vecid': 242606374551181, 'locationx': 31.277373905259132, 'locationy': 30.065379679478813, 'velocityx': 1.2366600012580546e-05, 'velocityy': 8.890502128345215e-06, 'acceleration': 3.351704737010546e-06, 'stop': 0, 'angle': 66.80140947792883}
+2022-03-23 11:30:16,394 Timestamp
+2022-03-23 11:30:16,395 12:03:17.304000
+2022-03-23 11:30:16,404 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:16,405 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:19,204 Timestamp
+2022-03-23 11:30:19,204 12:03:03.094000
+2022-03-23 11:30:19,214 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:19,215 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:19,639 {'vecid': 242606374551181, 'locationx': 31.277384060974974, 'locationy': 30.06538170905946, 'velocityx': -1.6303093050384024e-06, 'velocityy': -1.0169084546831561e-06, 'acceleration': 7.914245554015625e-06, 'stop': 0, 'angle': 75.96375653207352}
+2022-03-23 11:30:22,199 Timestamp
+2022-03-23 11:30:22,200 12:03:06.094000
+2022-03-23 11:30:22,208 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:22,209 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:22,711 {'vecid': 242606374551181, 'locationx': 31.277382411259243, 'locationy': 30.065378376768017, 'velocityx': -3.3418325494216887e-06, 'velocityy': -3.996911431891107e-06, 'acceleration': 4.7914321359546135e-06, 'stop': 0, 'angle': 75.96375653207352}
+2022-03-23 11:30:25,204 Timestamp
+2022-03-23 11:30:25,204 12:03:09.094000
+2022-03-23 11:30:25,212 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:25,212 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:28,213 Timestamp
+2022-03-23 11:30:28,214 12:03:12.094000
+2022-03-23 11:30:28,228 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:28,228 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:31,199 Timestamp
+2022-03-23 11:30:31,199 12:03:15.093000
+2022-03-23 11:30:31,208 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:31,208 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:34,197 Timestamp
+2022-03-23 11:30:34,198 12:03:18.093000
+2022-03-23 11:30:34,209 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:34,209 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:37,219 Timestamp
+2022-03-23 11:30:37,219 12:03:21.093000
+2022-03-23 11:30:37,228 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:37,228 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:40,200 Timestamp
+2022-03-23 11:30:40,200 12:03:24.093000
+2022-03-23 11:30:40,208 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:40,208 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:42,408 Timestamp
+2022-03-23 11:30:42,408 12:03:26.304000
+2022-03-23 11:30:42,419 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:42,420 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:45,409 Timestamp
+2022-03-23 11:30:45,410 12:03:29.304000
+2022-03-23 11:30:45,423 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:45,424 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:48,191 Timestamp
+2022-03-23 11:30:48,192 12:03:32.088000
+2022-03-23 11:30:48,201 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:48,202 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:51,202 Timestamp
+2022-03-23 11:30:51,202 12:03:35.088000
+2022-03-23 11:30:51,218 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:51,219 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:54,199 Timestamp
+2022-03-23 11:30:54,200 12:03:38.088000
+2022-03-23 11:30:54,208 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:54,208 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:57,207 Timestamp
+2022-03-23 11:30:57,208 12:03:41.088000
+2022-03-23 11:30:57,219 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:30:57,220 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:00,198 Timestamp
+2022-03-23 11:31:00,198 12:03:44.088000
+2022-03-23 11:31:00,210 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:00,210 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:03,221 Timestamp
+2022-03-23 11:31:03,221 12:03:47.088000
+2022-03-23 11:31:03,235 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:03,236 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:06,223 Timestamp
+2022-03-23 11:31:06,224 12:03:50.088000
+2022-03-23 11:31:06,233 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:06,233 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:09,201 Timestamp
+2022-03-23 11:31:09,201 12:03:53.088000
+2022-03-23 11:31:09,210 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:09,211 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:12,198 Timestamp
+2022-03-23 11:31:12,199 12:03:56.088000
+2022-03-23 11:31:12,209 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:12,211 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:15,191 Timestamp
+2022-03-23 11:31:15,192 12:03:59.088000
+2022-03-23 11:31:15,199 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:15,200 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:17,599 {'vecid': 242606374551181, 'locationx': 31.277409063300034, 'locationy': 30.06535931697862, 'velocityx': 2.3245090517980247e-06, 'velocityy': 8.486339092648595e-06, 'acceleration': 4.959250090967422e-06, 'stop': 0, 'angle': 18.43494881681535}
+2022-03-23 11:31:18,191 Timestamp
+2022-03-23 11:31:18,192 12:04:02.088000
+2022-03-23 11:31:18,199 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:18,199 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:20,671 {'vecid': 242606374551181, 'locationx': 31.277404883890814, 'locationy': 30.065363420163596, 'velocityx': -3.804502725321168e-06, 'velocityy': 5.224991167865911e-06, 'acceleration': 2.6607978817397035e-06, 'stop': 0, 'angle': 104.03624346074217}
+2022-03-23 11:31:21,208 Timestamp
+2022-03-23 11:31:21,208 12:04:05.088000
+2022-03-23 11:31:21,212 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:21,213 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:23,570 Timestamp
+2022-03-23 11:31:23,570 12:04:07.299000
+2022-03-23 11:31:23,582 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:23,582 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:23,745 {'vecid': 242606374551181, 'locationx': 31.27740225462844, 'locationy': 30.065367121748835, 'velocityx': -3.319218060367281e-06, 'velocityy': 3.9138657774910925e-06, 'acceleration': 9.996477499714257e-07, 'stop': 0, 'angle': 153.43494882292202}
+2022-03-23 11:31:26,404 Timestamp
+2022-03-23 11:31:26,405 12:04:10.299000
+2022-03-23 11:31:26,416 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:26,417 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:26,612 {'vecid': 242606374551181, 'locationx': 31.277400016827166, 'locationy': 30.06536528231943, 'velocityx': -2.4457246103013903e-06, 'velocityy': -1.7385036911572367e-06, 'acceleration': 3.248631219362571e-06, 'stop': 0, 'angle': 26.56505117707799}
+2022-03-23 11:31:29,193 Timestamp
+2022-03-23 11:31:29,193 12:04:13.086000
+2022-03-23 11:31:29,205 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:29,205 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:29,682 {'vecid': 242606374551181, 'locationx': 31.277404570319995, 'locationy': 30.065369390682633, 'velocityx': 4.4284965621048475e-06, 'velocityy': 3.2320101573074925e-06, 'acceleration': 3.985558027372422e-06, 'stop': 0, 'angle': 45.0}
+2022-03-23 11:31:31,411 Timestamp
+2022-03-23 11:31:31,411 12:04:15.306000
+2022-03-23 11:31:31,423 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:31,423 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:32,754 {'vecid': 242606374551181, 'locationx': 31.277407531747222, 'locationy': 30.065367747366412, 'velocityx': 3.864881876674855e-06, 'velocityy': -1.167066951993038e-06, 'acceleration': 2.1592938245692267e-06, 'stop': 0, 'angle': 153.43494884734866}
+2022-03-23 11:31:34,414 Timestamp
+2022-03-23 11:31:34,415 12:04:18.306000
+2022-03-23 11:31:34,424 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:34,424 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:35,621 {'vecid': 242606374551181, 'locationx': 31.277413815754457, 'locationy': 30.065363285302862, 'velocityx': 6.473206380028585e-06, 'velocityy': -4.775322107362864e-06, 'acceleration': 3.2393274426080907e-06, 'stop': 0, 'angle': 126.86989763118802}
+2022-03-23 11:31:37,411 Timestamp
+2022-03-23 11:31:37,411 12:04:21.306000
+2022-03-23 11:31:37,419 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:37,420 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:38,693 {'vecid': 242606374551181, 'locationx': 31.277418260729245, 'locationy': 30.065357814488546, 'velocityx': 4.892367336744598e-06, 'velocityy': -6.029440478287178e-06, 'acceleration': 1.731607414077066e-06, 'stop': 0, 'angle': 146.30993249280993}
+2022-03-23 11:31:40,420 Timestamp
+2022-03-23 11:31:40,421 12:04:24.306000
+2022-03-23 11:31:40,431 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:40,431 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:41,765 {'vecid': 242606374551181, 'locationx': 31.277418146185596, 'locationy': 30.06535732287972, 'velocityx': -4.845811043227175e-08, 'velocityy': -9.782249773600319e-07, 'acceleration': 3.347958554299975e-06, 'stop': 0, 'angle': 135.0}
+2022-03-23 11:31:43,214 Timestamp
+2022-03-23 11:31:43,214 12:04:27.102000
+2022-03-23 11:31:43,224 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:43,225 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:46,212 Timestamp
+2022-03-23 11:31:46,212 12:04:30.102000
+2022-03-23 11:31:46,222 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:46,223 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:49,213 Timestamp
+2022-03-23 11:31:49,213 12:04:33.102000
+2022-03-23 11:31:49,222 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:49,223 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:52,211 Timestamp
+2022-03-23 11:31:52,212 12:04:36.102000
+2022-03-23 11:31:52,223 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:52,223 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:54,413 Timestamp
+2022-03-23 11:31:54,415 12:04:38.309000
+2022-03-23 11:31:54,426 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:54,427 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:57,414 Timestamp
+2022-03-23 11:31:57,415 12:04:41.309000
+2022-03-23 11:31:57,425 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:57,425 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:59,563 Timestamp
+2022-03-23 11:31:59,564 12:04:43.309000
+2022-03-23 11:31:59,574 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:31:59,575 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:02,413 Timestamp
+2022-03-23 11:32:02,414 12:04:46.309000
+2022-03-23 11:32:02,422 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:02,422 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:05,180 Timestamp
+2022-03-23 11:32:05,180 12:04:49.083000
+2022-03-23 11:32:05,192 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:05,192 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:07,407 Timestamp
+2022-03-23 11:32:07,408 12:04:51.304000
+2022-03-23 11:32:07,417 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:07,417 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:10,410 Timestamp
+2022-03-23 11:32:10,410 12:04:54.304000
+2022-03-23 11:32:10,421 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:10,422 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:13,409 Timestamp
+2022-03-23 11:32:13,409 12:04:57.304000
+2022-03-23 11:32:13,421 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:13,421 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:16,408 Timestamp
+2022-03-23 11:32:16,409 12:05:00.304000
+2022-03-23 11:32:16,420 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:16,420 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:19,416 Timestamp
+2022-03-23 11:32:19,417 12:05:03.311000
+2022-03-23 11:32:19,434 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:19,435 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:22,425 Timestamp
+2022-03-23 11:32:22,426 12:05:06.311000
+2022-03-23 11:32:22,438 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:22,438 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:25,420 Timestamp
+2022-03-23 11:32:25,420 12:05:09.311000
+2022-03-23 11:32:25,424 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:25,424 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:28,432 Timestamp
+2022-03-23 11:32:28,432 12:05:12.311000
+2022-03-23 11:32:28,441 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:28,442 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:31,190 Timestamp
+2022-03-23 11:32:31,192 12:05:15.094000
+2022-03-23 11:32:31,197 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:31,198 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:34,200 Timestamp
+2022-03-23 11:32:34,200 12:05:18.094000
+2022-03-23 11:32:34,210 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:34,210 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:36,420 Timestamp
+2022-03-23 11:32:36,420 12:05:20.315000
+2022-03-23 11:32:36,433 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:36,433 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:39,431 Timestamp
+2022-03-23 11:32:39,432 12:05:23.315000
+2022-03-23 11:32:39,444 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:39,445 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:42,202 Timestamp
+2022-03-23 11:32:42,204 12:05:26.097000
+2022-03-23 11:32:42,213 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:42,214 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:45,220 Timestamp
+2022-03-23 11:32:45,221 12:05:29.097000
+2022-03-23 11:32:45,233 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:45,234 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:48,209 Timestamp
+2022-03-23 11:32:48,209 12:05:32.097000
+2022-03-23 11:32:48,218 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:48,219 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:51,206 Timestamp
+2022-03-23 11:32:51,206 12:05:35.097000
+2022-03-23 11:32:51,211 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:51,211 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:54,208 Timestamp
+2022-03-23 11:32:54,209 12:05:38.097000
+2022-03-23 11:32:54,217 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:54,217 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:57,200 Timestamp
+2022-03-23 11:32:57,200 12:05:41.097000
+2022-03-23 11:32:57,205 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:32:57,205 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:00,202 Timestamp
+2022-03-23 11:33:00,202 12:05:44.097000
+2022-03-23 11:33:00,206 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:00,207 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:03,205 Timestamp
+2022-03-23 11:33:03,205 12:05:47.097000
+2022-03-23 11:33:03,220 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:03,220 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:05,563 Timestamp
+2022-03-23 11:33:05,563 12:05:49.309000
+2022-03-23 11:33:05,578 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:05,579 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:08,425 Timestamp
+2022-03-23 11:33:08,425 12:05:52.309000
+2022-03-23 11:33:08,436 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:08,437 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:11,195 Timestamp
+2022-03-23 11:33:11,195 12:05:55.088000
+2022-03-23 11:33:11,204 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:11,204 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:13,414 Timestamp
+2022-03-23 11:33:13,414 12:05:57.309000
+2022-03-23 11:33:13,420 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:13,420 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:16,422 Timestamp
+2022-03-23 11:33:16,422 12:06:00.309000
+2022-03-23 11:33:16,434 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:16,435 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:19,409 Timestamp
+2022-03-23 11:33:19,410 12:06:03.304000
+2022-03-23 11:33:19,416 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:19,416 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:22,409 Timestamp
+2022-03-23 11:33:22,411 12:06:06.304000
+2022-03-23 11:33:22,420 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:22,420 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:25,418 Timestamp
+2022-03-23 11:33:25,418 12:06:09.304000
+2022-03-23 11:33:25,422 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:25,422 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:28,410 Timestamp
+2022-03-23 11:33:28,410 12:06:12.304000
+2022-03-23 11:33:28,414 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:28,415 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:31,416 Timestamp
+2022-03-23 11:33:31,416 12:06:15.304000
+2022-03-23 11:33:31,426 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:31,426 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:34,424 Timestamp
+2022-03-23 11:33:34,424 12:06:18.304000
+2022-03-23 11:33:34,430 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:34,431 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:37,418 Timestamp
+2022-03-23 11:33:37,419 12:06:21.304000
+2022-03-23 11:33:37,428 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:37,428 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:40,420 Timestamp
+2022-03-23 11:33:40,420 12:06:24.304000
+2022-03-23 11:33:40,431 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:40,432 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:43,200 Timestamp
+2022-03-23 11:33:43,200 12:06:27.094000
+2022-03-23 11:33:43,213 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:43,213 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:46,211 Timestamp
+2022-03-23 11:33:46,211 12:06:30.094000
+2022-03-23 11:33:46,223 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:46,224 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:48,430 Timestamp
+2022-03-23 11:33:48,430 12:06:32.315000
+2022-03-23 11:33:48,440 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:48,440 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:51,429 Timestamp
+2022-03-23 11:33:51,431 12:06:35.315000
+2022-03-23 11:33:51,435 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:51,436 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:54,236 Timestamp
+2022-03-23 11:33:54,237 12:06:38.101000
+2022-03-23 11:33:54,247 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:54,248 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:57,236 Timestamp
+2022-03-23 11:33:57,237 12:06:41.101000
+2022-03-23 11:33:57,251 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:33:57,252 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:00,237 Timestamp
+2022-03-23 11:34:00,238 12:06:44.101000
+2022-03-23 11:34:00,247 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:00,247 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:03,238 Timestamp
+2022-03-23 11:34:03,238 12:06:47.101000
+2022-03-23 11:34:03,247 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:03,248 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:05,609 Timestamp
+2022-03-23 11:34:05,610 12:06:49.309000
+2022-03-23 11:34:05,619 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:05,619 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:08,414 Timestamp
+2022-03-23 11:34:08,415 12:06:52.309000
+2022-03-23 11:34:08,425 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:08,426 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:11,210 Timestamp
+2022-03-23 11:34:11,210 12:06:55.102000
+2022-03-23 11:34:11,222 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:11,222 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:14,216 Timestamp
+2022-03-23 11:34:14,217 12:06:58.102000
+2022-03-23 11:34:14,227 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:14,227 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:17,202 Timestamp
+2022-03-23 11:34:17,203 12:07:01.083000
+2022-03-23 11:34:17,212 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:17,213 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:19,413 Timestamp
+2022-03-23 11:34:19,413 12:07:03.304000
+2022-03-23 11:34:19,425 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:19,425 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:22,412 Timestamp
+2022-03-23 11:34:22,413 12:07:06.304000
+2022-03-23 11:34:22,419 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:22,419 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:25,201 Timestamp
+2022-03-23 11:34:25,202 12:07:09.094000
+2022-03-23 11:34:25,212 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:25,212 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:28,209 Timestamp
+2022-03-23 11:34:28,210 12:07:12.094000
+2022-03-23 11:34:28,220 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:28,220 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:31,245 Timestamp
+2022-03-23 11:34:31,246 12:07:15.094000
+2022-03-23 11:34:31,250 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:31,251 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:34,234 Timestamp
+2022-03-23 11:34:34,234 12:07:18.094000
+2022-03-23 11:34:34,246 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:34,246 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:37,240 Timestamp
+2022-03-23 11:34:37,241 12:07:21.094000
+2022-03-23 11:34:37,251 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:37,251 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:40,229 Timestamp
+2022-03-23 11:34:40,230 12:07:24.094000
+2022-03-23 11:34:40,233 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:40,234 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:43,231 Timestamp
+2022-03-23 11:34:43,232 12:07:27.094000
+2022-03-23 11:34:43,239 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:43,240 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:46,231 Timestamp
+2022-03-23 11:34:46,232 12:07:30.094000
+2022-03-23 11:34:46,242 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:46,243 {'vecid': 251096697943453, 'locationx': 0.0, 'locationy': 90.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:34:50,209 Timestamp
+2022-03-23 11:34:50,209 12:07:34
+2022-03-23 11:34:50,225 {'vecid': 251096697943453, 'locationx': 24.047415423727642, 'locationy': 43.919530346412444, 'velocityx': 23.46766904122868, 'velocityy': -44.96954005409468, 'acceleration': 27.055270931421397, 'stop': 0, 'angle': 152.44188048731658}
+2022-03-23 11:34:50,226 {'vecid': 251096697943453, 'locationx': 24.047415423727642, 'locationy': 43.919530346412444, 'velocityx': 23.46766904122868, 'velocityy': -44.96954005409468, 'acceleration': 27.055270931421397, 'stop': 0, 'angle': 152.44188048731658}
+2022-03-23 11:34:53,638 Timestamp
+2022-03-23 11:34:53,639 12:07:37
+2022-03-23 11:34:53,651 {'vecid': 251096697943453, 'locationx': 31.765286383747103, 'locationy': 29.130313735113567, 'velocityx': 10.937713568679712, 'velocityy': -20.959188455152656, 'acceleration': 3.5364253305473183, 'stop': 0, 'angle': 73.30075576152441}
+2022-03-23 11:34:53,652 {'vecid': 251096697943453, 'locationx': 31.765286383747103, 'locationy': 29.130313735113567, 'velocityx': 10.937713568679712, 'velocityy': -20.959188455152656, 'acceleration': 3.5364253305473183, 'stop': 0, 'angle': 73.30075576152441}
+2022-03-23 11:34:56,229 Timestamp
+2022-03-23 11:34:56,229 12:07:40
+2022-03-23 11:34:56,240 {'vecid': 251096697943453, 'locationx': 34.18571254323589, 'locationy': 24.492264260198382, 'velocityx': 2.133542320551869, 'velocityy': -4.088310225756041, 'acceleration': 11.634203088341863, 'stop': 0, 'angle': 109.98310651967127}
+2022-03-23 11:34:56,240 {'vecid': 251096697943453, 'locationx': 34.18571254323589, 'locationy': 24.492264260198382, 'velocityx': 2.133542320551869, 'velocityy': -4.088310225756041, 'acceleration': 11.634203088341863, 'stop': 0, 'angle': 109.98310651967127}
+2022-03-23 11:34:59,636 Timestamp
+2022-03-23 11:34:59,636 12:07:43
+2022-03-23 11:34:59,640 {'vecid': 251096697943453, 'locationx': 33.77707376214778, 'locationy': 25.275377072357212, 'velocityx': -1.6217912083991388, 'velocityy': 3.107800821566024, 'acceleration': 9.046042458509941, 'stop': 0, 'angle': 51.84277341031927}
+2022-03-23 11:34:59,640 {'vecid': 251096697943453, 'locationx': 33.77707376214778, 'locationy': 25.275377072357212, 'velocityx': -1.6217912083991388, 'velocityy': 3.107800821566024, 'acceleration': 9.046042458509941, 'stop': 0, 'angle': 51.84277341031927}
+2022-03-23 11:35:02,226 Timestamp
+2022-03-23 11:35:02,226 12:07:46
+2022-03-23 11:35:02,232 {'vecid': 251096697943453, 'locationx': 32.601008906621075, 'locationy': 27.529048374505095, 'velocityx': -2.114678677942677, 'velocityy': 4.052278463407301, 'acceleration': 4.205268052813095, 'stop': 0, 'angle': 14.743562837736363}
+2022-03-23 11:35:02,233 {'vecid': 251096697943453, 'locationx': 32.601008906621075, 'locationy': 27.529048374505095, 'velocityx': -2.114678677942677, 'velocityy': 4.052278463407301, 'acceleration': 4.205268052813095, 'stop': 0, 'angle': 14.743562837736363}
+2022-03-23 11:35:05,641 Timestamp
+2022-03-23 11:35:05,641 12:07:49
+2022-03-23 11:35:05,646 {'vecid': 251096697943453, 'locationx': 31.67198542851797, 'locationy': 29.309330261532285, 'velocityx': -1.3462140310687931, 'velocityy': 2.579716530766741, 'acceleration': 0.7842759936946314, 'stop': 0, 'angle': 176.82016988145105}
+2022-03-23 11:35:05,646 {'vecid': 251096697943453, 'locationx': 31.67198542851797, 'locationy': 29.309330261532285, 'velocityx': -1.3462140310687931, 'velocityy': 2.579716530766741, 'acceleration': 0.7842759936946314, 'stop': 0, 'angle': 176.82016988145105}
+2022-03-23 11:35:08,255 Timestamp
+2022-03-23 11:35:08,256 12:07:52
+2022-03-23 11:35:08,266 {'vecid': 251096697943453, 'locationx': 31.216771726401983, 'locationy': 30.181667177485252, 'velocityx': -0.5101030864750242, 'velocityy': 0.9775175643404346, 'acceleration': 0.6712216618322424, 'stop': 0, 'angle': 176.82016988145105}
+2022-03-23 11:35:08,266 {'vecid': 251096697943453, 'locationx': 31.216771726401983, 'locationy': 30.181667177485252, 'velocityx': -0.5101030864750242, 'velocityy': 0.9775175643404346, 'acceleration': 0.6712216618322424, 'stop': 0, 'angle': 176.82016988145105}
+2022-03-23 11:35:11,690 Timestamp
+2022-03-23 11:35:11,690 12:07:55
+2022-03-23 11:35:11,696 {'vecid': 251096697943453, 'locationx': 31.105987138270493, 'locationy': 30.39397350653946, 'velocityx': -0.018562851968820654, 'velocityy': 0.03558642109664023, 'acceleration': 0.8524284513740015, 'stop': 0, 'angle': 169.69515352439453}
+2022-03-23 11:35:11,697 {'vecid': 251096697943453, 'locationx': 31.105987138270493, 'locationy': 30.39397350653946, 'velocityx': -0.018562851968820654, 'velocityy': 0.03558642109664023, 'acceleration': 0.8524284513740015, 'stop': 0, 'angle': 169.69515352439453}
+2022-03-23 11:35:14,236 Timestamp
+2022-03-23 11:35:14,236 12:07:58
+2022-03-23 11:35:14,241 {'vecid': 251096697943453, 'locationx': 31.15033349653539, 'locationy': 30.308948251220055, 'velocityx': 0.14719876369501325, 'velocityy': -0.2821168053176725, 'acceleration': 0.541999179138582, 'stop': 0, 'angle': 24.227745313891518}
+2022-03-23 11:35:14,241 {'vecid': 251096697943453, 'locationx': 31.15033349653539, 'locationy': 30.308948251220055, 'velocityx': 0.14719876369501325, 'velocityy': -0.2821168053176725, 'acceleration': 0.541999179138582, 'stop': 0, 'angle': 24.227745313891518}
+2022-03-23 11:35:17,674 Timestamp
+2022-03-23 11:35:17,675 12:08:01
+2022-03-23 11:35:17,692 {'vecid': 251096697943453, 'locationx': 31.222891981155303, 'locationy': 30.16988313321895, 'velocityx': 0.13592282449761128, 'velocityy': -0.2604958318206967, 'acceleration': 0.20778087897440783, 'stop': 0, 'angle': 164.74488130257913}
+2022-03-23 11:35:17,692 {'vecid': 251096697943453, 'locationx': 31.222891981155303, 'locationy': 30.16988313321895, 'velocityx': 0.13592282449761128, 'velocityy': -0.2604958318206967, 'acceleration': 0.20778087897440783, 'stop': 0, 'angle': 164.74488130257913}
+2022-03-23 11:35:20,243 Timestamp
+2022-03-23 11:35:20,243 12:08:04
+2022-03-23 11:35:20,258 {'vecid': 251096697943453, 'locationx': 31.27153754594744, 'locationy': 30.076642352015945, 'velocityx': 0.072799834305184, 'velocityy': -0.13952792485782262, 'acceleration': 0.011117539489069501, 'stop': 0, 'angle': 53.13010235415598}
+2022-03-23 11:35:20,259 {'vecid': 251096697943453, 'locationx': 31.27153754594744, 'locationy': 30.076642352015945, 'velocityx': 0.072799834305184, 'velocityy': -0.13952792485782262, 'acceleration': 0.011117539489069501, 'stop': 0, 'angle': 53.13010235415598}
+2022-03-23 11:35:23,661 Timestamp
+2022-03-23 11:35:23,662 12:08:07
+2022-03-23 11:35:23,673 {'vecid': 251096697943453, 'locationx': 31.290566320443208, 'locationy': 30.040178610724134, 'velocityx': 0.02069947533373139, 'velocityy': -0.039665138335256755, 'acceleration': 0.05597602319314968, 'stop': 0, 'angle': 18.43494882292201}
+2022-03-23 11:35:23,673 {'vecid': 251096697943453, 'locationx': 31.290566320443208, 'locationy': 30.040178610724134, 'velocityx': 0.02069947533373139, 'velocityy': -0.039665138335256755, 'acceleration': 0.05597602319314968, 'stop': 0, 'angle': 18.43494882292201}
+2022-03-23 11:35:26,246 Timestamp
+2022-03-23 11:35:26,246 12:08:10
+2022-03-23 11:35:26,258 {'vecid': 251096697943453, 'locationx': 31.291408148381404, 'locationy': 30.03856994640491, 'velocityx': -0.005055739804307766, 'velocityy': 0.009695876339366513, 'acceleration': 0.05250771750292831, 'stop': 0, 'angle': 146.30993246932277}
+2022-03-23 11:35:26,259 {'vecid': 251096697943453, 'locationx': 31.291408148381404, 'locationy': 30.03856994640491, 'velocityx': -0.005055739804307766, 'velocityy': 0.009695876339366513, 'acceleration': 0.05250771750292831, 'stop': 0, 'angle': 146.30993246932277}
+2022-03-23 11:35:29,671 Timestamp
+2022-03-23 11:35:29,673 12:08:13
+2022-03-23 11:35:29,686 {'vecid': 251096697943453, 'locationx': 31.28585139362709, 'locationy': 30.049245645337876, 'velocityx': -0.011091333583178396, 'velocityy': 0.021283064512968367, 'acceleration': 0.028157407096147054, 'stop': 0, 'angle': 19.983106514768096}
+2022-03-23 11:35:29,687 {'vecid': 251096697943453, 'locationx': 31.28585139362709, 'locationy': 30.049245645337876, 'velocityx': -0.011091333583178396, 'velocityy': 0.021283064512968367, 'acceleration': 0.028157407096147054, 'stop': 0, 'angle': 19.983106514768096}
+2022-03-23 11:35:32,247 Timestamp
+2022-03-23 11:35:32,248 12:08:16
+2022-03-23 11:35:32,258 {'vecid': 251096697943453, 'locationx': 31.280578832368867, 'locationy': 30.059392164838457, 'velocityx': -0.008152742665659657, 'velocityy': 0.015668725473564453, 'acceleration': 0.007870399462249622, 'stop': 0, 'angle': 85.60129464715976}
+2022-03-23 11:35:32,258 {'vecid': 251096697943453, 'locationx': 31.280578832368867, 'locationy': 30.059392164838457, 'velocityx': -0.008152742665659657, 'velocityy': 0.015668725473564453, 'acceleration': 0.007870399462249622, 'stop': 0, 'angle': 85.60129464715976}
+2022-03-23 11:35:35,664 Timestamp
+2022-03-23 11:35:35,665 12:08:19
+2022-03-23 11:35:35,676 {'vecid': 251096697943453, 'locationx': 31.27762351518976, 'locationy': 30.065053345191757, 'velocityx': -0.003657317199067131, 'velocityy': 0.007010763190413567, 'acceleration': 0.0021491661381639114, 'stop': 0, 'angle': 119.05460409792494}
+2022-03-23 11:35:35,676 {'vecid': 251096697943453, 'locationx': 31.27762351518976, 'locationy': 30.065053345191757, 'velocityx': -0.003657317199067131, 'velocityy': 0.007010763190413567, 'acceleration': 0.0021491661381639114, 'stop': 0, 'angle': 119.05460409792494}
+2022-03-23 11:35:38,246 Timestamp
+2022-03-23 11:35:38,247 12:08:22
+2022-03-23 11:35:38,257 {'vecid': 251096697943453, 'locationx': 31.276677843880655, 'locationy': 30.066876241206945, 'velocityx': -0.0006105177090413453, 'velocityy': 0.0011762858924129708, 'acceleration': 0.004462198945444995, 'stop': 0, 'angle': 175.23635831095842}
+2022-03-23 11:35:38,258 {'vecid': 251096697943453, 'locationx': 31.276677843880655, 'locationy': 30.066876241206945, 'velocityx': -0.0006105177090413453, 'velocityy': 0.0011762858924129708, 'acceleration': 0.004462198945444995, 'stop': 0, 'angle': 175.23635831095842}
+2022-03-23 11:35:41,671 Timestamp
+2022-03-23 11:35:41,671 12:08:25
+2022-03-23 11:35:41,681 {'vecid': 251096697943453, 'locationx': 31.276774042037133, 'locationy': 30.066689573415765, 'velocityx': 0.0006381824445983177, 'velocityy': -0.0012261304629872095, 'acceleration': 0.0032871270049658822, 'stop': 0, 'angle': 159.44395478543572}
+2022-03-23 11:35:41,682 {'vecid': 251096697943453, 'locationx': 31.276774042037133, 'locationy': 30.066689573415765, 'velocityx': 0.0006381824445983177, 'velocityy': -0.0012261304629872095, 'acceleration': 0.0032871270049658822, 'stop': 0, 'angle': 159.44395478543572}
+2022-03-23 11:35:44,243 Timestamp
+2022-03-23 11:35:44,243 12:08:28
+2022-03-23 11:35:44,253 {'vecid': 251096697943453, 'locationx': 31.27716178325739, 'locationy': 30.065979241671375, 'velocityx': 0.0007701453638213852, 'velocityy': -0.0014455313979104658, 'acceleration': 0.0014770906914492973, 'stop': 0, 'angle': 51.340191750378196}
+2022-03-23 11:35:44,253 {'vecid': 251096697943453, 'locationx': 31.27716178325739, 'locationy': 30.065979241671375, 'velocityx': 0.0007701453638213852, 'velocityy': -0.0014455313979104658, 'acceleration': 0.0014770906914492973, 'stop': 0, 'angle': 51.340191750378196}
+2022-03-23 11:35:47,663 Timestamp
+2022-03-23 11:35:47,663 12:08:28
+2022-03-23 11:35:47,678 {'vecid': 251096697943453, 'locationx': 31.277460510356878, 'locationy': 30.06541639161355, 'velocityx': 0.00047008800782479747, 'velocityy': -0.0008872164089605216, 'acceleration': 0.0002592149324783759, 'stop': 0, 'angle': 51.340191750378196}
+2022-03-23 11:35:47,678 {'vecid': 251096697943453, 'locationx': 31.277460510356878, 'locationy': 30.06541639161355, 'velocityx': 0.00047008800782479747, 'velocityy': -0.0008872164089605216, 'acceleration': 0.0002592149324783759, 'stop': 0, 'angle': 51.340191750378196}
+2022-03-23 11:35:50,247 Timestamp
+2022-03-23 11:35:50,248 12:08:34
+2022-03-23 11:35:50,260 {'vecid': 251096697943453, 'locationx': 31.27759957834246, 'locationy': 30.06514999728244, 'velocityx': 0.00016935163160704015, 'velocityy': -0.0003248273231593943, 'acceleration': 0.00023787301123338642, 'stop': 0, 'angle': 165.96375653207355}
+2022-03-23 11:35:50,261 {'vecid': 251096697943453, 'locationx': 31.27759957834246, 'locationy': 30.06514999728244, 'velocityx': 0.00016935163160704015, 'velocityy': -0.0003248273231593943, 'acceleration': 0.00023787301123338642, 'stop': 0, 'angle': 165.96375653207355}
+2022-03-23 11:35:53,697 Timestamp
+2022-03-23 11:35:53,697 12:08:37
+2022-03-23 11:35:53,709 {'vecid': 251096697943453, 'locationx': 31.2776239396406, 'locationy': 30.065104273474212, 'velocityx': -1.7030863215003225e-06, 'velocityy': 2.224543986548513e-06, 'acceleration': 0.00029458530695242126, 'stop': 0, 'angle': 165.96375653207355}
+2022-03-23 11:35:53,710 {'vecid': 251096697943453, 'locationx': 31.2776239396406, 'locationy': 30.065104273474212, 'velocityx': -1.7030863215003225e-06, 'velocityy': 2.224543986548513e-06, 'acceleration': 0.00029458530695242126, 'stop': 0, 'angle': 165.96375653207355}
+2022-03-23 11:35:56,239 Timestamp
+2022-03-23 11:35:56,239 12:08:40
+2022-03-23 11:35:56,249 {'vecid': 251096697943453, 'locationx': 31.277599978158815, 'locationy': 30.065149133609502, 'velocityx': -5.5772073233959553e-05, 'velocityy': 0.00010501374221205757, 'acceleration': 0.0001812539509462381, 'stop': 0, 'angle': 165.96375653207355}
+2022-03-23 11:35:56,249 {'vecid': 251096697943453, 'locationx': 31.277599978158815, 'locationy': 30.065149133609502, 'velocityx': -5.5772073233959553e-05, 'velocityy': 0.00010501374221205757, 'acceleration': 0.0001812539509462381, 'stop': 0, 'angle': 165.96375653207355}
+2022-03-23 11:35:59,665 Timestamp
+2022-03-23 11:35:59,665 12:08:43
+2022-03-23 11:35:59,679 {'vecid': 251096697943453, 'locationx': 31.277572988343174, 'locationy': 30.065206131660297, 'velocityx': -4.616896304338825e-05, 'velocityy': 9.32069325859007e-05, 'acceleration': 6.48093521728769e-05, 'stop': 0, 'angle': 63.43494884734867}
+2022-03-23 11:35:59,680 {'vecid': 251096697943453, 'locationx': 31.277572988343174, 'locationy': 30.065206131660297, 'velocityx': -4.616896304338825e-05, 'velocityy': 9.32069325859007e-05, 'acceleration': 6.48093521728769e-05, 'stop': 0, 'angle': 63.43494884734867}
+2022-03-23 11:36:02,229 Timestamp
+2022-03-23 11:36:02,230 12:08:46
+2022-03-23 11:36:02,241 {'vecid': 251096697943453, 'locationx': 31.277560202851202, 'locationy': 30.06523426201732, 'velocityx': -1.890575901307089e-05, 'velocityy': 4.056931656919711e-05, 'acceleration': 6.0849389265727306e-06, 'stop': 0, 'angle': 146.30993248341508}
+2022-03-23 11:36:02,242 {'vecid': 251096697943453, 'locationx': 31.277560202851202, 'locationy': 30.06523426201732, 'velocityx': -1.890575901307089e-05, 'velocityy': 4.056931656919711e-05, 'acceleration': 6.0849389265727306e-06, 'stop': 0, 'angle': 146.30993248341508}
+2022-03-23 11:36:05,666 Timestamp
+2022-03-23 11:36:05,666 12:08:49
+2022-03-23 11:36:05,682 {'vecid': 251096697943453, 'locationx': 31.277554860416867, 'locationy': 30.0652520613795, 'velocityx': -3.9668214990964085e-06, 'velocityy': 1.530108737511611e-05, 'acceleration': 1.8578902119789535e-05, 'stop': 0, 'angle': 146.30993248341508}
+2022-03-23 11:36:05,682 {'vecid': 251096697943453, 'locationx': 31.277554860416867, 'locationy': 30.0652520613795, 'velocityx': -3.9668214990964085e-06, 'velocityy': 1.530108737511611e-05, 'acceleration': 1.8578902119789535e-05, 'stop': 0, 'angle': 146.30993248341508}
+2022-03-23 11:36:08,243 Timestamp
+2022-03-23 11:36:08,245 12:08:52
+2022-03-23 11:36:08,255 {'vecid': 251096697943453, 'locationx': 31.277545870860617, 'locationy': 30.065263249887728, 'velocityx': -6.191736224427514e-06, 'velocityy': 6.644946889543867e-06, 'acceleration': 1.1618022039409693e-05, 'stop': 0, 'angle': 135.0}
+2022-03-23 11:36:08,256 {'vecid': 251096697943453, 'locationx': 31.277545870860617, 'locationy': 30.065263249887728, 'velocityx': -6.191736224427514e-06, 'velocityy': 6.644946889543867e-06, 'acceleration': 1.1618022039409693e-05, 'stop': 0, 'angle': 135.0}
+2022-03-23 11:36:10,675 {'vecid': 242606374551181, 'locationx': 0.0, 'locationy': 0.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:36:11,675 Timestamp
+2022-03-23 11:36:11,675 12:08:55
+2022-03-23 11:36:11,685 {'vecid': 251096697943453, 'locationx': 31.27751129448146, 'locationy': 30.06528004888225, 'velocityx': -3.305885038416464e-05, 'velocityy': 1.3568540143575659e-05, 'acceleration': 1.3209773874411921e-05, 'stop': 0, 'angle': 116.56505117895696}
+2022-03-23 11:36:11,686 {'vecid': 251096697943453, 'locationx': 31.27751129448146, 'locationy': 30.06528004888225, 'velocityx': -3.305885038416464e-05, 'velocityy': 1.3568540143575659e-05, 'acceleration': 1.3209773874411921e-05, 'stop': 0, 'angle': 116.56505117895696}
+2022-03-23 11:36:14,247 Timestamp
+2022-03-23 11:36:14,248 12:08:58
+2022-03-23 11:36:14,258 {'vecid': 251096697943453, 'locationx': 31.277534408248407, 'locationy': 30.065238372054164, 'velocityx': 1.8862878514052707e-05, 'velocityy': -4.069392692460522e-05, 'acceleration': 3.692727748162877e-05, 'stop': 0, 'angle': 143.39292518784222}
+2022-03-23 11:36:14,259 {'vecid': 251096697943453, 'locationx': 31.277534408248407, 'locationy': 30.065238372054164, 'velocityx': 1.8862878514052707e-05, 'velocityy': -4.069392692460522e-05, 'acceleration': 3.692727748162877e-05, 'stop': 0, 'angle': 143.39292518784222}
+2022-03-23 11:36:16,816 {'vecid': 242606374551181, 'locationx': 0.0, 'locationy': 0.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:36:17,667 Timestamp
+2022-03-23 11:36:17,668 12:09:01
+2022-03-23 11:36:17,682 {'vecid': 251096697943453, 'locationx': 31.277582310315236, 'locationy': 30.065205752984387, 'velocityx': 5.246526718412942e-05, 'velocityy': -3.954110007510503e-05, 'acceleration': 2.924073161317862e-05, 'stop': 0, 'angle': 114.30454926361439}
+2022-03-23 11:36:17,682 {'vecid': 251096697943453, 'locationx': 31.277582310315236, 'locationy': 30.065205752984387, 'velocityx': 5.246526718412942e-05, 'velocityy': -3.954110007510503e-05, 'acceleration': 2.924073161317862e-05, 'stop': 0, 'angle': 114.30454926361439}
+2022-03-23 11:36:19,889 {'vecid': 242606374551181, 'locationx': 0.0, 'locationy': 0.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:36:20,251 Timestamp
+2022-03-23 11:36:20,251 12:09:04
+2022-03-23 11:36:20,256 {'vecid': 251096697943453, 'locationx': 31.27763031772236, 'locationy': 30.065181350373138, 'velocityx': 5.4126402243531184e-05, 'velocityy': -2.7071299211918685e-05, 'acceleration': 1.194534213670029e-05, 'stop': 0, 'angle': 112.61986494948579}
+2022-03-23 11:36:20,256 {'vecid': 251096697943453, 'locationx': 31.27763031772236, 'locationy': 30.065181350373138, 'velocityx': 5.4126402243531184e-05, 'velocityy': -2.7071299211918685e-05, 'acceleration': 1.194534213670029e-05, 'stop': 0, 'angle': 112.61986494948579}
+2022-03-23 11:36:22,756 {'vecid': 242606374551181, 'locationx': 0.0, 'locationy': 0.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:36:23,663 Timestamp
+2022-03-23 11:36:23,664 12:09:04
+2022-03-23 11:36:23,673 {'vecid': 251096697943453, 'locationx': 31.277645497718524, 'locationy': 30.06517509676625, 'velocityx': 1.8458256596906393e-05, 'velocityy': -6.0132382820567055e-06, 'acceleration': 1.8820282785980216e-05, 'stop': 0, 'angle': 112.61986494948579}
+2022-03-23 11:36:23,674 {'vecid': 251096697943453, 'locationx': 31.277645497718524, 'locationy': 30.06517509676625, 'velocityx': 1.8458256596906393e-05, 'velocityy': -6.0132382820567055e-06, 'acceleration': 1.8820282785980216e-05, 'stop': 0, 'angle': 112.61986494948579}
+2022-03-23 11:36:26,243 Timestamp
+2022-03-23 11:36:26,244 12:09:10
+2022-03-23 11:36:26,254 {'vecid': 251096697943453, 'locationx': 31.27764888928135, 'locationy': 30.065170618210747, 'velocityx': 1.9708619670592625e-07, 'velocityy': -1.6347566627602905e-06, 'acceleration': 1.720694005553765e-05, 'stop': 0, 'angle': 165.96375651052057}
+2022-03-23 11:36:26,254 {'vecid': 251096697943453, 'locationx': 31.27764888928135, 'locationy': 30.065170618210747, 'velocityx': 1.9708619670592625e-07, 'velocityy': -1.6347566627602905e-06, 'acceleration': 1.720694005553765e-05, 'stop': 0, 'angle': 165.96375651052057}
+2022-03-23 11:36:28,695 {'vecid': 242606374551181, 'locationx': 0.0, 'locationy': 0.0, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': 0, 'angle': 0}
+2022-03-23 11:36:29,678 Timestamp
+2022-03-23 11:36:29,679 12:09:13
+2022-03-23 11:36:29,691 {'vecid': 251096697943453, 'locationx': 31.27763075087647, 'locationy': 30.065193432795486, 'velocityx': -2.1267074878974865e-05, 'velocityy': 2.3825267616944006e-05, 'acceleration': 2.4229824820454045e-05, 'stop': 0, 'angle': 144.78240702757634}
+2022-03-23 11:36:29,691 {'vecid': 251096697943453, 'locationx': 31.27763075087647, 'locationy': 30.065193432795486, 'velocityx': -2.1267074878974865e-05, 'velocityy': 2.3825267616944006e-05, 'acceleration': 2.4229824820454045e-05, 'stop': 0, 'angle': 144.78240702757634}
+2022-03-23 11:36:32,263 Timestamp
+2022-03-23 11:36:32,264 12:09:16
+2022-03-23 11:36:32,279 {'vecid': 251096697943453, 'locationx': 31.27760443405371, 'locationy': 30.065226464883605, 'velocityx': -3.0088635548582763e-05, 'velocityy': 3.645574633063125e-05, 'acceleration': 1.7850883106517882e-05, 'stop': 0, 'angle': 143.61564818811098}
+2022-03-23 11:36:32,279 {'vecid': 251096697943453, 'locationx': 31.27760443405371, 'locationy': 30.065226464883605, 'velocityx': -3.0088635548582763e-05, 'velocityy': 3.645574633063125e-05, 'acceleration': 1.7850883106517882e-05, 'stop': 0, 'angle': 143.61564818811098}
+2022-03-23 11:36:35,684 Timestamp
+2022-03-23 11:36:35,685 12:09:19
+2022-03-23 11:36:35,698 {'vecid': 251096697943453, 'locationx': 31.277614140769767, 'locationy': 30.06521333556794, 'velocityx': 6.310087183555587e-06, 'velocityy': -9.11611031416843e-06, 'acceleration': 2.3994182019398127e-05, 'stop': 0, 'angle': 141.7098368083822}
+2022-03-23 11:36:35,698 {'vecid': 251096697943453, 'locationx': 31.277614140769767, 'locationy': 30.06521333556794, 'velocityx': 6.310087183555587e-06, 'velocityy': -9.11611031416843e-06, 'acceleration': 2.3994182019398127e-05, 'stop': 0, 'angle': 141.7098368083822}
+2022-03-23 11:36:38,247 Timestamp
+2022-03-23 11:36:38,248 12:09:22
+2022-03-23 11:36:38,257 {'vecid': 251096697943453, 'locationx': 31.277617887682798, 'locationy': 30.06519021370035, 'velocityx': 7.399101238531401e-06, 'velocityy': -2.733927573592627e-05, 'acceleration': 1.8618284038673085e-05, 'stop': 0, 'angle': 141.7098368083822}
+2022-03-23 11:36:38,258 {'vecid': 251096697943453, 'locationx': 31.277617887682798, 'locationy': 30.06519021370035, 'velocityx': 7.399101238531401e-06, 'velocityy': -2.733927573592627e-05, 'acceleration': 1.8618284038673085e-05, 'stop': 0, 'angle': 141.7098368083822}
+2022-03-23 11:36:41,698 Timestamp
+2022-03-23 11:36:41,699 12:09:25
+2022-03-23 11:36:41,710 {'vecid': 251096697943453, 'locationx': 31.277622076713627, 'locationy': 30.065198578856844, 'velocityx': 5.759252839813487e-06, 'velocityy': 3.5908821153161197e-06, 'acceleration': 9.645502581429747e-06, 'stop': 0, 'angle': 4.085616778734945}
+2022-03-23 11:36:41,710 {'vecid': 251096697943453, 'locationx': 31.277622076713627, 'locationy': 30.065198578856844, 'velocityx': 5.759252839813487e-06, 'velocityy': 3.5908821153161197e-06, 'acceleration': 9.645502581429747e-06, 'stop': 0, 'angle': 4.085616778734945}
+2022-03-23 11:36:44,278 Timestamp
+2022-03-23 11:36:44,278 12:09:28
+2022-03-23 11:36:44,288 {'vecid': 251096697943453, 'locationx': 31.27762895597491, 'locationy': 30.065352048621495, 'velocityx': 7.193009911819884e-06, 'velocityy': 0.00015219874482088073, 'acceleration': 8.314207551794377e-05, 'stop': 0, 'angle': 1.9414863901433819}
+2022-03-23 11:36:44,288 {'vecid': 251096697943453, 'locationx': 31.27762895597491, 'locationy': 30.065352048621495, 'velocityx': 7.193009911819884e-06, 'velocityy': 0.00015219874482088073, 'acceleration': 8.314207551794377e-05, 'stop': 0, 'angle': 1.9414863901433819}
+2022-03-23 11:36:47,288 Timestamp
+2022-03-23 11:36:47,288 12:09:31
+2022-03-23 11:36:47,299 {'vecid': 251096697943453, 'locationx': 31.27762456299402, 'locationy': 30.06542037210886, 'velocityx': -3.833245976200534e-06, 'velocityy': 8.922493579792233e-05, 'acceleration': 5.302070933822652e-06, 'stop': 0, 'angle': 160.34617594747309}
+2022-03-23 11:36:47,300 {'vecid': 251096697943453, 'locationx': 31.27762456299402, 'locationy': 30.06542037210886, 'velocityx': -3.833245976200534e-06, 'velocityy': 8.922493579792233e-05, 'acceleration': 5.302070933822652e-06, 'stop': 0, 'angle': 160.34617594747309}
+2022-03-23 11:36:50,278 Timestamp
+2022-03-23 11:36:50,279 12:09:34
+2022-03-23 11:36:50,288 {'vecid': 251096697943453, 'locationx': 31.277611242642863, 'locationy': 30.06546402710572, 'velocityx': -1.4338506300766703e-05, 'velocityy': 4.394495699723956e-05, 'acceleration': 2.5557918315041566e-05, 'stop': 0, 'angle': 152.10272896971256}
+2022-03-23 11:36:50,289 {'vecid': 251096697943453, 'locationx': 31.277611242642863, 'locationy': 30.06546402710572, 'velocityx': -1.4338506300766703e-05, 'velocityy': 4.394495699723956e-05, 'acceleration': 2.5557918315041566e-05, 'stop': 0, 'angle': 152.10272896971256}
+2022-03-23 11:36:53,278 Timestamp
+2022-03-23 11:36:53,278 12:09:37
+2022-03-23 11:36:53,291 {'vecid': 251096697943453, 'locationx': 31.2776026224923, 'locationy': 30.065487097911717, 'velocityx': -1.0490444743480997e-05, 'velocityy': 1.759633507731625e-05, 'acceleration': 2.3997868511260395e-05, 'stop': 0, 'angle': 167.0053832032805}
+2022-03-23 11:36:53,292 {'vecid': 251096697943453, 'locationx': 31.2776026224923, 'locationy': 30.065487097911717, 'velocityx': -1.0490444743480997e-05, 'velocityy': 1.759633507731625e-05, 'acceleration': 2.3997868511260395e-05, 'stop': 0, 'angle': 167.0053832032805}
+2022-03-23 11:36:56,292 Timestamp
+2022-03-23 11:36:56,292 12:09:40
+2022-03-23 11:36:56,303 {'vecid': 251096697943453, 'locationx': 31.277599859643637, 'locationy': 30.065489371103588, 'velocityx': -3.101375672119824e-06, 'velocityy': -2.819170954457987e-06, 'acceleration': 2.086170122854493e-05, 'stop': 0, 'angle': 167.0053832032805}
+2022-03-23 11:36:56,303 {'vecid': 251096697943453, 'locationx': 31.277599859643637, 'locationy': 30.065489371103588, 'velocityx': -3.101375672119824e-06, 'velocityy': -2.819170954457987e-06, 'acceleration': 2.086170122854493e-05, 'stop': 0, 'angle': 167.0053832032805}
+2022-03-23 11:36:59,285 Timestamp
+2022-03-23 11:36:59,286 12:09:43
+2022-03-23 11:36:59,295 {'vecid': 251096697943453, 'locationx': 31.277606099092278, 'locationy': 30.065473072630205, 'velocityx': 6.876951344756314e-06, 'velocityy': -2.0419581830802934e-05, 'acceleration': 1.8880736129333893e-05, 'stop': 0, 'angle': 150.94539589631407}
+2022-03-23 11:36:59,296 {'vecid': 251096697943453, 'locationx': 31.277606099092278, 'locationy': 30.065473072630205, 'velocityx': 6.876951344756314e-06, 'velocityy': -2.0419581830802934e-05, 'acceleration': 1.8880736129333893e-05, 'stop': 0, 'angle': 150.94539589631407}
+2022-03-23 11:37:02,287 Timestamp
+2022-03-23 11:37:02,287 12:09:46
+2022-03-23 11:37:02,298 {'vecid': 251096697943453, 'locationx': 31.277611488436747, 'locationy': 30.06544795150717, 'velocityx': 6.95990141026141e-06, 'velocityy': -2.868422742467795e-05, 'acceleration': 1.177498551312071e-05, 'stop': 0, 'angle': 171.25383773250297}
+2022-03-23 11:37:02,298 {'vecid': 251096697943453, 'locationx': 31.277611488436747, 'locationy': 30.06544795150717, 'velocityx': 6.95990141026141e-06, 'velocityy': -2.868422742467795e-05, 'acceleration': 1.177498551312071e-05, 'stop': 0, 'angle': 171.25383773250297}
+2022-03-23 11:37:05,279 Timestamp
+2022-03-23 11:37:05,280 12:09:49
+2022-03-23 11:37:05,291 {'vecid': 251096697943453, 'locationx': 31.27762395869776, 'locationy': 30.065422003518602, 'velocityx': 1.2901128895490344e-05, 'velocityy': -2.8255887023527908e-05, 'acceleration': 6.066047431660545e-06, 'stop': 0, 'angle': 148.39249775532363}
+2022-03-23 11:37:05,292 {'vecid': 251096697943453, 'locationx': 31.27762395869776, 'locationy': 30.065422003518602, 'velocityx': 1.2901128895490344e-05, 'velocityy': -2.8255887023527908e-05, 'acceleration': 6.066047431660545e-06, 'stop': 0, 'angle': 148.39249775532363}
+2022-03-23 11:37:08,281 Timestamp
+2022-03-23 11:37:08,282 12:09:52
+2022-03-23 11:37:08,294 {'vecid': 251096697943453, 'locationx': 31.277635512826325, 'locationy': 30.065415468323447, 'velocityx': 1.24920813727666e-05, 'velocityy': -7.723310621216439e-06, 'acceleration': 9.403200314605467e-06, 'stop': 0, 'angle': 80.53767779527529}
+2022-03-23 11:37:08,295 {'vecid': 251096697943453, 'locationx': 31.277635512826325, 'locationy': 30.065415468323447, 'velocityx': 1.24920813727666e-05, 'velocityy': -7.723310621216439e-06, 'acceleration': 9.403200314605467e-06, 'stop': 0, 'angle': 80.53767779527529}
+2022-03-23 11:37:11,278 Timestamp
+2022-03-23 11:37:11,278 12:09:55
+2022-03-23 11:37:11,288 {'vecid': 251096697943453, 'locationx': 31.27764135923842, 'locationy': 30.06542913071438, 'velocityx': 6.267105802171091e-06, 'velocityy': 1.54733861483769e-05, 'acceleration': 1.6395074382725546e-05, 'stop': 0, 'angle': 10.304846475605487}
+2022-03-23 11:37:11,289 {'vecid': 251096697943453, 'locationx': 31.27764135923842, 'locationy': 30.06542913071438, 'velocityx': 6.267105802171091e-06, 'velocityy': 1.54733861483769e-05, 'acceleration': 1.6395074382725546e-05, 'stop': 0, 'angle': 10.304846475605487}
+2022-03-23 11:37:14,281 Timestamp
+2022-03-23 11:37:14,283 12:09:58
+2022-03-23 11:37:14,298 {'vecid': 251096697943453, 'locationx': 31.27763599247444, 'locationy': 30.065452270751308, 'velocityx': -5.765880489111401e-06, 'velocityy': 2.665867348813436e-05, 'acceleration': 1.4588230301302304e-05, 'stop': 0, 'angle': 158.9624889758373}
+2022-03-23 11:37:14,298 {'vecid': 251096697943453, 'locationx': 31.27763599247444, 'locationy': 30.065452270751308, 'velocityx': -5.765880489111401e-06, 'velocityy': 2.665867348813436e-05, 'acceleration': 1.4588230301302304e-05, 'stop': 0, 'angle': 158.9624889758373}
+2022-03-23 11:37:17,292 Timestamp
+2022-03-23 11:37:17,293 12:10:01
+2022-03-23 11:37:17,304 {'vecid': 251096697943453, 'locationx': 31.277625601914107, 'locationy': 30.065457092931346, 'velocityx': -1.1995638193514763e-05, 'velocityy': 8.04707903833071e-06, 'acceleration': 8.042993410574849e-06, 'stop': 0, 'angle': 63.43494881477979}
+2022-03-23 11:37:17,304 {'vecid': 251096697943453, 'locationx': 31.277625601914107, 'locationy': 30.065457092931346, 'velocityx': -1.1995638193514763e-05, 'velocityy': 8.04707903833071e-06, 'acceleration': 8.042993410574849e-06, 'stop': 0, 'angle': 63.43494881477979}
+2022-03-23 11:37:20,286 Timestamp
+2022-03-23 11:37:20,286 12:10:04
+2022-03-23 11:37:20,297 {'vecid': 251096697943453, 'locationx': 31.277608740237852, 'locationy': 30.065442989075066, 'velocityx': -1.8119138804593698e-05, 'velocityy': -1.4884483781759124e-05, 'acceleration': 1.5399727135782066e-05, 'stop': 0, 'angle': 39.80557109426738}
+2022-03-23 11:37:20,298 {'vecid': 251096697943453, 'locationx': 31.277608740237852, 'locationy': 30.065442989075066, 'velocityx': -1.8119138804593698e-05, 'velocityy': -1.4884483781759124e-05, 'acceleration': 1.5399727135782066e-05, 'stop': 0, 'angle': 39.80557109426738}
+2022-03-23 11:37:23,289 Timestamp
+2022-03-23 11:37:23,289 12:10:07
+2022-03-23 11:37:23,299 {'vecid': 251096697943453, 'locationx': 31.277596919607277, 'locationy': 30.06540884895928, 'velocityx': -1.3191442585271725e-05, 'velocityy': -3.697672227965669e-05, 'acceleration': 1.7550136046855344e-05, 'stop': 0, 'angle': 12.804266065766654}
+2022-03-23 11:37:23,300 {'vecid': 251096697943453, 'locationx': 31.277596919607277, 'locationy': 30.06540884895928, 'velocityx': -1.3191442585271725e-05, 'velocityy': -3.697672227965669e-05, 'acceleration': 1.7550136046855344e-05, 'stop': 0, 'angle': 12.804266065766654}
+2022-03-23 11:37:26,280 Timestamp
+2022-03-23 11:37:26,282 12:10:10
+2022-03-23 11:37:26,292 {'vecid': 251096697943453, 'locationx': 31.27760399736754, 'locationy': 30.06539564601486, 'velocityx': 6.7720589888489775e-06, 'velocityy': -1.7657092799391642e-05, 'acceleration': 1.1275515536513633e-05, 'stop': 0, 'angle': 97.12501634702282}
+2022-03-23 11:37:26,293 {'vecid': 251096697943453, 'locationx': 31.27760399736754, 'locationy': 30.06539564601486, 'velocityx': 6.7720589888489775e-06, 'velocityy': -1.7657092799391642e-05, 'acceleration': 1.1275515536513633e-05, 'stop': 0, 'angle': 97.12501634702282}
+2022-03-23 11:37:29,279 Timestamp
+2022-03-23 11:37:29,279 12:10:13
+2022-03-23 11:37:29,290 {'vecid': 251096697943453, 'locationx': 31.277613849734276, 'locationy': 30.065378986381287, 'velocityx': 1.2289651134246573e-05, 'velocityy': -1.571898092366403e-05, 'acceleration': 7.692416763605159e-06, 'stop': 0, 'angle': 153.43494882292202}
+2022-03-23 11:37:29,291 {'vecid': 251096697943453, 'locationx': 31.277613849734276, 'locationy': 30.065378986381287, 'velocityx': 1.2289651134246573e-05, 'velocityy': -1.571898092366403e-05, 'acceleration': 7.692416763605159e-06, 'stop': 0, 'angle': 153.43494882292202}
+2022-03-23 11:37:32,291 Timestamp
+2022-03-23 11:37:32,292 12:10:16
+2022-03-23 11:37:32,302 {'vecid': 251096697943453, 'locationx': 31.277629671993136, 'locationy': 30.06539101329221, 'velocityx': 1.7326606293153188e-05, 'velocityy': 1.1999382202054749e-05, 'acceleration': 1.6742803922307586e-05, 'stop': 0, 'angle': 36.86989764910091}
+2022-03-23 11:37:32,303 {'vecid': 251096697943453, 'locationx': 31.277629671993136, 'locationy': 30.06539101329221, 'velocityx': 1.7326606293153188e-05, 'velocityy': 1.1999382202054749e-05, 'acceleration': 1.6742803922307586e-05, 'stop': 0, 'angle': 36.86989764910091}

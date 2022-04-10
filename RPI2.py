@@ -12,6 +12,7 @@ from sympy import Symbol
 import math
 import uuid
 import logging
+import numpy as np
 
 
 # Location, Angle, Velocity, Acceleration and Distance to collison global variables
@@ -22,7 +23,7 @@ prev_locationx = 0
 prev_locationy = 0
 angle = 0
 velocity =0
-time = 0
+timee = 0
 prev_velocity =0
 velocityx = 0
 velocityy=0
@@ -169,6 +170,8 @@ class kalmanTrack(object):
 
 
     def update(self, z: bcnSample, tm) -> None:
+
+
         zVec = np.zeros((2, 1))
         self.vehId = z.vehId
         # self.pseudonym = z.psym
@@ -278,7 +281,7 @@ def determineLeadingVehicle(message):
     global locationx
     global locationy
     global Following_vehicle
-    if (message["angle"] - angle) <= 3:
+    if abs(message["angle"] - angle) <= 3:
         if angle > 0:
             if message["locationx"] > locationx or message["locationy"] > locationy:
                 print("ana following")
@@ -526,8 +529,8 @@ def update_speed():
         velocityx =  0
         velocityy =  0
     else:
-        velocityx = locationx - prev_locationx
-        velocityy = locationy- prev_locationy
+        velocityx =abs(locationx - prev_locationx)
+        velocityy = abs(locationy- prev_locationy)
 
 def update_angle():
     global locationx
@@ -535,12 +538,21 @@ def update_angle():
     global prev_locationx
     global prev_locationy
     global angle
-    #needs update
-    #print((locationx))
-    #print((locationy))
-    if float(locationx)> 0 and float(locationy) > 0:
-        if(locationx - prev_locationx !=0):
-            angle = (90 - math.degrees(math.atan((locationy - prev_locationy) / (locationx - prev_locationx))))
+
+    dLon = (locationx - prev_locationx)
+
+    y = math.sin(dLon) * math.cos(locationy)
+    x = math.cos(prev_locationy) * math.sin(locationy) - math.sin(prev_locationy) * math.cos(locationy) * math.cos(dLon)
+
+    brng = math.atan2(y, x)
+
+    brng = brng * (180.0 / 3.141592653589793238463)
+    brng = (brng + 360)
+    brng = brng % 360
+    brng = 360 - brng
+
+    angle= brng
+
 
 def update_acceleration():
     global velocityy
@@ -554,7 +566,7 @@ def update_acceleration():
 
     velocity = math.sqrt(math.pow(velocityx , 2) + math.pow(velocityy , 2))
     prev_velocity = math.sqrt(math.pow(prev_velocityx , 2) + math.pow(prev_velocityy , 2))
-    acceleration = velocity - prev_velocity
+    acceleration = abs(velocity - prev_velocity)
 
 # add Semaphore for Location
 
@@ -570,7 +582,7 @@ def current_location():
     global locationy
     global prev_locationx
     global prev_locationy
-    global time
+    global timee
     prev_locationx = locationx
     prev_locationy = locationy
     checkOK()
@@ -588,8 +600,10 @@ def current_location():
         msg = pynmea2.parse(location)
         locationx=convert_long(msg.lon)
         locationy=convert_lat(msg.lat)
-        time=msg.timestamp
-        print("Timestamp",time)
+        timee=msg.timestamp
+        print("Timestamp",timee)
+        # logger.info("Timestamp")
+        # logger.info(timee)
         # var_Location = (
         #         str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
@@ -622,14 +636,18 @@ def broadcast():
     klm = kalmanTrack(bcn1, 0)
     while True:
         current_location()
+        klm.predict()
+        bcn1 = bcnSample(vecid, 0, locationx, locationy, velocityx, velocityy)
+        klm.update(bcn1, 1)
+        locationx = klm.X[0]
+        locationy = klm.X[3]
+
         update_speed()
         update_angle()
         #keda ba3d kalman should be deleted after test
         update_acceleration()
         #add kalman
-        klm.predict()
-        bcn1 = bcnSample(vecid, 0, locationx, locationy, velocityx,velocityy)
-        klm.update(bcn1, 1)
+
         #send kalman cooridantes
         acceleration = math.sqrt(math.pow(klm.X[2], 2) + math.pow(klm.X[5], 2))
         variable = message(vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], acceleration, stop, angle)
@@ -661,10 +679,10 @@ def receive():
         data_encoded = rev_socket.recv(8192)
         data_string = data_encoded.decode(encoding="utf-8")
         data_variable = json.loads(data_string)
-        logger.info(data_variable)
+        # logger.info(data_variable)
         if data_variable["vecid"]==vecid:
            continue
-        # logger.info(data_variable)
+        logger.info(data_variable)
         determineLeadingVehicle(data_variable)
         if Following_vehicle:
             determineDistanceToCollison(data_variable)
