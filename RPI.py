@@ -5,15 +5,14 @@ import threading
 # import io
 import pynmea2
 import serial
-import os
+#import os
 import RPi.GPIO as GPIO
 from sympy import symbols, Eq, solve
 from sympy import Symbol
 import math
 import uuid
 import logging
-
-
+import numpy as np
 # Location, Angle, Velocity, Acceleration and Distance to collison global variables
 vecid = uuid.getnode()
 locationx = 0     #long
@@ -22,7 +21,7 @@ prev_locationx = 0
 prev_locationy = 0
 angle = 0
 velocity =0
-time = 0
+timee = 0
 prev_velocity =0
 velocityx = 0
 velocityy=0
@@ -278,7 +277,7 @@ def determineLeadingVehicle(message):
     global locationx
     global locationy
     global Following_vehicle
-    if (message["angle"] - angle) <= 3:
+    if abs(message["angle"] - angle) <= 10:
         if angle > 0:
             if message["locationx"] > locationx or message["locationy"] > locationy:
                 print("ana following")
@@ -577,7 +576,7 @@ def current_location():
     global locationy
     global prev_locationx
     global prev_locationy
-    global time
+    global timee
     prev_locationx = locationx
     prev_locationy = locationy
     checkOK()
@@ -595,8 +594,10 @@ def current_location():
         msg = pynmea2.parse(location)
         locationx=convert_long(msg.lon)
         locationy=convert_lat(msg.lat)
-        time=msg.timestamp
-        print("Timestamp",time)
+        timee=msg.timestamp
+        print("Timestamp",timee)
+        logger.info("Timestamp")
+        logger.info(timee)
         # var_Location = (
         #         str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
