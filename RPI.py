@@ -32,7 +32,7 @@ prev_velocityy = 0
 acceleration = 0
 stop = 0
 DTCa = 0
-Following_vehicle = False
+Following_vehicle = True
 
 # Location and speed Global Variables
 location = ""
@@ -281,7 +281,10 @@ def determineLeadingVehicle(message):
     global locationx
     global locationy
     global Following_vehicle
+    print("recieved angle",message["angle"])
+    print("My angle",angle)
     if abs(message["angle"] - angle) <= 3:
+        print("trying to deetermine the leading vehicle")
         if angle > 0:
             if message["locationx"] > locationx or message["locationy"] > locationy:
                 print("ana following")
@@ -305,10 +308,11 @@ def determineDistanceToCollison(message):
     global locationy
     global DTCa
     velocity = velocity * 0.27777777777778
-    message["velocity"] = message["velocity"] * 0.27777777777778
+    receivedvelocity =math.sqrt(math.pow(message["velocityx"] , 2) + math.pow(message["velocityy"] , 2))
+    receivedvelocity = receivedvelocity * 0.27777777777778
 
     # v_Relative = abs(v_Relative)
-    v_Relative = message["velocity"] - velocity
+    v_Relative = receivedvelocity - velocity
     print("relative", v_Relative)
     haversine = Haversine()
     location_a, location_b = (message["locationx"], message["locationy"]), (locationx, locationy)
@@ -316,10 +320,10 @@ def determineDistanceToCollison(message):
     range = haversine.distance(location_a, location_b)
     range = range * 1000
     print("range is", range)
-    logger.info("range is", range)
+    #logger.info("range is", range)
     # t = math.pow(v_Relative,2)
     # if leading vehicle acceleration not equal zero
-    if message["acceleration"] != 0:
+    if message["acceleration"] != 0 and velocity != 0:
         sqrtv = math.sqrt(math.pow(v_Relative, 2) + 2 * abs(message["acceleration"]) * range)
         # print(sqrtv)
         DTCa = ((-v_Relative - sqrtv) / message["acceleration"]) * velocity
@@ -328,7 +332,7 @@ def determineDistanceToCollison(message):
     # if leading and following vehicles not equal zero
     if acceleration != 0 and message["acceleration"] != 0:
         Dw1 = 0.5 * ((pow(velocity, 2) / acceleration) - (
-                    pow(message["velocity"], 2) / abs(message["acceleration"]))) + 1.5 * velocity + 1
+                    pow(receivedvelocity, 2) / abs(message["acceleration"]))) + 1.5 * velocity + 1
         print("DW1", Dw1)
         Dw2 = ((pow(velocity, 2)) / (19.6 * ((acceleration / 9.8) + 0.7))) + 1.5 * velocity + 1
         print("DW2", Dw2)
@@ -351,7 +355,7 @@ def determineDistanceToCollison(message):
         print("TTC", DTCa / velocity)
         if tw3 < 2:
             print("brake")
-            stop()
+            Stop()
             logger.info("BRAKE")
         elif tw2 < 2:
             print("Danger")
@@ -361,11 +365,13 @@ def determineDistanceToCollison(message):
             logger.info("warning")
     elif message["acceleration"] == 0 and acceleration == 0:
         x = Symbol('x')
-
-        s = (solve(
-            (acceleration * x ** 2) - (message["acceleration"] * x ** 2) + velocity * x - message["velocity"] * x - (range),
+        print(solve(
+            (acceleration * x ** 2) - (message["acceleration"] * x ** 2) + velocity * x - receivedvelocity * x - (range),
             x))
-        print("TTC", s[0])
+        s = (solve(
+            (acceleration * x ** 2) - (message["acceleration"] * x ** 2) + velocity * x - receivedvelocity * x - (range),
+            x))
+        print("TTC", s)
         if s[0] < 3:
             print("Brake")
             stop()
@@ -376,6 +382,8 @@ def determineDistanceToCollison(message):
         elif s[0] < 7:
             print("warning")
             logger.info("Time warning")
+    else:
+        print("md5lt444")
 
 
 
@@ -483,6 +491,50 @@ def left():
     GPIO.output(in4, GPIO.HIGH)
     p2.ChangeDutyCycle(0)
 
+
+# Function to initialize the GPIO
+# by setting the mode to GPIO.BCM
+# and setting up the pins in1 in2 in3 in4
+# and setting up the enable pins en1 and en2
+# then putting the initial PWM signal
+def GPIO_Init():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
+    GPIO.setup(in1, GPIO.OUT)
+    GPIO.setup(in2, GPIO.OUT)
+    GPIO.setup(en, GPIO.OUT)
+    GPIO.setup(in3, GPIO.OUT)
+    GPIO.setup(in4, GPIO.OUT)
+    GPIO.setup(en2, GPIO.OUT)
+    # PWM
+    global p
+    p = GPIO.PWM(en, 100)
+    global p2
+    p2 = GPIO.PWM(en2, 100)
+    p.start(0)
+    p2.start(0)
+
+# Function For testing the pins to move all wheels in the forward direction
+def ON():
+    # RUN
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100)
+
+# function to putting low voltage on all pins in1 in2 in3 in4
+# and changing the duty cycle to 0 to stop the car
+def Stop():
+    # stop
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.LOW)
+    p.ChangeDutyCycle(0)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.LOW)
+    p2.ChangeDutyCycle(0)
+    
 #Function to update speed
 def update_speed():
     global prev_locationy
@@ -649,6 +701,7 @@ def receive():
         logger.info(data_variable)
         determineLeadingVehicle(data_variable)
         if Following_vehicle:
+            print("going to check")
             determineDistanceToCollison(data_variable)
 
         # print(data_variable.locationx)
