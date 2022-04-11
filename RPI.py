@@ -550,15 +550,19 @@ def update_speed():
 
 def update_angle():
     global locationx
+    locationx_t=f'{locationx:.5f}'[:-1]
     global locationy
+    locationy_t=f'{locationy:.5f}'[:-1]
     global prev_locationx
+    prev_locationx_t=f'{prev_locationx:.5f}'[:-1]
     global prev_locationy
+    prev_locationy_t=f'{prev_locationy:.5f}'[:-1]
     global angle
 
-    dLon = (locationx - prev_locationx)
+    dLon = (locationx_t - prev_locationx_t)
 
-    y = math.sin(dLon) * math.cos(locationy)
-    x = math.cos(prev_locationy) * math.sin(locationy) - math.sin(prev_locationy) * math.cos(locationy) * math.cos(dLon)
+    y = math.sin(dLon) * math.cos(locationy_t)
+    x = math.cos(prev_locationy_t) * math.sin(locationy_t) - math.sin(prev_locationy_t) * math.cos(locationy_t) * math.cos(dLon)
 
     brng = math.atan2(y, x)
 
