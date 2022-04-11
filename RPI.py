@@ -663,6 +663,8 @@ def broadcast():
         locationy = klm.X[3]
 
         update_speed()
+        velocityx=klm.X[1]
+        velocityy=klm.X[4]
         update_angle()
         #keda ba3d kalman should be deleted after test
         update_acceleration()
