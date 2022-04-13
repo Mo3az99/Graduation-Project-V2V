@@ -687,7 +687,7 @@ def broadcast():
         # send_socket.sendto(message, ('<broadcast>', 5037))
         print("message sent! \n")
         # Sleep for 1 second
-        time.sleep(3)
+        time.sleep(1)
 
 # Function to automatically reveive the location of the nearby vehicles
 # by setting socket as DGRAM and reuse the socket for recieving the broadcasted message
@@ -872,7 +872,7 @@ if __name__ == "__main__":
     rev_thread = threading.Thread(target=receive)
     broadcast_thread = threading.Thread(target=broadcast)
     Car_thread = threading.Thread(target=car_Controller)
-    logging.basicConfig(filename="car2.log",
+    logging.basicConfig(filename="car3.log",
                         format='%(asctime)s %(message)s',
                         filemode='w')
 
