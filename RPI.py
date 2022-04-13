@@ -551,15 +551,19 @@ def update_speed():
 def update_angle():
     global locationx
     locationx_t=f'{locationx:.5f}'[:-1]
+    locationx_t = float(locationx_t)
     global locationy
     locationy_t=f'{locationy:.5f}'[:-1]
+    locationy_t = float(locationy_t)
     global prev_locationx
     prev_locationx_t=f'{prev_locationx:.5f}'[:-1]
+    prev_locationx_t = float(prev_locationx_t)
     global prev_locationy
     prev_locationy_t=f'{prev_locationy:.5f}'[:-1]
+    prev_locationy_t = float(prev_locationy_t)
     global angle
 
-    dLon = (locationx_t - prev_locationx_t)
+    dLon = locationx_t - prev_locationx_t
 
     y = math.sin(dLon) * math.cos(locationy_t)
     x = math.cos(prev_locationy_t) * math.sin(locationy_t) - math.sin(prev_locationy_t) * math.cos(locationy_t) * math.cos(dLon)
@@ -572,7 +576,7 @@ def update_angle():
     brng = 360 - brng
 
     angle= brng
-
+    print(angle)
 
 def update_acceleration():
     global velocityy
@@ -683,7 +687,7 @@ def broadcast():
         # send_socket.sendto(message, ('<broadcast>', 5037))
         print("message sent! \n")
         # Sleep for 1 second
-        time.sleep(1)
+        time.sleep(3)
 
 # Function to automatically reveive the location of the nearby vehicles
 # by setting socket as DGRAM and reuse the socket for recieving the broadcasted message
