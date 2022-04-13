@@ -872,7 +872,7 @@ if __name__ == "__main__":
     rev_thread = threading.Thread(target=receive)
     broadcast_thread = threading.Thread(target=broadcast)
     Car_thread = threading.Thread(target=car_Controller)
-    logging.basicConfig(filename="car3.log",
+    logging.basicConfig(filename="carstop.log",
                         format='%(asctime)s %(message)s',
                         filemode='w')
 
