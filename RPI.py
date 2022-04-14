@@ -772,6 +772,19 @@ def convert_long(x):
     result = degree + (minutes / 60)
     return result
 
+def convertLatlonToXY(lat1,lon1,lat2,lon2):
+    dx = (lon1 - lon2) * 40000 * math.cos((lat1 + lat2) * math.pi / 360) / 360
+    # if negative to east
+    print(dx )
+    dy = (lat1 - lat2) * 40000 / 360
+    # if negative to north
+    print(dy)
+    return dx, dy
+
+def calculateDistancinMeters(dx,dy):
+    distance = math.sqrt(pow( dx, 2) + pow(dy, 2)) * 1000
+    print("distance = ", distance, "meters")
+    return distance
 
 # Function to recieve commands from the controller android application
 # and commanding the vehicle with the appropriate direction
