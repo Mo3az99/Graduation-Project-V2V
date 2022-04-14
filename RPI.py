@@ -795,8 +795,40 @@ def DetermineDirection(lat1,lon1,lat2,lon2):
     print("diffrence in x",dx)
     dy*= -1000
     print("diffrence in y",dy)
-    slope = dy/dx %360
-    print("slope is ",slope)
+    if dx > 0  and (abs(dx)>2 or abs(dy >2)):
+        if dy > 0 :
+            if dx/dy >100:
+                print("Heading East")
+            elif dy/dx > 100:
+                print("heading north")
+            else:
+                print("Heading North East")
+        if dy < 0:
+            if dx/dy >100:
+                print("Heading East")
+            elif dy/dx > 100:
+                print("heading south")
+            else:
+                print("Heading South East")
+    elif dx < 0 and (abs(dx)>2 or abs(dy >2)):
+        if dy > 0 :
+            if dx/dy >100:
+                print("Heading West")
+            elif dy/dx > 100:
+                print("heading north")
+            else:
+                print("Heading North West")
+        if dy < 0:
+            if dx/dy >100:
+                print("Heading West")
+            elif dy/dx > 100:
+                print("heading south")
+            else:
+                print("Heading South West")
+    else:
+        print("stopped")
+    # slope = dy/dx
+    # print("slope is ",slope)
     # a = [15, 12, 8, 8, 7, 7, 7, 6, 5, 3]
     # b = [10, 25, 17, 11, 13, 17, 20, 13, 9, 15]
     # print(linregress(a, b))
