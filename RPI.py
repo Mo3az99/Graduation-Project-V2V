@@ -711,7 +711,7 @@ def receive():
         logger.info(data_variable)
         determineLeadingVehicle(data_variable)
         if Following_vehicle:
-            print("going to check")
+            print("Iam Following and going to check a possible FCA")
             determineDistanceToCollison(data_variable)
 
         # print(data_variable.locationx)
