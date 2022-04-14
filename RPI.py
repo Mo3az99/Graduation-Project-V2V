@@ -786,6 +786,18 @@ def calculateDistancinMeters(dx,dy):
     print("distance = ", distance, "meters")
     return distance
 
+def DetermineDirection(lat1,lon1,lat2,lon2):
+    dx, dy = convertLatlonToXY(lat1, lon1, lat2, lon2)
+    calculateDistancinMeters(dx,dy)
+    dx*= -1000
+    print("diffrence in x",dx)
+    dy*= -1000
+    print("diffrence in y",dy)
+    slope = dy/dx %360
+    print("slope is ",slope)
+    # a = [15, 12, 8, 8, 7, 7, 7, 6, 5, 3]
+    # b = [10, 25, 17, 11, 13, 17, 20, 13, 9, 15]
+    # print(linregress(a, b))
 # Function to recieve commands from the controller android application
 # and commanding the vehicle with the appropriate direction
 # and handling any exception that could happen
