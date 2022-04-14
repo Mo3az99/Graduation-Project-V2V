@@ -626,6 +626,8 @@ def current_location():
         locationy=convert_lat(msg.lat)
         timee=msg.timestamp
         print("Timestamp",timee)
+        super_logger.info(locationx )
+        super_logger.info(locationy)
         # logger.info("Timestamp")
         # logger.info(timee)
         # var_Location = (
@@ -891,18 +893,38 @@ def car_Controller():
                 print(e)
                 print("break")
 
+def setup_logger(name, log_file, level=logging.INFO):
+    """To setup as many loggers as you want"""
+
+    handler = logging.FileHandler(log_file)
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+
+    return logger
 
 if __name__ == "__main__":
     # creating threads
     rev_thread = threading.Thread(target=receive)
     broadcast_thread = threading.Thread(target=broadcast)
     Car_thread = threading.Thread(target=car_Controller)
-    logging.basicConfig(filename="carstop.log",
-                        format='%(asctime)s %(message)s',
-                        filemode='w')
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    # first file logger
+    logger = setup_logger('first_logger', 'first_logfile.log')
+    # logger.info('This is just info message')
+
+    # second file logger
+    super_logger = setup_logger('second_logger', 'second_logfile.log')
+    super_logger.info(" Locations before kalman")
+    # super_logger.error('This is an error message')
+    # logging.basicConfig(filename="carstop.log",
+    #                     format='%(asctime)s %(message)s',
+    #                     filemode='w')
 
     # Let us Create an object
-    logger = logging.getLogger()
+    # logger = logging.getLogger()
 
     # Now we are going to Set the threshold of logger to DEBUG
     logger.setLevel(logging.DEBUG)
