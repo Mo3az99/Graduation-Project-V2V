@@ -14,6 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0f69197-fb83-46b1-800a-58030e052680" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RPI2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RPI2.py" afterDir="false" />
     </list>

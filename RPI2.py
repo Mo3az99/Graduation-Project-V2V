@@ -594,16 +594,17 @@ def current_location():
             location = temp_read
             break
     ser.write(b'AT+GPSRD=0\r')
+    #Read untl buffer end instead of 1000
     x = ser.read(1000)
     if location != "":
         print(location)
         msg = pynmea2.parse(location)
+        #Filter Data
+        #Reseting A9G With Code
         locationx=convert_long(msg.lon)
         locationy=convert_lat(msg.lat)
         timee=msg.timestamp
         print("Timestamp",timee)
-        # logger.info("Timestamp")
-        # logger.info(timee)
         # var_Location = (
         #         str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
