@@ -22,6 +22,7 @@ locationy = 0     #lat
 prev_locationx = 0
 prev_locationy = 0
 angle = 0
+direction = ""
 velocity =0
 timee = 0
 prev_velocity =0
@@ -264,8 +265,9 @@ class message(object):
     acceleration = 0
     stop = 0
     angle = 0
+    direction = ""
 
-    def __init__(self, vecid, locationx, locationy, velocityx, velocityy, acceleration, stop, angle):
+    def __init__(self, vecid, locationx, locationy, velocityx, velocityy, acceleration, stop, angle, direction):
         self.vecid = vecid
         self.locationx = locationx
         self.locationy = locationy
@@ -274,6 +276,7 @@ class message(object):
         self.acceleration = acceleration
         self.stop = stop
         self.angle = angle
+        self.direction = direction
 
 
 
@@ -282,23 +285,40 @@ def determineLeadingVehicle(message):
     global locationy
     global Following_vehicle
     print("recieved angle",message["angle"])
+    print("recieved Direction", message["direction"])
     print("My angle",angle)
-    if abs(message["angle"] - angle) <= 3:
-        print("trying to deetermine the leading vehicle")
-        if angle > 0:
+    print("My Direction",direction)
+    if message["direction"] == direction :
+        if direction == "EAST" or direction == "NORTH" :
             if message["locationx"] > locationx or message["locationy"] > locationy:
                 print("ana following")
                 Following_vehicle = True
-            else :
+            else:
                 print("ana leading ")
-        elif angle < 0:
+        elif direction == "WEST" or direction == "SOUTH" :
             if message["locationx"] < locationx or message["locationy"] < locationy:
                 print("ana following to south ")
                 Following_vehicle = True
             else:
                 print("ana leading to south ")
-    else:
-        print("none of my business")
+        else:
+            print("Mlna4 Da3wa Ya MO7eee")
+    # if abs(message["angle"] - angle) <= 3:
+    #     print("trying to deetermine the leading vehicle")
+    #     if angle > 0:
+    #         if message["locationx"] > locationx or message["locationy"] > locationy:
+    #             print("ana following")
+    #             Following_vehicle = True
+    #         else :
+    #             print("ana leading ")
+    #     elif angle < 0:
+    #         if message["locationx"] < locationx or message["locationy"] < locationy:
+    #             print("ana following to south ")
+    #             Following_vehicle = True
+    #         else:
+    #             print("ana leading to south ")
+    # else:
+    #     print("none of my business")
 
 
 def determineDistanceToCollison(message):
@@ -678,7 +698,7 @@ def broadcast():
 
         #send kalman cooridantes
         acceleration = math.sqrt(math.pow(klm.X[2], 2) + math.pow(klm.X[5], 2))
-        variable = message(vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], acceleration, stop, angle)
+        variable = message(vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], acceleration, stop, angle, direction)
         # Map your object into dict
         data_as_dict = vars(variable)
 
@@ -789,6 +809,7 @@ def calculateDistancinMeters(dx,dy):
     return distance
 
 def DetermineDirection(lat1,lon1,lat2,lon2):
+    global direction
     dx, dy = convertLatlonToXY(lat1, lon1, lat2, lon2)
     calculateDistancinMeters(dx,dy)
     dx*= -1000
@@ -799,34 +820,47 @@ def DetermineDirection(lat1,lon1,lat2,lon2):
         if dy > 0 :
             if dx/dy >100:
                 print("Heading East")
+                direction = "EAST"
             elif dy/dx > 100:
                 print("heading north")
+                direction = "NORTH"
             else:
                 print("Heading North East")
+                direction = "NORTHEAST"
         if dy < 0:
             if dx/dy >100:
                 print("Heading East")
+                direction = "EAST"
             elif dy/dx > 100:
                 print("heading south")
+                direction = "SOUTH"
             else:
                 print("Heading South East")
+                direction = "SOUTHEAST"
     elif dx < 0 and (abs(dx)>2 or abs(dy >2)):
         if dy > 0 :
             if dx/dy >100:
                 print("Heading West")
+                direction = "WEST"
             elif dy/dx > 100:
                 print("heading north")
+                direction = "NORTH"
             else:
                 print("Heading North West")
+                direction = "NORTHWEST"
         if dy < 0:
             if dx/dy >100:
                 print("Heading West")
+                direction = "WEST"
             elif dy/dx > 100:
                 print("heading south")
+                direction = "SOUTH"
             else:
                 print("Heading South West")
+                direction = "SOUTHWEST"
     else:
         print("stopped")
+        direction = "STOPPED"
     # slope = dy/dx
     # print("slope is ",slope)
     # a = [15, 12, 8, 8, 7, 7, 7, 6, 5, 3]
