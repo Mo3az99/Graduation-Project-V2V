@@ -31,7 +31,7 @@ velocityy=0
 prev_velocityx =0
 prev_velocityy = 0
 acceleration = 0
-stop = 0
+stop = False
 DTCa = 0
 Following_vehicle = True
 
@@ -50,6 +50,9 @@ en = 2
 in3 = 22
 in4 = 27
 en2 = 23
+# set GPIO Pins for ultrasonic
+GPIO_TRIGGER = 6
+GPIO_ECHO = 5
 # Port and size Variables
 PORT_NUMBER = 5037
 SIZE = 1024
@@ -394,7 +397,7 @@ def determineDistanceToCollison(message):
         print("TTC", s)
         if s[0] < 3:
             print("Brake")
-            stop()
+            Stop()
             logger.info("BRAKE with Time")
         elif s[0] < 5:
             print("Danger")
@@ -526,6 +529,8 @@ def GPIO_Init():
     GPIO.setup(in3, GPIO.OUT)
     GPIO.setup(in4, GPIO.OUT)
     GPIO.setup(en2, GPIO.OUT)
+    GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
+    GPIO.setup(GPIO_ECHO, GPIO.IN)
     # PWM
     global p
     p = GPIO.PWM(en, 100)
@@ -533,6 +538,32 @@ def GPIO_Init():
     p2 = GPIO.PWM(en2, 100)
     p.start(0)
     p2.start(0)
+    
+#Calculate Distance with Ultrasonic
+def distance():
+    # set Trigger to HIGH
+    GPIO.output(GPIO_TRIGGER, True)
+
+    # set Trigger after 0.01ms to LOW
+    time.sleep(0.00001)
+    GPIO.output(GPIO_TRIGGER, False)
+
+    StartTime = time.time()
+    StopTime = time.time()
+    # save StartTime
+    while GPIO.input(GPIO_ECHO) == 0:
+        StartTime = time.time()
+    # save time of arrival
+    while GPIO.input(GPIO_ECHO) == 1:
+        StopTime = time.time()
+
+    # time difference between start and arrival
+    TimeElapsed = StopTime - StartTime
+    # multiply with the sonic speed (34300 cm/s)
+    # and divide by 2, because there and back
+    distance = (TimeElapsed * 34300) / 2
+
+    return distance
 
 # Function For testing the pins to move all wheels in the forward direction
 def ON():
@@ -596,7 +627,7 @@ def update_angle():
     brng = 360 - brng
 
     angle= brng
-    print(angle)
+    #print(angle)
 
 def update_acceleration():
     global velocityy
@@ -874,6 +905,7 @@ def car_Controller():
     global Down_Pressed
     global Right_Pressed
     global Left_Pressed
+    global stop
     while True:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -928,36 +960,56 @@ def car_Controller():
                 # break
 
             try:
-                if UP_Pressed and Right_Pressed:
-                    print("Right Forward")
-                    up_right()
-                elif UP_Pressed and Left_Pressed:
-                    print("left forward")
-                    up_left()
-                elif Down_Pressed and Right_Pressed:
-                    print("backward right")
-                    down_right()
-                elif Down_Pressed and Left_Pressed:
-                    print("backward Left")
-                    down_left()
-                elif UP_Pressed:
-                    print("Move Forward")
-                    up()
-                elif Down_Pressed:
-                    print("Move Backward")
-                    down()
-                elif Right_Pressed:
-                    print("Move Right")
-                    right()
-                elif Left_Pressed:
-                    print("Move Left")
-                    left()
-                else:
-                    print("Stop")
-                    Stop()
+                if stop == False:
+                    if UP_Pressed and Right_Pressed:
+                        print("Right Forward")
+                        up_right()
+                    elif UP_Pressed and Left_Pressed:
+                        print("left forward")
+                        up_left()
+                    elif Down_Pressed and Right_Pressed:
+                        print("backward right")
+                        down_right()
+                    elif Down_Pressed and Left_Pressed:
+                        print("backward Left")
+                        down_left()
+                    elif UP_Pressed:
+                        print("Move Forward")
+                        up()
+                    elif Down_Pressed:
+                        print("Move Backward")
+                        down()
+                    elif Right_Pressed:
+                        print("Move Right")
+                        right()
+                    elif Left_Pressed:
+                        print("Move Left")
+                        left()
+                    else:
+                        print("Stop")
+                        Stop()
             except Exception as e:
                 print(e)
                 print("break")
+def ultrasonic():
+    global stop
+    try:
+        while True:
+            dist = distance()
+            if dist < 50 :
+                print("Warning")
+                Stop()
+                stop = True
+            else :
+                stop = False
+            print("Measured Distance = %.1f cm" % dist)
+            time.sleep(1)
+            
+
+        # Reset by pressing CTRL + C
+    except KeyboardInterrupt:
+        print("Measurement stopped by User")
+        GPIO.cleanup()
 
 def setup_logger(name, log_file, level=logging.INFO):
     """To setup as many loggers as you want"""
@@ -976,6 +1028,7 @@ if __name__ == "__main__":
     rev_thread = threading.Thread(target=receive)
     broadcast_thread = threading.Thread(target=broadcast)
     Car_thread = threading.Thread(target=car_Controller)
+    Ultrasonic_thread = threading.Thread(target=ultrasonic) 
     formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
     # first file logger
     logger = setup_logger('first_logger', 'first_logfile.log')
@@ -1008,6 +1061,8 @@ if __name__ == "__main__":
     broadcast_thread.start()
     # starting thread 3 Car Controlling Thread
     Car_thread.start()
+    # starting thread 4 ultrasonic Calculating distance thread
+    Ultrasonic_thread.start()
     #time.sleep(60)
     #exit()
 

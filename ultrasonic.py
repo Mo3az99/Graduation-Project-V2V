@@ -4,10 +4,12 @@ import time
 
 # GPIO Mode (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
 
 # set GPIO Pins
-GPIO_TRIGGER = 31
-GPIO_ECHO = 29
+GPIO_TRIGGER = 6
+GPIO_ECHO = 5
 
 # set GPIO direction (IN / OUT)
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
@@ -24,11 +26,9 @@ def distance():
 
     StartTime = time.time()
     StopTime = time.time()
-
     # save StartTime
     while GPIO.input(GPIO_ECHO) == 0:
         StartTime = time.time()
-
     # save time of arrival
     while GPIO.input(GPIO_ECHO) == 1:
         StopTime = time.time()
