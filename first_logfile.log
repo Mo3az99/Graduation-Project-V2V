@@ -132,3 +132,65 @@
 2022-04-16 13:22:14,761 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': True, 'angle': 360.0, 'direction': ''}
 2022-04-16 13:22:17,772 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': True, 'angle': 360.0, 'direction': ''}
 2022-04-16 13:22:20,766 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': True, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:32:02,267 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:32:02,759 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:34:23,760 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:34:25,815 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:35:02,425 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:35:02,770 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:36:11,449 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:36:12,756 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:36:29,586 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:36:56,332 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:36:57,744 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:24,367 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:24,594 INFO BRAKE with Time
+2022-04-16 13:37:25,746 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:28,481 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:28,491 INFO BRAKE with Time
+2022-04-16 13:37:28,742 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:31,451 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:31,463 INFO BRAKE with Time
+2022-04-16 13:37:31,735 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:34,194 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:34,208 INFO BRAKE with Time
+2022-04-16 13:37:34,734 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:37,410 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:37,422 INFO BRAKE with Time
+2022-04-16 13:37:37,740 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:40,360 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:40,374 INFO BRAKE with Time
+2022-04-16 13:37:40,733 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:43,411 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:43,425 INFO BRAKE with Time
+2022-04-16 13:37:43,739 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:46,484 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:46,497 INFO BRAKE with Time
+2022-04-16 13:37:46,732 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:49,732 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:50,779 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:50,787 INFO BRAKE with Time
+2022-04-16 13:37:52,741 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:54,659 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:54,673 INFO BRAKE with Time
+2022-04-16 13:37:55,766 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:57,874 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:37:57,882 INFO BRAKE with Time
+2022-04-16 13:37:58,751 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:00,418 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:00,424 INFO BRAKE with Time
+2022-04-16 13:38:01,737 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:03,351 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:03,357 INFO BRAKE with Time
+2022-04-16 13:38:04,737 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:06,316 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:06,322 INFO BRAKE with Time
+2022-04-16 13:38:07,740 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:09,270 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:09,276 INFO BRAKE with Time
+2022-04-16 13:38:10,732 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:12,219 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:12,232 INFO BRAKE with Time
+2022-04-16 13:38:13,738 INFO {'vecid': 242606374551181, 'locationx': 31.347566666666665, 'locationy': 30.06169166666667, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:15,540 INFO {'vecid': 251096697943453, 'locationx': 31.347795, 'locationy': 30.061575, 'velocityx': 0.0, 'velocityy': 0.0, 'acceleration': 0.0, 'stop': False, 'angle': 360.0, 'direction': ''}
+2022-04-16 13:38:15,551 INFO BRAKE with Time

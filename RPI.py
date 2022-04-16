@@ -391,9 +391,13 @@ def determineDistanceToCollison(message):
         print(solve(
             (acceleration * x ** 2) - (message["acceleration"] * x ** 2) + velocity * x - receivedvelocity * x - (range),
             x))
+        s= [0]
+        print(s)
         s = (solve(
             (acceleration * x ** 2) - (message["acceleration"] * x ** 2) + velocity * x - receivedvelocity * x - (range),
             x))
+        if len(s) == 0:
+            s = [0] 
         print("TTC", s)
         if s[0] < 3:
             print("Brake")
