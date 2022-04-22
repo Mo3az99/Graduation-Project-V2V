@@ -1,0 +1,242 @@
+import socket
+import RPi.GPIO as GPIO
+from globals import *
+# Function For testing the pins to move all wheels in the forward direction
+def ON():
+    # RUN
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100)
+
+# function to putting low voltage on all pins in1 in2 in3 in4
+# and changing the duty cycle to 0 to stop the car
+def Stop():
+    # stop
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.LOW)
+    p.ChangeDutyCycle(0)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.LOW)
+    p2.ChangeDutyCycle(0)
+
+
+# Car Controller Functions
+# Function to move car in the up right direction
+# by making right wheels slower than left wheels
+# p 75 duty cycle and p2 100 duty cycle multiplied by speed
+def up_right():
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(75 * speed)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100 * speed)
+
+
+# Function to move car in the up left direction
+# by making left wheels slower than right wheels
+# p2 75 duty cycle and p 100 duty cycle multiplied by speed
+def up_left():
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100 * speed)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(75 * speed)
+
+
+# Function to move car in the down right direction
+# by reversing direction with reversing pins in1 and in2
+# and making right wheels slower than left wheels
+# p 75 duty cycle and p2 100 duty cycle multiplied by speed
+def down_right():
+    GPIO.output(in1, GPIO.HIGH)
+    GPIO.output(in2, GPIO.LOW)
+    p.ChangeDutyCycle(75 * speed)
+    GPIO.output(in3, GPIO.HIGH)
+    GPIO.output(in4, GPIO.LOW)
+    p2.ChangeDutyCycle(100 * speed)
+
+
+# Function to move car in the down left direction
+# by reversing direction with reversing pins in1 and in2
+# and making left wheels slower than right wheels
+# p2 75 duty cycle and p 100 duty cycle multiplied by speed
+def down_left():
+    GPIO.output(in1, GPIO.HIGH)
+    GPIO.output(in2, GPIO.LOW)
+    p.ChangeDutyCycle(100 * speed)
+    GPIO.output(in3, GPIO.HIGH)
+    GPIO.output(in4, GPIO.LOW)
+    p2.ChangeDutyCycle(75 * speed)
+
+
+# Function to move car in the forwarding direction
+# by making all wheels move with the same amount of speed
+# p2 100 duty cycle and p 100 duty cycle multiplied by speed
+def up():
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100 * speed)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100 * speed)
+
+
+# Function to move car in the backward direction
+# by reversing pins 1 and 2
+# and making all wheels move with the same amount of speed
+# p2 100 duty cycle and p 100 duty cycle multiplied by speed
+def down():
+    GPIO.output(in1, GPIO.HIGH)
+    GPIO.output(in2, GPIO.LOW)
+    p.ChangeDutyCycle(100 * speed)
+    GPIO.output(in3, GPIO.HIGH)
+    GPIO.output(in4, GPIO.LOW)
+    p2.ChangeDutyCycle(100 * speed)
+
+
+# Function to move car in the right direction
+# by changing pins 1 and 2 and the opposite for 3 and 4
+# and making only the left wheels move
+# p2 100 duty cycle and p 0 duty cycle multiplied by speed
+def right():
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(0)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100 * speed)
+
+
+# Function to move car in the left direction
+# by changing pins 1 and 2 and the opposite for 3 and 4
+# and making only the right wheels move
+# p 100 duty cycle and p2 0 duty cycle multiplied by speed
+def left():
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100 * speed)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(0)
+
+
+# Function to initialize the GPIO
+# by setting the mode to GPIO.BCM
+# and setting up the pins in1 in2 in3 in4
+# and setting up the enable pins en1 and en2
+# then putting the initial PWM signal
+def GPIO_Init():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
+    GPIO.setup(in1, GPIO.OUT)
+    GPIO.setup(in2, GPIO.OUT)
+    GPIO.setup(en, GPIO.OUT)
+    GPIO.setup(in3, GPIO.OUT)
+    GPIO.setup(in4, GPIO.OUT)
+    GPIO.setup(en2, GPIO.OUT)
+    GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
+    GPIO.setup(GPIO_ECHO, GPIO.IN)
+    # PWM
+    global p
+    p = GPIO.PWM(en, 100)
+    global p2
+    p2 = GPIO.PWM(en2, 100)
+    p.start(0)
+    p2.start(0)
+
+def car_Controller():
+    global UP_Pressed
+    global Down_Pressed
+    global Right_Pressed
+    global Left_Pressed
+    global stop
+    while True:
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        sock.bind(('0.0.0.0', 4445))
+        sock.listen(1)
+        print('Waiting for a Connection...')
+        (client, (ip, sock)) = sock.accept()
+        while True:
+            try:
+                print("Connected")
+                data = client.recv(1024)
+                print(data)
+                if data == b'exit':
+                    client.close()
+                    break
+                if data == b'':
+                    # client.close()
+                    continue
+                if data == b'UDOWN':
+                    print("up pressed")
+                    UP_Pressed = True
+                elif data == b'DDOWN':
+                    print("down pressed")
+                    Down_Pressed = True
+                elif data == b'RDOWN':
+                    print("right pressed")
+                    Right_Pressed = True
+                elif data == b'LDOWN':
+                    print("left pressed")
+                    Left_Pressed = True
+                elif data == b'UUP':
+                    UP_Pressed = False
+                    print("up released")
+                elif data == b'DUP':
+                    print("Down released")
+                    Down_Pressed = False
+                elif data == b'RUP':
+                    print("Right released")
+                    Right_Pressed = False
+                elif data == b'LUP':
+                    print("Left released")
+                    Left_Pressed = False
+
+                if not data:
+                    print("?")
+                    # break
+                # print ("Recieving Packet Number %d" %counter)
+                # print(data)
+                # counter += 1
+            except:
+                print("Error")
+                # break
+
+            try:
+                if stop == False:
+                    if UP_Pressed and Right_Pressed:
+                        print("Right Forward")
+                        up_right()
+                    elif UP_Pressed and Left_Pressed:
+                        print("left forward")
+                        up_left()
+                    elif Down_Pressed and Right_Pressed:
+                        print("backward right")
+                        down_right()
+                    elif Down_Pressed and Left_Pressed:
+                        print("backward Left")
+                        down_left()
+                    elif UP_Pressed:
+                        print("Move Forward")
+                        up()
+                    elif Down_Pressed:
+                        print("Move Backward")
+                        down()
+                    elif Right_Pressed:
+                        print("Move Right")
+                        right()
+                    elif Left_Pressed:
+                        print("Move Left")
+                        left()
+                    else:
+                        print("Stop")
+                        Stop()
+            except Exception as e:
+                print(e)
+                print("break")

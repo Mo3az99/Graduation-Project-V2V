@@ -1,21 +1,10 @@
-# Libraries
-import RPi.GPIO as GPIO
+
+from globals import *
+from car_controller import *
 import time
+import RPi.GPIO as GPIO
 
-# GPIO Mode (BOARD / BCM)
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-
-
-# set GPIO Pins
-GPIO_TRIGGER = 6
-GPIO_ECHO = 5
-
-# set GPIO direction (IN / OUT)
-GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
-GPIO.setup(GPIO_ECHO, GPIO.IN)
-
-
+#Calculate Distance with Ultrasonic
 def distance():
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, True)
@@ -41,11 +30,18 @@ def distance():
 
     return distance
 
+#functionality of the Ultrasonic
+def ultrasonic():
 
-if __name__ == '__main__':
     try:
         while True:
             dist = distance()
+            if dist < 50:
+                print("Warning")
+                Stop()
+                globals.stop = True
+            else:
+                globals.stop = False
             print("Measured Distance = %.1f cm" % dist)
             time.sleep(1)
 
