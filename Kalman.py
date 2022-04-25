@@ -1,9 +1,6 @@
 import numpy as np
-import xlrd
-import pandas as pd
-import matplotlib.pyplot as plt
 
-
+#Kalman Classes
 class bcnSample(object):
     def __init__(self, vehId, timestamp, px, py, vx, vy) -> None:
         super().__init__()
@@ -16,11 +13,6 @@ class bcnSample(object):
         self.py = py
         self.vy = vy
         # self.angle
-
-
-# class KalmanTrack(object):
-#    pass
-
 
 class kalmanTrack(object):
     p0 = 50
@@ -122,6 +114,8 @@ class kalmanTrack(object):
 
 
     def update(self, z: bcnSample, tm) -> None:
+
+
         zVec = np.zeros((2, 1))
         self.vehId = z.vehId
         # self.pseudonym = z.psym
@@ -159,41 +153,3 @@ class kalmanTrack(object):
         ik = np.eye(len(self.K), M=len(self.K)) - np.dot(self.K, self.H)
 
         self.P = np.dot((np.dot(ik, p_prior)), ik.transpose()) + np.dot((np.dot(self.K, self.R)), self.K.transpose())
-
-
-if __name__ == "__main__":
-    df = pd.read_csv("C:/Users/lenovo/Desktop/Kalman/GPS_track.csv")
-    df = df.head(900)
-
-    lat = np.array([df.latitude])
-    long = np.array([df.longitude])
-    speedx = np.array([df.speedx])
-    speedy = np.array([df.speedy])
-    newspeedx = np.array([df.newspeedx])
-    newspeedy = np.array([df.newspeedy])
-
-    bcn1 = bcnSample(0, 0, long[0][0], lat[0][0], newspeedx[0][0],
-                     newspeedy[0][0])
-
-    klm = kalmanTrack(bcn1, 0)
-    print("First Output", klm.X)
-
-    x = np.zeros(800)
-    y = np.zeros(800)
-    for j in range(1, 800):
-        # El Predict 8alat we have to trace it line by line and print every single matrix
-        klm.predict()
-        print("After Predict", klm.X)
-        bcn1 = bcnSample(0, 0, long[0][j], lat[0][j], newspeedx[0][j],
-                         newspeedy[0][j])
-        klm.update(bcn1, 1)
-        print("After Update", klm.X)
-
-        # x[j] = klm.X[0]
-        # y[j] = klm.X[3]
-
-# plt.title("Line graph")
-# plt.plot(x)
-#
-# plt.show()
-# print(klm.X)
