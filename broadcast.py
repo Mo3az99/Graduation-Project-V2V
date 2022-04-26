@@ -1,10 +1,10 @@
 # Message Class
-import math
+
 import socket
 import pynmea2
 import globals
 import Kalman
-from globals import json , time , serial
+from globals import json , time , serial , math
 class message(object):
     vecid = 0
     locationx = 0
@@ -24,7 +24,7 @@ class message(object):
         self.velocityy = velocityy
         self.acceleration = acceleration
         self.stop = stop
-        self.ngle = angle
+        self.angle = angle
         self.direction = direction
 
 #Function to update speed

@@ -57,13 +57,13 @@ def determineLeadingVehicle(message):
         if globals.direction == "EAST" or globals.direction == "NORTH" :
             if message["locationx"] > globals.locationx or message["locationy"] > globals.locationy:
                 print("ana following")
-                Following_vehicle = True
+                globals.Following_vehicle = True
             else:
                 print("ana leading ")
         elif globals.direction == "WEST" or globals.direction == "SOUTH" :
             if message["locationx"] < globals.locationx or message["locationy"] < globals.locationy:
                 print("ana following to south ")
-                Following_vehicle = True
+                globals.Following_vehicle = True
             else:
                 print("ana leading to south ")
         else:
