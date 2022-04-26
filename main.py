@@ -219,10 +219,10 @@ def ultrasonic():
 
 if __name__ == "__main__":
     # creating threads
-    rev_thread = threading.Thread(target=receive_thread())
-    broadcast_thread = threading.Thread(target=broadcast_thread())
-    Car_thread = threading.Thread(target=CarController_thread())
-    Ultrasonic_thread = threading.Thread(target=ultrasonic_thread())
+    rev_thread = threading.Thread(target=receive())
+    broadcast_thread = threading.Thread(target=broadcast())
+    Car_thread = threading.Thread(target=car_Controller())
+    Ultrasonic_thread = threading.Thread(target=ultrasonic())
     # initialize GPS
     init()
     # Initialize GPIO Pins and PWM
