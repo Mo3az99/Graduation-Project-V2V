@@ -18,12 +18,28 @@ def init():
             print("GPS ON")
             break
 
+
+def receive_thread():
+    recieve.receive()
+
+
+def broadcast_thread():
+    broadcast.broadcast()
+
+
+def CarController_thread():
+    car_controller.car_Controller()
+
+def ultrasonic_thread():
+    ultrasonic.ultrasonic()
+
+
 if __name__ == "__main__":
     # creating threads
-    rev_thread = threading.Thread(target=recieve.receive())
-    broadcast_thread = threading.Thread(target=broadcast.broadcast())
-    Car_thread = threading.Thread(target=car_controller.car_Controller())
-    Ultrasonic_thread = threading.Thread(target=ultrasonic.ultrasonic())
+    rev_thread = threading.Thread(target=receive_thread())
+    broadcast_thread = threading.Thread(target=broadcast_thread())
+    Car_thread = threading.Thread(target=CarController_thread())
+    Ultrasonic_thread = threading.Thread(target=ultrasonic_thread())
     # initialize GPS
     init()
     # Initialize GPIO Pins and PWM

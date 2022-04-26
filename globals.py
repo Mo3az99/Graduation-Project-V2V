@@ -30,7 +30,7 @@ stop = False
 angle = 0
 velocityx = 0
 velocityy=0
-direction = ""
+direction = "STOPPED"
 acceleration = 0
 #previous location variables
 prev_velocity =0

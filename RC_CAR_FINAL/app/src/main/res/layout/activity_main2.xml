@@ -26,7 +26,7 @@
         android:layout_height="75dp"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="#40E0D0"
+        android:background="@drawable/btn_bg"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="U"
@@ -45,7 +45,7 @@
         android:layout_height="75dp"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="44dp"
-        android:backgroundTint="#40E0D0"
+        android:background="@drawable/btn_bg"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="D"
@@ -64,7 +64,7 @@
         android:layout_height="75dp"
         android:layout_marginEnd="52dp"
         android:layout_marginBottom="48dp"
-        android:backgroundTint="#40E0D0"
+        android:background="@drawable/btn_bg"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="R"
@@ -77,17 +77,20 @@
         app:strokeColor="#023209"
         app:strokeWidth="5dp" />
 
+
+<!--    app:strokeColor="#023209"-->
+<!--    android:textColor="@drawable/button_bg"-->
+
     <Button
         android:id="@+id/left"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="48dp"
-        android:backgroundTint="#40E0D0"
+        android:background="@drawable/button_bg"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="L"
-        android:textColor="#023209"
         android:textSize="34sp"
         android:textStyle="bold"
         app:cornerRadius="75dp"
@@ -95,15 +98,15 @@
         app:layout_constraintEnd_toStartOf="@+id/right"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/DOWN"
-        app:strokeColor="#023209"
-        app:strokeWidth="5dp" />
+        app:backgroundTint="@null"
+         />
 
     <Button
         android:id="@+id/Location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:alpha=".5"
-        android:backgroundTint="#40E0D0"
+        android:alpha="1"
+        android:backgroundTint="#0E9183"
         android:text="Get Location"
         android:textColor="#023209"
         app:layout_constraintBottom_toBottomOf="parent"
