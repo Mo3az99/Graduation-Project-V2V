@@ -1,6 +1,7 @@
 import socket
 import RPi.GPIO as GPIO
-from globals import *
+
+import globals
 # Function For testing the pins to move all wheels in the forward direction
 def ON():
     # RUN
@@ -150,11 +151,6 @@ def GPIO_Init():
     p2.start(0)
 
 def car_Controller():
-    global UP_Pressed
-    global Down_Pressed
-    global Right_Pressed
-    global Left_Pressed
-    global stop
     while True:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -175,28 +171,28 @@ def car_Controller():
                     continue
                 if data == b'UDOWN':
                     print("up pressed")
-                    UP_Pressed = True
+                    globals.UP_Pressed = True
                 elif data == b'DDOWN':
                     print("down pressed")
-                    Down_Pressed = True
+                    globals.Down_Pressed = True
                 elif data == b'RDOWN':
                     print("right pressed")
-                    Right_Pressed = True
+                    globals.Right_Pressed = True
                 elif data == b'LDOWN':
                     print("left pressed")
-                    Left_Pressed = True
+                    globals.Left_Pressed = True
                 elif data == b'UUP':
-                    UP_Pressed = False
+                    globals.UP_Pressed = False
                     print("up released")
                 elif data == b'DUP':
                     print("Down released")
-                    Down_Pressed = False
+                    globals.Down_Pressed = False
                 elif data == b'RUP':
                     print("Right released")
-                    Right_Pressed = False
+                    globals.Right_Pressed = False
                 elif data == b'LUP':
                     print("Left released")
-                    Left_Pressed = False
+                    globals.Left_Pressed = False
 
                 if not data:
                     print("?")
@@ -210,28 +206,28 @@ def car_Controller():
 
             try:
                 if stop == False:
-                    if UP_Pressed and Right_Pressed:
+                    if globals.UP_Pressed and globals.Right_Pressed:
                         print("Right Forward")
                         up_right()
-                    elif UP_Pressed and Left_Pressed:
+                    elif globals.UP_Pressed and globals.Left_Pressed:
                         print("left forward")
                         up_left()
-                    elif Down_Pressed and Right_Pressed:
+                    elif globals.Down_Pressed and globals.Right_Pressed:
                         print("backward right")
                         down_right()
-                    elif Down_Pressed and Left_Pressed:
+                    elif globals.Down_Pressed and globals.Left_Pressed:
                         print("backward Left")
                         down_left()
-                    elif UP_Pressed:
+                    elif globals.UP_Pressed:
                         print("Move Forward")
                         up()
-                    elif Down_Pressed:
+                    elif globals.Down_Pressed:
                         print("Move Backward")
                         down()
-                    elif Right_Pressed:
+                    elif globals.Right_Pressed:
                         print("Move Right")
                         right()
-                    elif Left_Pressed:
+                    elif globals.Left_Pressed:
                         print("Move Left")
                         left()
                     else:

@@ -1,5 +1,4 @@
-
-from car_controller import *
+import car_controller
 import time
 import RPi.GPIO as GPIO
 import globals
@@ -37,7 +36,7 @@ def ultrasonic():
             dist = distance()
             if dist < 50:
                 print("Warning")
-                Stop()
+                car_controller.Stop()
                 globals.stop = True
             else:
                 globals.stop = False

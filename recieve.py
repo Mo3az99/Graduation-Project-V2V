@@ -2,7 +2,6 @@
 import socket
 import globals
 import FCA
-from globals import json
 
 def receive():
 
@@ -16,7 +15,7 @@ def receive():
     while True:
         data_encoded = rev_socket.recv(8192)
         data_string = data_encoded.decode(encoding="utf-8")
-        data_variable = json.loads(data_string)
+        data_variable = globals.json.loads(data_string)
         # logger.info(data_variable)
         if data_variable["vecid"] == globals.vecid:
            continue

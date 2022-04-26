@@ -121,7 +121,7 @@ def current_location():
         globals.locationx=convert_long(msg.lon)
         globals.locationy=convert_lat(msg.lat)
         globals.timee=msg.timestamp
-        print("Timestamp",globals.timee)
+        # print("Timestamp",globals.timee)
         globals.super_logger.info(globals.locationx)
         globals.super_logger.info(globals.locationy)
         # logger.info("Timestamp")

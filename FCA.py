@@ -15,7 +15,7 @@ class Haversine(object):
     def get_location_a(self) -> tuple:
         return self.LOCATION_ONE
 
-    property
+    @property
 
     def get_location_b(self) -> tuple:
         return self.LOCATION_TWO
@@ -60,14 +60,17 @@ def determineLeadingVehicle(message):
                 globals.Following_vehicle = True
             else:
                 print("ana leading ")
+                globals.Following_vehicle = False
         elif globals.direction == "WEST" or globals.direction == "SOUTH" :
             if message["locationx"] < globals.locationx or message["locationy"] < globals.locationy:
                 print("ana following to south ")
                 globals.Following_vehicle = True
             else:
                 print("ana leading to south ")
+                globals.Following_vehicle = False
         else:
             print("Mlna4 Da3wa Ya MO7eee")
+            globals.Following_vehicle = False
     # if abs(message["angle"] - angle) <= 3:
     #     print("trying to deetermine the leading vehicle")
     #     if angle > 0:
@@ -111,6 +114,7 @@ def determineDistanceToCollison(message):
         print("TTC", globals.DTCa / globals.velocity)
     # if leading and following vehicles not equal zero
     if globals.acceleration != 0 and message["acceleration"] != 0:
+        #it maybe changed to global
         Dw1 = 0.5 * ((pow(globals.velocity, 2) / globals.acceleration) - (
                     pow(receivedvelocity, 2) / abs(message["acceleration"]))) + 1.5 * globals.velocity + 1
         print("DW1", Dw1)
@@ -143,6 +147,7 @@ def determineDistanceToCollison(message):
         elif tw1 < 2:
             print("warning ")
             globals.logger.info("warning")
+    # we should change it
     elif message["acceleration"] == 0 and globals.acceleration == 0:
         x = Symbol('x')
         print(solve(
@@ -167,5 +172,5 @@ def determineDistanceToCollison(message):
             print("warning")
             globals.logger.info("Time warning")
     else:
-        print("md5lt444")
+        print("md5lt444 3aaa")
 
