@@ -134,19 +134,19 @@ def left():
 def GPIO_Init():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
-    GPIO.setup(in1, GPIO.OUT)
-    GPIO.setup(in2, GPIO.OUT)
-    GPIO.setup(en, GPIO.OUT)
-    GPIO.setup(in3, GPIO.OUT)
-    GPIO.setup(in4, GPIO.OUT)
-    GPIO.setup(en2, GPIO.OUT)
-    GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
-    GPIO.setup(GPIO_ECHO, GPIO.IN)
+    GPIO.setup(globals.in1, GPIO.OUT)
+    GPIO.setup(globals.in2, GPIO.OUT)
+    GPIO.setup(globals.en, GPIO.OUT)
+    GPIO.setup(globals.in3, GPIO.OUT)
+    GPIO.setup(globals.in4, GPIO.OUT)
+    GPIO.setup(globals.en2, GPIO.OUT)
+    GPIO.setup(globals.GPIO_TRIGGER, GPIO.OUT)
+    GPIO.setup(globals.GPIO_ECHO, GPIO.IN)
     # PWM
     global p
-    p = GPIO.PWM(en, 100)
+    p = GPIO.PWM(globals.en, 100)
     global p2
-    p2 = GPIO.PWM(en2, 100)
+    p2 = GPIO.PWM(globals.en2, 100)
     p.start(0)
     p2.start(0)
 
