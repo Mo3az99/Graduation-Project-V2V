@@ -2,7 +2,9 @@
 import math
 import socket
 import pynmea2
-
+import globals
+import Kalman
+from globals import json , time , serial
 class message(object):
     vecid = 0
     locationx = 0
@@ -22,36 +24,40 @@ class message(object):
         self.velocityy = velocityy
         self.acceleration = acceleration
         self.stop = stop
-        self.angle = angle
+        self.ngle = angle
         self.direction = direction
 
 #Function to update speed
+def checkOK():
+    globals.ser.write(b'AT+GPSRD=1\r')
+    while 1:
+        rcv = globals.ser.readline()
+        if rcv == b'+CME ERROR: 58\r':
+            globals.ser.write(b'AT+GPSRD=1\r')
+            print("Error Handled")
+        print(rcv)
+        if rcv == b'OK\r\n':
+            print("GPSRD ON")
+            break
+
 def update_speed():
-    global prev_locationy
-    global prev_locationx
-    global velocityy
-    global velocityx
-    if prev_locationx == 0 and prev_locationy == 0:
-        velocityx =  0
-        velocityy =  0
+
+    if globals.prev_locationx == 0 and globals.prev_locationy == 0:
+        globals.velocityx =  0
+        globals.velocityy =  0
     else:
-        velocityx =abs(locationx - prev_locationx)
-        velocityy = abs(locationy- prev_locationy)
+        globals.velocityx =abs(globals.locationx - globals.prev_locationx)
+        globals.velocityy = abs(globals.locationy- globals.prev_locationy)
 
 def update_angle():
-    global locationx
-    locationx_t=f'{locationx:.5f}'[:-1]
+    locationx_t=f'{globals.locationx:.5f}'[:-1]
     locationx_t = float(locationx_t)
-    global locationy
-    locationy_t=f'{locationy:.5f}'[:-1]
+    locationy_t=f'{globals.locationy:.5f}'[:-1]
     locationy_t = float(locationy_t)
-    global prev_locationx
-    prev_locationx_t=f'{prev_locationx:.5f}'[:-1]
+    prev_locationx_t=f'{globals.prev_locationx:.5f}'[:-1]
     prev_locationx_t = float(prev_locationx_t)
-    global prev_locationy
-    prev_locationy_t=f'{prev_locationy:.5f}'[:-1]
+    prev_locationy_t=f'{globals.prev_locationy:.5f}'[:-1]
     prev_locationy_t = float(prev_locationy_t)
-    global angle
 
     dLon = locationx_t - prev_locationx_t
 
@@ -65,59 +71,59 @@ def update_angle():
     brng = brng % 360
     brng = 360 - brng
 
-    angle= brng
+    globals.angle= brng
     #print(angle)
 
 def update_acceleration():
-    global velocityy
-    global velocityx
-    global prev_velocityx
-    global prev_velocityy
-    global acceleration
-    global velocity
-    global prev_velocity
-    global angle
-
-    velocity = math.sqrt(math.pow(velocityx , 2) + math.pow(velocityy , 2))
-    prev_velocity = math.sqrt(math.pow(prev_velocityx , 2) + math.pow(prev_velocityy , 2))
-    acceleration = abs(velocity - prev_velocity)
-
+    globals.velocity = math.sqrt(math.pow(globals.velocityx, 2) + math.pow(globals.velocityy, 2))
+    globals.prev_velocity = math.sqrt(math.pow(globals.prev_velocityx, 2) + math.pow(globals.prev_velocityy, 2))
+    globals.acceleration = abs(globals.velocity - globals.prev_velocity)
 # add Semaphore for Location
 
 # Function To get the current location of the moving vehicle
 # and update the global variable Location
 # and converting the format of GNRMC to latitude and longitude
 # and setting up the Google maps link
+def convert_lat(x):
+    degree = float(str(x)[:2])
+    minutes = float(str(x)[2:])
+    result = degree + (minutes / 60)
+    return result
+
+
+def getlocation_link(lat, lon):
+    link = "http://maps.google.com/maps?q=loc:" + str(lat) + "," + str(lon)
+    return link
+
+
+def convert_long(x):
+    degree = float(str(x)[:3])
+    minutes = float(str(x)[3:])
+    result = degree + (minutes / 60)
+    return result
 def current_location():
     # we dont need it global if it is only the command form the A9G
-    global location
-    global vecid
-    global locationx
-    global locationy
-    global prev_locationx
-    global prev_locationy
-    global timee
-    prev_locationx = locationx
-    prev_locationy = locationy
+    globals.prev_locationx = globals.locationx
+    globals.prev_locationy = globals.locationy
     checkOK()
     # time.sleep(1.1)
     # needs edit
     for i in range(0, 8):
-        temp_read = (ser.readline().decode('utf-8'))
+        temp_read = (globals.ser.readline().decode('utf-8'))
         if temp_read[0:6] == "$GNRMC":
-            location = temp_read
+            globals.location = temp_read
             break
-    ser.write(b'AT+GPSRD=0\r')
-    x = ser.read(1000)
-    if location != "":
-        print(location)
-        msg = pynmea2.parse(location)
-        locationx=convert_long(msg.lon)
-        locationy=convert_lat(msg.lat)
-        timee=msg.timestamp
-        print("Timestamp",timee)
-        super_logger.info(locationx )
-        super_logger.info(locationy)
+    globals.ser.write(b'AT+GPSRD=0\r')
+    x = globals.ser.read(1000)
+    if globals.location != "":
+        print(globals.location)
+        msg = pynmea2.parse(globals.location)
+        globals.locationx=convert_long(msg.lon)
+        globals.locationy=convert_lat(msg.lat)
+        globals.timee=msg.timestamp
+        print("Timestamp",globals.timee)
+        globals.super_logger.info(globals.locationx)
+        globals.super_logger.info(globals.locationy)
         # logger.info("Timestamp")
         # logger.info(timee)
         # var_Location = (
@@ -132,14 +138,7 @@ def broadcast():
     # sio = io.TextIOWrapper(io.BufferedRWPair(ser, ser))
     # nazlha ta7t 34an mkan el kolya et3ml update
     # current_location()
-    global vecid
-    global velocityy
-    global velocityx
-    global acceleration
-    global angle
-    global locationy
-    global locationx
-    global stop
+
     send_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
@@ -148,34 +147,34 @@ def broadcast():
     update_speed()
     update_angle()
     update_acceleration()
-    bcn1 = bcnSample(vecid, 0, locationx, locationy, velocityx,velocityy)
-    klm = kalmanTrack(bcn1, 0)
+    bcn1 = Kalman.bcnSample(globals.vecid, 0, globals.locationx, globals.locationy, globals.velocityx,globals.velocityy)
+    klm = Kalman.kalmanTrack(bcn1, 0)
     while True:
         current_location()
         klm.predict()
-        bcn1 = bcnSample(vecid, 0, locationx, locationy, velocityx, velocityy)
+        bcn1 = Kalman.bcnSample(globals.vecid, 0, globals.locationx, globals.locationy, globals.velocityx, globals.velocityy)
         klm.update(bcn1, 1)
-        locationx = klm.X[0]
-        locationy = klm.X[3]
+        globals.locationx = klm.X[0]
+        globals.locationy = klm.X[3]
 
         update_speed()
-        velocityx=klm.X[1]
-        velocityy=klm.X[4]
+        globals.velocityx=klm.X[1]
+        globals.velocityy=klm.X[4]
         update_angle()
         #keda ba3d kalman should be deleted after test
         update_acceleration()
         #add kalman
-
         #send kalman cooridantes
-        acceleration = math.sqrt(math.pow(klm.X[2], 2) + math.pow(klm.X[5], 2))
-        variable = message(vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], acceleration, stop, angle, direction)
+        globals.acceleration = math.sqrt(math.pow(klm.X[2], 2) + math.pow(klm.X[5], 2))
+        variable = message(globals.vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], globals.acceleration, globals.stop, globals.angle, globals.direction)
         # Map your object into dict
         data_as_dict = vars(variable)
 
         # Serialize your dict object
         data_string = json.dumps(data_as_dict)
         send_socket.sendto(data_string.encode(encoding="utf-8") , ('<broadcast>',5037))
-        logger.info(data_as_dict)
+        globals.logger.info(data_as_dict)
+        #tayha fl logger deh
         # send_socket.sendto(message, ('<broadcast>', 5037))
         print("message sent! \n")
         # Sleep for 1 second
