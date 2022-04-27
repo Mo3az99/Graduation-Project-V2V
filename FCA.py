@@ -46,6 +46,72 @@ class Haversine(object):
         c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
         distance = self.EARTH_RADIUS * c
         return distance
+def convertLatlonToXY(lat1,lon1,lat2,lon2):
+    dx = (lon1 - lon2) * 40000 * math.cos((lat1 + lat2) * math.pi / 360) / 360
+    # if negative to east
+    print(dx)
+    dy = (lat1 - lat2) * 40000 / 360
+    # if negative to north
+    print(dy)
+    return dx, dy
+
+def calculateDistancinMeters(dx,dy):
+    distance = math.sqrt(pow( dx, 2) + pow(dy, 2)) * 1000
+    print("distance = ", distance, "meters")
+    return distance
+
+def DetermineDirection(lat1,lon1,lat2,lon2):
+    dx, dy = convertLatlonToXY(lat1, lon1, lat2, lon2)
+    calculateDistancinMeters(dx,dy)
+    dx*= -1000
+    print("diffrence in x",dx)
+    dy*= -1000
+    print("diffrence in y",dy)
+    if dx > 0  and (abs(dx)>2 or abs(dy >2)):
+        if dy > 0 :
+            if dx/dy >100:
+                print("Heading East")
+                globals.direction = "EAST"
+            elif dy/dx > 100:
+                print("heading north")
+                globals.direction = "NORTH"
+            else:
+                print("Heading North East")
+                globals.direction = "NORTHEAST"
+        if dy < 0:
+            if dx/dy >100:
+                print("Heading East")
+                globals.direction = "EAST"
+            elif dy/dx > 100:
+                print("heading south")
+                globals.direction = "SOUTH"
+            else:
+                print("Heading South East")
+                globals.direction = "SOUTHEAST"
+    elif dx < 0 and (abs(dx)>2 or abs(dy >2)):
+        if dy > 0 :
+            if dx/dy >100:
+                print("Heading West")
+                globals.direction = "WEST"
+            elif dy/dx > 100:
+                print("heading north")
+                globals.direction = "NORTH"
+            else:
+                print("Heading North West")
+                globals.direction = "NORTHWEST"
+        if dy < 0:
+            if dx/dy >100:
+                print("Heading West")
+                globals.direction = "WEST"
+            elif dy/dx > 100:
+                print("heading south")
+                globals.direction = "SOUTH"
+            else:
+                print("Heading South West")
+                globals.direction = "SOUTHWEST"
+    else:
+        print("stopped")
+        globals.direction = "STOPPED"
 
 def determineLeadingVehicle(message):
 
