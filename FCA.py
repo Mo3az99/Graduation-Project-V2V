@@ -175,7 +175,7 @@ def determineDistanceToCollison(message):
     if message["acceleration"] != 0 and globals.velocity != 0:
         sqrtv = math.sqrt(math.pow(v_Relative, 2) + 2 * abs(message["acceleration"]) * range)
         # print(sqrtv)
-        globals.DTCa = ((-v_Relative - sqrtv) / message["acceleration"]) * globals.avelocity
+        globals.DTCa = ((-v_Relative - sqrtv) / message["acceleration"]) * globals.velocity
         print("DTCa", globals.DTCa)
         print("TTC", globals.DTCa / globals.velocity)
     # if leading and following vehicles not equal zero
