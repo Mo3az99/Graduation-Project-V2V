@@ -847,11 +847,11 @@ def DetermineDirection(lat1,lon1,lat2,lon2):
     global direction
     dx, dy = convertLatlonToXY(lat1, lon1, lat2, lon2)
     calculateDistancinMeters(dx,dy)
-    dx*= -1000
+    dx*= -1000  # 2.5
     print("diffrence in x",dx)
-    dy*= -1000
+    dy*= -1000  # 0.009
     print("diffrence in y",dy)
-    if dx > 0  and (abs(dx)>2 or abs(dy >2)):
+    if dx > 0  and (abs(dx)>2 or abs(dy)>2):
         if dy > 0 :
             if dx/dy >100:
                 print("Heading East")
