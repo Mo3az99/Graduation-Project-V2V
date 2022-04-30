@@ -5,23 +5,23 @@ import globals
 # Function For testing the pins to move all wheels in the forward direction
 def ON():
     # RUN
-    GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.HIGH)
-    p.ChangeDutyCycle(100)
-    GPIO.output(in3, GPIO.LOW)
-    GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(100)
+    GPIO.output(globals.in1, GPIO.LOW)
+    GPIO.output(globals.in2, GPIO.HIGH)
+    globals.p.ChangeDutyCycle(100)
+    GPIO.output(globals.in3, GPIO.LOW)
+    GPIO.output(globals.in4, GPIO.HIGH)
+    globals.p2.ChangeDutyCycle(100)
 
 # function to putting low voltage on all pins in1 in2 in3 in4
 # and changing the duty cycle to 0 to stop the car
 def Stop():
     # stop
-    GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.LOW)
-    p.ChangeDutyCycle(0)
-    GPIO.output(in3, GPIO.LOW)
-    GPIO.output(in4, GPIO.LOW)
-    p2.ChangeDutyCycle(0)
+    GPIO.output(globals.in1, GPIO.LOW)
+    GPIO.output(globals.in2, GPIO.LOW)
+    globals.p.ChangeDutyCycle(0)
+    GPIO.output(globals.in3, GPIO.LOW)
+    GPIO.output(globals.in4, GPIO.LOW)
+    globals.p2.ChangeDutyCycle(0)
 
 
 # Car Controller Functions
@@ -29,8 +29,8 @@ def Stop():
 # by making right wheels slower than left wheels
 # p 75 duty cycle and p2 100 duty cycle multiplied by speed
 def up_right():
-    GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.HIGH)
+    GPIO.output(globals.in1, GPIO.LOW)
+    GPIO.output(globals.in2, GPIO.HIGH)
     p.ChangeDutyCycle(75 * speed)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.HIGH)
