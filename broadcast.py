@@ -164,7 +164,7 @@ def broadcast():
         update_angle()
         #keda ba3d kalman should be deleted after test
         update_acceleration()
-        globals.direction = FCA.DetermineDirection(globals.prev_locationy,globals.prev_locationx,globals.locationy,globals.locationx)
+        FCA.DetermineDirection(globals.prev_locationy,globals.prev_locationx,globals.locationy,globals.locationx)
         print(globals.direction)
         #add kalman
         #send kalman cooridantes

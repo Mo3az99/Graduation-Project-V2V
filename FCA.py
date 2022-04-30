@@ -67,7 +67,7 @@ def DetermineDirection(lat1,lon1,lat2,lon2):
     print("diffrence in x",dx)
     dy*= -1000
     print("diffrence in y",dy)
-    if dx > 0  and (abs(dx)>2 or abs(dy >2)):
+    if dx > 0  and (abs(dx)>1.5 or abs(dy >1.5)):
         if dy > 0 :
             if dx/dy >100:
                 print("Heading East")
@@ -88,7 +88,7 @@ def DetermineDirection(lat1,lon1,lat2,lon2):
             else:
                 print("Heading South East")
                 globals.direction = "SOUTHEAST"
-    elif dx < 0 and (abs(dx)>2 or abs(dy >2)):
+    elif dx < 0 and (abs(dx)>1.5 or abs(dy >1.5)):
         if dy > 0 :
             if dx/dy >100:
                 print("Heading West")
