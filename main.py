@@ -41,14 +41,14 @@ if __name__ == "__main__":
     Car_thread = threading.Thread(target=CarController_thread)
     Ultrasonic_thread = threading.Thread(target=ultrasonic_thread)
     # initialize GPS
-    #init()
+    init()
     
     # Initialize GPIO Pins and PWM
-    car_controller.GPIO_Init()
+    #car_controller.GPIO_Init()
     # starting thread 1 for Receiving
-    #rev_thread.start()
+    rev_thread.start()
     # starting thread 2 Main Thread
-    #broadcast_thread.start()
+    broadcast_thread.start()
     # starting thread 3 Car Controlling Thread
     #Car_thread.start()
     # starting thread 4 ultrasonic Calculating distance thread
