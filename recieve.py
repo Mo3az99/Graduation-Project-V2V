@@ -21,7 +21,6 @@ def receive():
         if data_variable["vecid"] == globals.vecid:
            continue
         globals.logger.info(data_variable)
-        DetermineDirection(globals.prev_locationy,globals.prev_locationx,globals.locationy,globals.locationx)
         FCA.determineLeadingVehicle(data_variable)
         if globals.Following_vehicle:
             print("Iam Following and going to check a possible FCA")

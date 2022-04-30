@@ -5,6 +5,7 @@ import pynmea2
 import globals
 import Kalman
 from globals import json , time , serial , math
+import FCA
 class message(object):
     vecid = 0
     locationx = 0
@@ -163,6 +164,8 @@ def broadcast():
         update_angle()
         #keda ba3d kalman should be deleted after test
         update_acceleration()
+        globals.direction = FCA.DetermineDirection(globals.prev_locationy,globals.prev_locationx,globals.locationy,globals.locationx)
+        print(globals.direction)
         #add kalman
         #send kalman cooridantes
         globals.acceleration = math.sqrt(math.pow(klm.X[2], 2) + math.pow(klm.X[5], 2))
