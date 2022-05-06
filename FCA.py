@@ -1,4 +1,3 @@
-
 from sympy import symbols, Eq, solve
 from sympy import Symbol
 import globals
@@ -206,6 +205,7 @@ def determineDistanceToCollison(message):
         if tw3 < 2:
             print("brake")
             car_controller.Stop()
+            globals.stop=True
             globals.logger.info("BRAKE")
         elif tw2 < 2:
             print("Danger")
@@ -213,6 +213,9 @@ def determineDistanceToCollison(message):
         elif tw1 < 2:
             print("warning ")
             globals.logger.info("warning")
+            globals.stop=False
+        else:
+            globals.stop=False
     # we should change it
     elif message["acceleration"] == 0 and globals.acceleration == 0:
         x = Symbol('x')

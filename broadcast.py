@@ -1,11 +1,11 @@
-# Message Class
-
 import socket
 import pynmea2
 import globals
 import Kalman
 from globals import json , time , serial , math
 import FCA
+
+# Message Class
 class message(object):
     vecid = 0
     locationx = 0
@@ -16,8 +16,10 @@ class message(object):
     stop = 0
     angle = 0
     direction = ""
+    point1=[]
+    point2=[]
 
-    def __init__(self, vecid, locationx, locationy, velocityx, velocityy, acceleration, stop, angle, direction):
+    def __init__(self, vecid, locationx, locationy, velocityx, velocityy, acceleration, stop, angle, direction,point1,point2,line1):
         self.vecid = vecid
         self.locationx = locationx
         self.locationy = locationy
@@ -27,6 +29,9 @@ class message(object):
         self.stop = stop
         self.angle = angle
         self.direction = direction
+        self.point1 = point1
+        self.point2 = point2
+        self.line1 = line1
 
 #Function to update speed
 def checkOK():
@@ -131,6 +136,21 @@ def current_location():
         #         str(convert_lat(msg.lat)) + " °" + msg.lat_dir + "," + str(convert_long(msg.lon)) + " °" + msg.lon_dir)
         print(getlocation_link(convert_lat(msg.lat), convert_long(msg.lon)))
 
+def convertLatlonToXY(lat1,lon1,lat2,lon2):
+    dx = (lon1 - lon2) * 40000 * math.cos((lat1 + lat2) * math.pi / 360) / 360
+    # if negative to east
+    # print("dx",dx)
+    dy = (lat1 - lat2) * 40000 / 360
+    # if negative to north
+    # print("dy",dy)
+    return dx, dy
+
+def convertMeters(lat1, lon1, lat2, lon2):
+    dx, dy = convertLatlonToXY(lat1, lon1, lat2, lon2)
+    dx *= 1000
+    dy *= 1000
+    return dx , dy
+
 # Function to get the Current Location from current_Location function and update the Global Location Variable
 # preparing the socket for broadcasting and reusing the port
 # finally we broadcast the location over the network and printing an Acknowledgement message
@@ -157,7 +177,11 @@ def broadcast():
         klm.update(bcn1, 1)
         globals.locationx = klm.X[0]
         globals.locationy = klm.X[3]
-
+        x1_car1, y1_car1 = convertMeters(globals.prev_locationy, globals.prev_locationx, 0, 0)
+        globals.point1 = [x1_car1, y1_car1]
+        x2_car1, y2_car1 = convertMeters(globals.locationy, globals.locationx, 0, 0)
+        globals.point2 = [x2_car1, y2_car1]
+        globals.line1 = [globals.point1,globals.point2]
         update_speed()
         globals.velocityx=klm.X[1]
         globals.velocityy=klm.X[4]
@@ -169,7 +193,7 @@ def broadcast():
         #add kalman
         #send kalman cooridantes
         globals.acceleration = math.sqrt(math.pow(klm.X[2], 2) + math.pow(klm.X[5], 2))
-        variable = message(globals.vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], globals.acceleration, globals.stop, globals.angle, globals.direction)
+        variable = message(globals.vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], globals.acceleration, globals.stop, globals.angle, globals.direction,globals.point1,globals.point2,globals.line1)
         # Map your object into dict
         data_as_dict = vars(variable)
 

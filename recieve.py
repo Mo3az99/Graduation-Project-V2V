@@ -1,9 +1,9 @@
-
 import socket
 import globals
 import FCA
-
-
+import broadcast
+import ICA
+import car_controller
 def receive():
 
     #global SIZE
@@ -25,6 +25,24 @@ def receive():
         if globals.Following_vehicle:
             print("Iam Following and going to check a possible FCA")
             FCA.determineDistanceToCollison(data_variable)
+        #Determine  if 2 directions will intersect
+        #check direction
+        if (globals.direction != data_variable["direction"]):
+            #intersection point
+            point_x, point_y = line_intersection(line1, data_variable["line1"])
+            dti_car1 = calculateDistance(point_x - globals.point2[0], point_y - globals.point2[1])
+            #high possiblity for error
+            dti_car2 = calculateDistance(point_x - data_variable["point1"][0], point_y - data_variable["point1"][1])
+            tti_car1 = dti_car1 / 2.5 # instead of this put spead in meters
+            tti_car2 = dti_car2 / 2.5 # instead of this put spead in meters
+
+            if (tti_car1 > tti_car2):
+                # difference in time to not stop car if it will pass safely the intersection point
+                if(abs(tti_car1-tti_car2) <= 5 ):
+                    car_controller.Stop()
+                    globals.stop=True
+                else:
+                    globals.stop = False
 
         # print(data_variable.locationx)
         # (data, addr) = rev_socket.recvfrom(SIZE)
