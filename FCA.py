@@ -48,10 +48,10 @@ class Haversine(object):
 def convertLatlonToXY(lat1,lon1,lat2,lon2):
     dx = (lon1 - lon2) * 40000 * math.cos((lat1 + lat2) * math.pi / 360) / 360
     # if negative to east
-    print(dx)
+    # print(dx)
     dy = (lat1 - lat2) * 40000 / 360
     # if negative to north
-    print(dy)
+    # print(dy)
     return dx, dy
 
 def calculateDistancinMeters(dx,dy):
