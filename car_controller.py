@@ -7,10 +7,10 @@ def ON():
     # RUN
     GPIO.output(globals.in1, GPIO.LOW)
     GPIO.output(globals.in2, GPIO.HIGH)
-    globals.p.ChangeDutyCycle(100)
+    p.ChangeDutyCycle(100)
     GPIO.output(globals.in3, GPIO.LOW)
     GPIO.output(globals.in4, GPIO.HIGH)
-    globals.p2.ChangeDutyCycle(100)
+    p2.ChangeDutyCycle(100)
 
 # function to putting low voltage on all pins in1 in2 in3 in4
 # and changing the duty cycle to 0 to stop the car
@@ -18,10 +18,10 @@ def Stop():
     # stop
     GPIO.output(globals.in1, GPIO.LOW)
     GPIO.output(globals.in2, GPIO.LOW)
-    globals.p.ChangeDutyCycle(0)
+    p.ChangeDutyCycle(0)
     GPIO.output(globals.in3, GPIO.LOW)
     GPIO.output(globals.in4, GPIO.LOW)
-    globals.p2.ChangeDutyCycle(0)
+    p2.ChangeDutyCycle(0)
 
 
 # Car Controller Functions

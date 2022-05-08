@@ -20,6 +20,7 @@ def receive():
         # logger.info(data_variable)
         if data_variable["vecid"] == globals.vecid:
            continue
+        #print("not me")
         globals.logger.info(data_variable)
         FCA.determineLeadingVehicle(data_variable)
         if globals.Following_vehicle:
@@ -29,7 +30,7 @@ def receive():
         #check direction
         if (globals.direction != data_variable["direction"]):
             #intersection point
-            point_x, point_y = line_intersection(line1, data_variable["line1"])
+            point_x, point_y = ICA.line_intersection(globals.line1, data_variable["line1"])
             dti_car1 = calculateDistance(point_x - globals.point2[0], point_y - globals.point2[1])
             #high possiblity for error
             dti_car2 = calculateDistance(point_x - data_variable["point1"][0], point_y - data_variable["point1"][1])

@@ -44,13 +44,13 @@ if __name__ == "__main__":
     init()
     
     # Initialize GPIO Pins and PWM
-    #car_controller.GPIO_Init()
+    car_controller.GPIO_Init()
     # starting thread 1 for Receiving
     rev_thread.start()
     # starting thread 2 Main Thread
     broadcast_thread.start()
     # starting thread 3 Car Controlling Thread
-    #Car_thread.start()
+    Car_thread.start()
     # starting thread 4 ultrasonic Calculating distance thread
     Ultrasonic_thread.start()
     #time.sleep(60)
