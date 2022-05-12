@@ -31,22 +31,22 @@ def Stop():
 def up_right():
     GPIO.output(globals.in1, GPIO.LOW)
     GPIO.output(globals.in2, GPIO.HIGH)
-    p.ChangeDutyCycle(75 * speed)
-    GPIO.output(in3, GPIO.LOW)
-    GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(100 * speed)
+    p.ChangeDutyCycle(75 * globals.speed)
+    GPIO.output(globals.in3, GPIO.LOW)
+    GPIO.output(globals.in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100 * globals.speed)
 
 
 # Function to move car in the up left direction
 # by making left wheels slower than right wheels
 # p2 75 duty cycle and p 100 duty cycle multiplied by speed
 def up_left():
-    GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.HIGH)
-    p.ChangeDutyCycle(100 * speed)
-    GPIO.output(in3, GPIO.LOW)
-    GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(75 * speed)
+    GPIO.output(globals.in1, GPIO.LOW)
+    GPIO.output(globals.in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100 * globals.speed)
+    GPIO.output(globals.in3, GPIO.LOW)
+    GPIO.output(globals.in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(75 * globals.speed)
 
 
 # Function to move car in the down right direction
@@ -54,12 +54,12 @@ def up_left():
 # and making right wheels slower than left wheels
 # p 75 duty cycle and p2 100 duty cycle multiplied by speed
 def down_right():
-    GPIO.output(in1, GPIO.HIGH)
-    GPIO.output(in2, GPIO.LOW)
-    p.ChangeDutyCycle(75 * speed)
-    GPIO.output(in3, GPIO.HIGH)
-    GPIO.output(in4, GPIO.LOW)
-    p2.ChangeDutyCycle(100 * speed)
+    GPIO.output(globals.in1, GPIO.HIGH)
+    GPIO.output(globals.in2, GPIO.LOW)
+    p.ChangeDutyCycle(75 * globals.speed)
+    GPIO.output(globals.in3, GPIO.HIGH)
+    GPIO.output(globals.in4, GPIO.LOW)
+    p2.ChangeDutyCycle(100 * globals.speed)
 
 
 # Function to move car in the down left direction
@@ -67,24 +67,24 @@ def down_right():
 # and making left wheels slower than right wheels
 # p2 75 duty cycle and p 100 duty cycle multiplied by speed
 def down_left():
-    GPIO.output(in1, GPIO.HIGH)
-    GPIO.output(in2, GPIO.LOW)
-    p.ChangeDutyCycle(100 * speed)
-    GPIO.output(in3, GPIO.HIGH)
-    GPIO.output(in4, GPIO.LOW)
-    p2.ChangeDutyCycle(75 * speed)
+    GPIO.output(globals.in1, GPIO.HIGH)
+    GPIO.output(globals.in2, GPIO.LOW)
+    p.ChangeDutyCycle(100 * globals.speed)
+    GPIO.output(globals.in3, GPIO.HIGH)
+    GPIO.output(globals.in4, GPIO.LOW)
+    p2.ChangeDutyCycle(75 * globals.speed)
 
 
 # Function to move car in the forwarding direction
 # by making all wheels move with the same amount of speed
 # p2 100 duty cycle and p 100 duty cycle multiplied by speed
 def up():
-    GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.HIGH)
-    p.ChangeDutyCycle(100 * speed)
-    GPIO.output(in3, GPIO.LOW)
-    GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(100 * speed)
+    GPIO.output(globals.in1, GPIO.LOW)
+    GPIO.output(globals.in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100 * globals.speed)
+    GPIO.output(globals.in3, GPIO.LOW)
+    GPIO.output(globals.in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100 * globals.speed)
 
 
 # Function to move car in the backward direction
@@ -92,12 +92,12 @@ def up():
 # and making all wheels move with the same amount of speed
 # p2 100 duty cycle and p 100 duty cycle multiplied by speed
 def down():
-    GPIO.output(in1, GPIO.HIGH)
-    GPIO.output(in2, GPIO.LOW)
-    p.ChangeDutyCycle(100 * speed)
-    GPIO.output(in3, GPIO.HIGH)
-    GPIO.output(in4, GPIO.LOW)
-    p2.ChangeDutyCycle(100 * speed)
+    GPIO.output(globals.in1, GPIO.HIGH)
+    GPIO.output(globals.in2, GPIO.LOW)
+    p.ChangeDutyCycle(100 * globals.speed)
+    GPIO.output(globals.in3, GPIO.HIGH)
+    GPIO.output(globals.in4, GPIO.LOW)
+    p2.ChangeDutyCycle(100 * globals.speed)
 
 
 # Function to move car in the right direction
@@ -105,12 +105,12 @@ def down():
 # and making only the left wheels move
 # p2 100 duty cycle and p 0 duty cycle multiplied by speed
 def right():
-    GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.HIGH)
+    GPIO.output(globals.in1, GPIO.LOW)
+    GPIO.output(globals.in2, GPIO.HIGH)
     p.ChangeDutyCycle(0)
-    GPIO.output(in3, GPIO.LOW)
-    GPIO.output(in4, GPIO.HIGH)
-    p2.ChangeDutyCycle(100 * speed)
+    GPIO.output(globals.in3, GPIO.LOW)
+    GPIO.output(globals.in4, GPIO.HIGH)
+    p2.ChangeDutyCycle(100 * globals.speed)
 
 
 # Function to move car in the left direction
@@ -118,11 +118,11 @@ def right():
 # and making only the right wheels move
 # p 100 duty cycle and p2 0 duty cycle multiplied by speed
 def left():
-    GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.HIGH)
-    p.ChangeDutyCycle(100 * speed)
-    GPIO.output(in3, GPIO.LOW)
-    GPIO.output(in4, GPIO.HIGH)
+    GPIO.output(globals.in1, GPIO.LOW)
+    GPIO.output(globals.in2, GPIO.HIGH)
+    p.ChangeDutyCycle(100 * globals.speed)
+    GPIO.output(globals.in3, GPIO.LOW)
+    GPIO.output(globals.in4, GPIO.HIGH)
     p2.ChangeDutyCycle(0)
 
 
@@ -205,7 +205,8 @@ def car_Controller():
                 # break
 
             try:
-                if stop == False:
+                print("the global stop",globals.stop)
+                if globals.stop == False:
                     if globals.UP_Pressed and globals.Right_Pressed:
                         print("Right Forward")
                         up_right()

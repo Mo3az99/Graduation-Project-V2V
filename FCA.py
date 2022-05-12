@@ -109,7 +109,7 @@ def DetermineDirection(lat1,lon1,lat2,lon2):
                 print("Heading South West")
                 globals.direction = "SOUTHWEST"
     else:
-        print("stopped")
+        print("The car is stopped")
         globals.direction = "STOPPED"
 
 def determineLeadingVehicle(message):
