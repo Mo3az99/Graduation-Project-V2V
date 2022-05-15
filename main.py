@@ -13,7 +13,7 @@ def init():
         if rcv == b'+CME ERROR: 58\r\n':
             globals.ser.write(b'AT+GPS=1 \r')
             print("Error Handled")
-        print(rcv)
+        #print(rcv)
         if rcv == b'OK\r\n':
             print("GPS ON")
             break
