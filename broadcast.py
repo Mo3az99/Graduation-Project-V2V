@@ -111,18 +111,23 @@ def current_location():
     # we dont need it global if it is only the command form the A9G
     globals.prev_locationx = globals.locationx
     globals.prev_locationy = globals.locationy
+    globals.ser.flushInput()
     checkOK()
     #print("1")
     # time.sleep(1.1)
     # needs edit
     for i in range(0, 8):
         temp_read = (globals.ser.readline().decode('utf-8'))
+        #print("the line is ", temp_read)
         if temp_read[0:6] == "$GNRMC":
             globals.location = temp_read
             break
     #print("2")
     globals.ser.write(b'AT+GPSRD=0\r')
-    x = globals.ser.read(1000)
+    globals.ser.flushInput()
+    globals.ser.flushOutput()
+    #x = globals.ser.read(1000)
+    
 #     print("3")
     if globals.location != "":
         print(globals.location)
