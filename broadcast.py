@@ -111,8 +111,8 @@ def current_location():
     # we dont need it global if it is only the command form the A9G
     globals.prev_locationx = globals.locationx
     globals.prev_locationy = globals.locationy
-    #checkOK()
-    
+    checkOK()
+    #print("1")
     # time.sleep(1.1)
     # needs edit
     for i in range(0, 8):
@@ -120,8 +120,10 @@ def current_location():
         if temp_read[0:6] == "$GNRMC":
             globals.location = temp_read
             break
-    #globals.ser.write(b'AT+GPSRD=0\r')
+    #print("2")
+    globals.ser.write(b'AT+GPSRD=0\r')
     x = globals.ser.read(1000)
+#     print("3")
     if globals.location != "":
         print(globals.location)
         msg = pynmea2.parse(globals.location)
@@ -160,7 +162,7 @@ def broadcast():
     # sio = io.TextIOWrapper(io.BufferedRWPair(ser, ser))
     # nazlha ta7t 34an mkan el kolya et3ml update
     # current_location()
-
+    print("ssssssssssssssssssssssssssssssssssssssssssssssssssssss")
     send_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
