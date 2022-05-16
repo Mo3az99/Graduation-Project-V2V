@@ -114,9 +114,9 @@ def DetermineDirection(lat1,lon1,lat2,lon2):
 
 def determineLeadingVehicle(message):
 
-    print("recieved angle",message["angle"])
+    #print("recieved angle",message["angle"])
     print("recieved Direction", message["direction"])
-    print("My angle",globals.angle)
+    #print("My angle",globals.angle)
     print("My Direction",globals.direction)
     if message["direction"] == globals.direction :
         if globals.direction == "EAST" or globals.direction == "NORTH" or globals.direction == "NORTHEAST" :
@@ -133,8 +133,22 @@ def determineLeadingVehicle(message):
             else:
                 print("ana leading to south ")
                 globals.Following_vehicle = False
+        elif globals.direction == "NORTHWEST" :
+            if message["locationx"] < globals.locationx or message["locationy"] > globals.locationy:
+                print("ana following to NORTHWEST ")
+                globals.Following_vehicle = True
+            else:
+                print("ana leading to North west")
+                globals.Following_vehicle = False
+        elif globals.direction == "SOUTHEAST" :
+            if message["locationx"] > globals.locationx or message["locationy"] < globals.locationy:
+                print("ana following to SOUTHEAST ")
+                globals.Following_vehicle = True
+            else:
+                print("ana leading to SOUTH EAST")
+                globals.Following_vehicle = False
         else:
-            print("Mlna4 Da3wa Ya MO7eee")
+            print("Cars are not in the same Direction")
             globals.Following_vehicle = False
     # if abs(message["angle"] - angle) <= 3:
     #     print("trying to deetermine the leading vehicle")
