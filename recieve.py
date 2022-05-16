@@ -23,12 +23,14 @@ def receive():
         print("not me")
         globals.logger.info(data_variable)
         FCA.determineLeadingVehicle(data_variable)
+        print("am i following? ",globals.Following_vehicle)
         if globals.Following_vehicle:
             print("Iam Following and going to check a possible FCA")
             FCA.determineDistanceToCollison(data_variable)
         #Determine  if 2 directions will intersect
         #check direction
         if (globals.direction != data_variable["direction"]):
+            print("going to check possiple intersection")
             #intersection point
             point_x, point_y = ICA.line_intersection(globals.line1, data_variable["line1"])
             dti_car1 = ICA.calculateDistance(point_x - globals.point2[0], point_y - globals.point2[1])
