@@ -38,14 +38,17 @@ def receive():
             dti_car2 = ICA.calculateDistance(point_x - data_variable["point1"][0], point_y - data_variable["point1"][1])
             tti_car1 = dti_car1 / 2.5 # instead of this put spead in meters
             tti_car2 = dti_car2 / 2.5 # instead of this put spead in meters
-
+            print("my tti ",tti_car1)
+            print("car2 tti",tti_car2)
             if (tti_car1 > tti_car2):
                 # difference in time to not stop car if it will pass safely the intersection point
                 if(abs(tti_car1-tti_car2) <= 5 ):
                     car_controller.Stop()
                     globals.stop=True
+                    print("ICA STOOOOOOP")
                 else:
                     globals.stop = False
+                    print("ICA ez")
 
         # print(data_variable.locationx)
         # (data, addr) = rev_socket.recvfrom(SIZE)
