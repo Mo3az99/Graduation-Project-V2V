@@ -29,7 +29,7 @@ def receive():
             FCA.determineDistanceToCollison(data_variable)
         #Determine  if 2 directions will intersect
         #check direction
-        if (globals.direction != data_variable["direction"] and globals.direction != "STOPPED"):
+        if (globals.direction != data_variable["direction"] and globals.direction != "STOPPED" and data_variable["direction"] != "STOPPED"):
             print("going to check possiple intersection")
             #intersection point
             point_x, point_y = ICA.line_intersection(globals.line1, data_variable["line1"])

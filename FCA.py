@@ -61,7 +61,8 @@ def calculateDistancinMeters(dx,dy):
 
 def DetermineDirection(lat1,lon1,lat2,lon2):
     dx, dy = convertLatlonToXY(lat1, lon1, lat2, lon2)
-    calculateDistancinMeters(dx,dy)
+    globals.prev_velocity=globals.velocity
+    globals.velocity=calculateDistancinMeters(dx,dy)
     dx*= -1000
     print("diffrence in x",dx)
     dy*= -1000
@@ -120,29 +121,58 @@ def determineLeadingVehicle(message):
     print("My Direction",globals.direction)
     if message["direction"] == globals.direction :
         print("Directions are the same")
-        if globals.direction == "EAST" or globals.direction == "NORTH" or globals.direction == "NORTHEAST" :
-            if message["locationx"] > globals.locationx or message["locationy"] > globals.locationy:
+        if globals.direction == "EAST" :
+            if message["locationx"] > globals.locationx:
                 print("ana following")
                 globals.Following_vehicle = True
             else:
                 print("ana leading ")
                 globals.Following_vehicle = False
-        elif globals.direction == "WEST" or globals.direction == "SOUTH" or globals.direction ==  "SOUTWEST":
-            if message["locationx"] < globals.locationx or message["locationy"] < globals.locationy:
+        elif globals.direction == "NORTH" :
+            if message["locationy"] > globals.locationy:
+                print("ana following")
+                globals.Following_vehicle = True
+            else:
+                print("ana leading ")
+                globals.Following_vehicle = False
+        elif globals.direction == "NORTHEAST"
+            if message["locationx"] > globals.locationx and message["locationy"] > globals.locationy:
+                print("ana following")
+                globals.Following_vehicle = True
+            else:
+                print("ana leading ")
+                globals.Following_vehicle = False
+        elif globals.direction == "WEST":
+            if message["locationx"] < globals.locationx:
+                print("ana following to west ")
+                globals.Following_vehicle = True
+            else:
+                print("ana leading to west ")
+                globals.Following_vehicle = False
+                
+        elif globals.direction == "SOUTH":
+            if message["locationy"] < globals.locationy:
                 print("ana following to south ")
                 globals.Following_vehicle = True
             else:
                 print("ana leading to south ")
                 globals.Following_vehicle = False
+        elif globals.direction ==  "SOUTWEST":
+            if message["locationx"] < globals.locationx and message["locationy"] < globals.locationy:
+                print("ana following to SOUTWEST ")
+                globals.Following_vehicle = True
+            else:
+                print("ana leading to SOUTWEST ")
+                globals.Following_vehicle = False
         elif globals.direction == "NORTHWEST" :
-            if message["locationx"] < globals.locationx or message["locationy"] > globals.locationy:
+            if message["locationx"] < globals.locationx and message["locationy"] > globals.locationy:
                 print("ana following to NORTHWEST ")
                 globals.Following_vehicle = True
             else:
                 print("ana leading to North west")
                 globals.Following_vehicle = False
         elif globals.direction == "SOUTHEAST" :
-            if message["locationx"] > globals.locationx or message["locationy"] < globals.locationy:
+            if message["locationx"] > globals.locationx and message["locationy"] < globals.locationy:
                 print("ana following to SOUTHEAST ")
                 globals.Following_vehicle = True
             else:
@@ -174,9 +204,10 @@ def determineLeadingVehicle(message):
 
 def determineDistanceToCollison(message):
 
-    globals.velocity = globals.velocity * 0.27777777777778
-    receivedvelocity =math.sqrt(math.pow(message["velocityx"] , 2) + math.pow(message["velocityy"] , 2))
-    receivedvelocity = receivedvelocity * 0.27777777777778
+    #globals.velocity = globals.velocity * 0.27777777777778
+    #receivedvelocity =math.sqrt(math.pow(message["velocityx"] , 2) + math.pow(message["velocityy"] , 2))
+    #receivedvelocity = receivedvelocity * 0.27777777777778
+    receivedvelocity = message["velocityy"]
     # v_Relative = abs(v_Relative)
     v_Relative = receivedvelocity - globals.velocity
     print("relative", v_Relative)
@@ -194,8 +225,9 @@ def determineDistanceToCollison(message):
         # print(sqrtv)
         globals.DTCa = ((-v_Relative - sqrtv) / message["acceleration"]) * globals.velocity
         print("DTCa", globals.DTCa)
-        print("TTC", globals.DTCa / globals.velocity)
+        #print("TTC", globals.DTCa / globals.velocity)
     # if leading and following vehicles not equal zero
+    print("1",globals.velocity,"2",globals.acceleration,"3",message["velocityy"],"4",message["acceleration"])
     if globals.acceleration != 0 and message["acceleration"] != 0:
         #it maybe changed to global
         Dw1 = 0.5 * ((pow(globals.velocity, 2) / globals.acceleration) - (
@@ -213,22 +245,24 @@ def determineDistanceToCollison(message):
         # Delta 3
         deltaD3 = globals.DTCa - Dw3
         # tw1
-        tw1 = deltaD1 / globals.velocity
-        tw2 = deltaD2 / globals.velocity
-        tw3 = deltaD3 / globals.velocity
+        #print(globals.velocity)
+        tw1 = abs(deltaD1 / globals.velocity)
+        tw2 = abs(deltaD2 / globals.velocity)
+        tw3 = abs(deltaD3 / globals.velocity)
         print("TW1", tw1)
         print("TW2", tw2)
         print("TW3", tw3)
-        print("TTC", globals.DTCa / globals.velocity)
-        if tw3 < 2:
+        ttc= abs(globals.DTCa / globals.velocity)
+        print("TTC", ttc)
+        if ttc < tw3 :
             print("brake")
             car_controller.Stop()
             globals.stop=True
             globals.logger.info("BRAKE")
-        elif tw2 < 2:
+        elif ttc < tw2 :
             print("Danger")
             globals.logger.info("Danger")
-        elif tw1 < 2:
+        elif ttc < tw1 :
             print("warning ")
             globals.logger.info("warning")
             globals.stop=False
