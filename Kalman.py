@@ -82,34 +82,16 @@ class kalmanTrack(object):
 
     def predict(self) -> None:
         tmpx = self.X[0:3]
-        # print("tempX",tmpx)
-        # print("F elly hatdrb feha",self.F)
         temp = np.dot(self.F, tmpx)
-        # temp=np.dot(tmpx,self.F)
-        # print("First temp",temp)
-
         self.X[0] = temp[0]
         self.X[1] = temp[1]
         self.X[2] = temp[2]
-
         tmpx = self.X[3:6]
-        # print("second tempX", tmpx)
         temp = np.dot(self.F, tmpx)
-        # temp = np.dot(tmpx,self.F)
-        # print("Second temp",temp)
         self.X[3] = temp[0]
         self.X[4] = temp[1]
         self.X[5] = temp[2]
-
-        #self.P = self.F * self.P * self.F.transpose() + self.Q
-        # print("F",self.F)
-        # print("P", self.P)
-        # print("F.T", self.F.T)
-        # print("Q", self.Q)
-        # print("F.P",np.dot(self.F, self.P))
-        # print("F.P.F.T",np.dot(np.dot(self.F, self.P), self.F.T))
         self.P = np.dot(np.dot(self.F, self.P), self.F.T) + self.Q
-        # print("p",self.P)
 
 
 
