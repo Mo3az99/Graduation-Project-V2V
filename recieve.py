@@ -23,12 +23,14 @@ def receive():
         print("not me")
         globals.logger.info(data_variable)
         FCA.determineLeadingVehicle(data_variable)
+        print("am i following? ",globals.Following_vehicle)
         if globals.Following_vehicle:
             print("Iam Following and going to check a possible FCA")
             FCA.determineDistanceToCollison(data_variable)
         #Determine  if 2 directions will intersect
         #check direction
-        if (globals.direction != data_variable["direction"]):
+        if (globals.direction != data_variable["direction"] and globals.direction != "STOPPED" and data_variable["direction"] != "STOPPED"):
+            print("going to check possiple intersection")
             #intersection point
             point_x, point_y = ICA.line_intersection(globals.line1, data_variable["line1"])
             dti_car1 = ICA.calculateDistance(point_x - globals.point2[0], point_y - globals.point2[1])
@@ -36,14 +38,20 @@ def receive():
             dti_car2 = ICA.calculateDistance(point_x - data_variable["point1"][0], point_y - data_variable["point1"][1])
             tti_car1 = dti_car1 / 2.5 # instead of this put spead in meters
             tti_car2 = dti_car2 / 2.5 # instead of this put spead in meters
-
+            print("my tti ",tti_car1)
+            print("car2 tti",tti_car2)
             if (tti_car1 > tti_car2):
                 # difference in time to not stop car if it will pass safely the intersection point
                 if(abs(tti_car1-tti_car2) <= 5 ):
                     car_controller.Stop()
                     globals.stop=True
+                    print("ICA STOOOOOOP")
                 else:
                     globals.stop = False
+                    print("ICA ez")
+        elif globals.direction == data_variable["direction"]:
+            globals.stop = False
+
 
         # print(data_variable.locationx)
         # (data, addr) = rev_socket.recvfrom(SIZE)

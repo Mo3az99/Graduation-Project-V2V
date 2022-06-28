@@ -48,7 +48,7 @@ DTCa = 0
 Following_vehicle = True
 # Location and speed Global Variables
 location = ""
-speed = 1
+speed = 0.5
 # buttons Variables
 UP_Pressed = False
 Down_Pressed = False

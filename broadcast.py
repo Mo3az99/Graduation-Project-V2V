@@ -81,9 +81,15 @@ def update_angle():
     #print(angle)
 
 def update_acceleration():
-    globals.velocity = math.sqrt(math.pow(globals.velocityx, 2) + math.pow(globals.velocityy, 2))
-    globals.prev_velocity = math.sqrt(math.pow(globals.prev_velocityx, 2) + math.pow(globals.prev_velocityy, 2))
-    globals.acceleration = abs(globals.velocity - globals.prev_velocity)
+    #globals.velocity = math.sqrt(math.pow(globals.velocityx, 2) + math.pow(globals.velocityy, 2))
+    #globals.prev_velocity = math.sqrt(math.pow(globals.prev_velocityx, 2) + math.pow(globals.prev_velocityy, 2))
+    globals.acceleration = abs(globals.velocity - globals.prev_velocity) /2
+    print("ACCELERATION !!! ", globals.acceleration)
+    
+
+# 
+
+# 
 # add Semaphore for Location
 
 # Function To get the current location of the moving vehicle
@@ -183,9 +189,9 @@ def broadcast():
     send_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
     send_socket.settimeout(0.2)
     current_location()
-    update_speed()
+    #update_speed()
     update_angle()
-    update_acceleration()
+    #update_acceleration()
     bcn1 = Kalman.bcnSample(globals.vecid, 0, globals.locationx, globals.locationy, globals.velocityx,globals.velocityy)
     klm = Kalman.kalmanTrack(bcn1, 0)
     while True:
@@ -200,18 +206,21 @@ def broadcast():
         x2_car1, y2_car1 = convertMeters(globals.locationy, globals.locationx, 0, 0)
         globals.point2 = [x2_car1, y2_car1]
         globals.line1 = [globals.point1,globals.point2]
-        update_speed()
+        #update_speed()
         globals.velocityx=klm.X[1]
         globals.velocityy=klm.X[4]
         update_angle()
         #keda ba3d kalman should be deleted after test
-        update_acceleration()
+        
         FCA.DetermineDirection(globals.prev_locationy,globals.prev_locationx,globals.locationy,globals.locationx)
+        update_acceleration()
         print("Direction before Broadcast",globals.direction)
         #add kalman
         #send kalman cooridantes
-        globals.acceleration = math.sqrt(math.pow(klm.X[2], 2) + math.pow(klm.X[5], 2))
-        variable = message(globals.vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], globals.acceleration, globals.stop, globals.angle, globals.direction,globals.point1,globals.point2,globals.line1)
+        #globals.acceleration = math.sqrt(math.pow(klm.X[2], 2) + math.pow(klm.X[5], 2))
+#        variable = message(globals.vecid, klm.X[0], klm.X[3], klm.X[1], klm.X[4], globals.acceleration, globals.stop, globals.angle, globals.direction,globals.point1,globals.point2,globals.line1)
+        variable = message(globals.vecid, klm.X[0], klm.X[3], klm.X[1], globals.velocity, globals.acceleration, globals.stop, globals.angle, globals.direction,globals.point1,globals.point2,globals.line1)
+
         # Map your object into dict
         data_as_dict = vars(variable)
 

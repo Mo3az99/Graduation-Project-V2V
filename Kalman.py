@@ -82,74 +82,41 @@ class kalmanTrack(object):
 
     def predict(self) -> None:
         tmpx = self.X[0:3]
-        # print("tempX",tmpx)
-        # print("F elly hatdrb feha",self.F)
         temp = np.dot(self.F, tmpx)
-        # temp=np.dot(tmpx,self.F)
-        # print("First temp",temp)
-
         self.X[0] = temp[0]
         self.X[1] = temp[1]
         self.X[2] = temp[2]
-
         tmpx = self.X[3:6]
-        # print("second tempX", tmpx)
         temp = np.dot(self.F, tmpx)
-        # temp = np.dot(tmpx,self.F)
-        # print("Second temp",temp)
         self.X[3] = temp[0]
         self.X[4] = temp[1]
         self.X[5] = temp[2]
-
-        #self.P = self.F * self.P * self.F.transpose() + self.Q
-        # print("F",self.F)
-        # print("P", self.P)
-        # print("F.T", self.F.T)
-        # print("Q", self.Q)
-        # print("F.P",np.dot(self.F, self.P))
-        # print("F.P.F.T",np.dot(np.dot(self.F, self.P), self.F.T))
         self.P = np.dot(np.dot(self.F, self.P), self.F.T) + self.Q
-        # print("p",self.P)
 
 
 
     def update(self, z: bcnSample, tm) -> None:
-
-
         zVec = np.zeros((2, 1))
         self.vehId = z.vehId
         # self.pseudonym = z.psym
         self.lifeTime += 1
         self.bActive = True
         self.lastUpdateTime = tm
-
         x_prior = self.X
         p_prior = self.P
-
-      #  self.S = np.dot((np.dot(self.H, p_prior)), (self.H.transpose())) + self.R
         self.S = self.R + np.dot(self.H, np.dot(p_prior, self.H.T))
-
         self.Sinv = np.linalg.inv(self.S)
         self.Sdet = np.linalg.det(self.S)
-
         self.K = np.dot((np.dot(p_prior, self.H.T)), self.Sinv)
-
         zVec = np.array([z.px, z.vx])
-
         temp = (x_prior[0:3]) + np.dot(self.K, zVec - np.dot(self.H, (x_prior[0:3])))
-
         self.X[0] = temp[0]
         self.X[1] = temp[1]
         self.X[2] = temp[2]
-
         zVec = np.array([z.py, z.vy])  # momkn deh 8alat
-
         temp = (x_prior[3:6]) + np.dot(self.K, zVec - np.dot(self.H, (x_prior[3:6])))
-
         self.X[3] = temp[0]
         self.X[4] = temp[1]
         self.X[5] = temp[2]
-
         ik = np.eye(len(self.K), M=len(self.K)) - np.dot(self.K, self.H)
-
         self.P = np.dot((np.dot(ik, p_prior)), ik.transpose()) + np.dot((np.dot(self.K, self.R)), self.K.transpose())
