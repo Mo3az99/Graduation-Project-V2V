@@ -3,6 +3,8 @@ import android.os.Build;
 import android.os.Bundle;
 import static com.example.rc_car_final.MainActivity.get_ip;
 import static com.example.rc_car_final.MainActivity2.IP;
+import static com.example.rc_car_final.MainActivity2.Xdiff;
+import static com.example.rc_car_final.MainActivity2.Ydiff;
 import static com.example.rc_car_final.MainActivity2.down_flag_pressed;
 import static com.example.rc_car_final.MainActivity2.down_flag_released;
 import static com.example.rc_car_final.MainActivity2.exit_flag;
@@ -21,12 +23,15 @@ import static com.example.rc_car_final.Thread1.client;
 import static java.lang.String.join;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -57,6 +62,19 @@ public class MainActivity2 extends AppCompatActivity {
     static boolean exit_flag= false;
     static boolean start_flag= false;
 
+    static float Xdiff = 0 ;
+    static float Ydiff = 0 ;
+    float Ygrid;
+    float Xgrid;
+    float CenterHeight;
+    float CenterWidth;
+    private static final int PaddingPos = 10;
+    private static final int PaddingNeg = -10;
+    private static final int GridValue = 100;
+    ImageView RedDot;
+    ImageView GreenDot;
+    Handler handler = new Handler();
+    Runnable runnable;
 
     static String IP ;
     static String port_num = "4445";
@@ -76,16 +94,32 @@ public class MainActivity2 extends AppCompatActivity {
     }
     @Override
     public void onResume(){
-        super.onResume();
-        // put your code here...
+            handler.postDelayed(runnable = new Runnable() {
+                public void run() {
+                    handler.postDelayed(runnable, 1000);
+
+                    setDotPosition(RedDot,Xdiff,Ydiff); //Set RedDot with margin Xdiff,Ydiff to the center
+                }
+            }, 1000);
+
         start_flag = false;
         exit_flag = false;
+        super.onResume();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         mn = MainActivity2.this;
+        ConstraintLayout box = findViewById(R.id.box);
+        GreenDot = (ImageView) findViewById(R.id.GreenDot);
+        RedDot = (ImageView) findViewById(R.id.RedDot);
+        Ygrid = (box.getLayoutParams().height)/GridValue;
+        Xgrid = (box.getLayoutParams().width)/GridValue;
+        CenterHeight = (box.getLayoutParams().height)/2 -30;
+        CenterWidth = (box.getLayoutParams().width)/2 -40;
+        setDotPosition(GreenDot,0,0); //Set GreenDot to center
+
 
         UP = findViewById(R.id.UP);
         DOWN = findViewById(R.id.DOWN);
@@ -186,6 +220,46 @@ public class MainActivity2 extends AppCompatActivity {
         DOWN.setOnTouchListener(handleTouch);
         RIGHT.setOnTouchListener(handleTouch);
         LEFT.setOnTouchListener(handleTouch);
+    }
+
+
+    void setDotPosition(ImageView Dot, float Xpos, float Ypos)
+    {
+
+        if(Xdiff == 0 && Ydiff == 0)
+        {
+            RedDot.setVisibility(View.GONE);
+        }
+        else
+        {
+            RedDot.setVisibility(View.VISIBLE);
+
+        }
+
+        if(Xpos == 0 && Ypos == 0)
+        {
+            Dot.setTranslationX(CenterWidth);
+            Dot.setTranslationY(CenterHeight);
+        }
+        else
+        {
+            if(Xdiff > 0)
+            {
+                Dot.setTranslationX(CenterWidth + (Xgrid * (Xpos + PaddingPos)));
+            }
+            else if(Xdiff < 0)
+            {
+                Dot.setTranslationX(CenterWidth + (Xgrid * (Xpos + PaddingNeg)));
+            }
+            if(Ydiff > 0)
+            {
+                Dot.setTranslationY(CenterHeight + (Ygrid * (Ypos + PaddingPos)));
+            }
+            else if(Ydiff < 0)
+            {
+                Dot.setTranslationY(CenterHeight + (Ygrid * (Ypos + PaddingNeg)));
+            }
+        }
     }
 
     public static void setLCD(String s){
@@ -348,6 +422,9 @@ class Thread2 implements Runnable {
                     if((receiveMessage = stdIn.readLine()) != null){
                         System.out.println(receiveMessage);
                         String finalReceiveMessage = receiveMessage;
+                        String[] splited = finalReceiveMessage.split(",");
+                        Xdiff = Integer.parseInt(splited[0]);
+                        Ydiff = Integer.parseInt(splited[1]);
                         mn.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -360,5 +437,6 @@ class Thread2 implements Runnable {
             e.printStackTrace();
         }
     }
+
 }
 
