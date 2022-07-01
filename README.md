@@ -14,7 +14,8 @@ This project aims to implement a V2V solution where cars can communicate with ea
 
 ## Demo and Mobile App
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Demo](![alt text](https://github.com/Mo3az99/Graduation-Project-V2V/Images/Cars.jpeg?raw=true)
+)
 
 
 ## Deployment
