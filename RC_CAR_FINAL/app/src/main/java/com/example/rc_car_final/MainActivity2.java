@@ -223,36 +223,25 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
 
-    void setDotPosition(ImageView Dot, float Xpos, float Ypos)
-    {
-
-        if(Xdiff == 0 && Ydiff == 0)
-        {
+    void setDotPosition(ImageView Dot, float Xpos, float Ypos) {
+        if(Xdiff == 0 && Ydiff == 0) {
             RedDot.setVisibility(View.GONE);
         }
-        else
-        {
+        else {
             RedDot.setVisibility(View.VISIBLE);
-
         }
-
-        if(Xpos == 0 && Ypos == 0)
-        {
+        if(Xpos == 0 && Ypos == 0) {
             Dot.setTranslationX(CenterWidth);
             Dot.setTranslationY(CenterHeight);
         }
-        else
-        {
-            if(Xdiff > 0)
-            {
+        else {
+            if(Xdiff > 0) {
                 Dot.setTranslationX(CenterWidth + (Xgrid * (Xpos + PaddingPos)));
             }
-            else if(Xdiff < 0)
-            {
+            else if(Xdiff < 0) {
                 Dot.setTranslationX(CenterWidth + (Xgrid * (Xpos + PaddingNeg)));
             }
-            if(Ydiff > 0)
-            {
+            if(Ydiff > 0) {
                 Dot.setTranslationY(CenterHeight + (Ygrid * (Ypos + PaddingPos)));
             }
             else if(Ydiff < 0)
